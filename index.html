@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMMAND CENTER | Cool Art Advertising</title>
+  
+  <!-- CA Favicon Setup -->
+  <link rel="icon" type="image/png" href="CA_logo.png">
+  <link rel="apple-touch-icon" href="CA_logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-main: #fbfbfd;
+      --text-muted: #98989d;
+      --p-most-urgent: #ff2d55;
+      --p-urgent: #ff9f0a;
+      --p-important: #bf5af2;
+      --p-normal: #30d158;
+      --glass-surface: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-glow: rgba(255, 255, 255, 0.08);
+      --sheet-connected: #30d158;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "SF Pro Display", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #05060a;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+      padding: 24px 16px 50px;
+    }
+
+    /* Ambient Liquid Aurora Background */
+    .aurora-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(110px);
+      opacity: 0.38;
+      animation: floatOrb 22s infinite alternate ease-in-out;
+    }
+
+    .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, #ff2d55, transparent); top: -12%; left: -8%; }
+    .orb-2 { width: 600px; height: 600px; background: radial-gradient(circle, #0071e3, #5856d6); bottom: -18%; right: -6%; animation-duration: 26s; }
+    .orb-3 { width: 420px; height: 420px; background: radial-gradient(circle, #30d158, #00c7be); top: 30%; right: 15%; animation-duration: 19s; }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(60px, 45px) scale(1.15); }
+      100% { transform: translate(-50px, 70px) scale(0.92); }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 880px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      z-index: 10;
+    }
+
+    /* Master Apple Glassmorphism Panel */
+    .glass-panel {
+      background: var(--glass-surface);
+      backdrop-filter: blur(34px) saturate(190%);
+      -webkit-backdrop-filter: blur(34px) saturate(190%);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 24px 26px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      position: relative;
+    }
+
+    /* Executive Top Status Bar with CA Logo Integration */
+    .top-header {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .status-left-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-frame {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 0 18px rgba(0, 242, 254, 0.25);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 30px;
+      background: rgba(48, 209, 88, 0.12);
+      border: 1px solid rgba(48, 209, 88, 0.35);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #30d158;
+      text-transform: uppercase;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #30d158;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #30d158;
+      animation: pulseDot 1.6s infinite alternate;
+    }
+
+    @keyframes pulseDot {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.3); }
+    }
+
+    .cloud-sync-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--sheet-connected);
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    .header-content {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .master-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(110deg, #ffffff 10%, #d4d4d8 60%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .quote-box {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #e4e4e7;
+      line-height: 1.45;
+      font-weight: 400;
+      border-left: 3px solid #ff2d55;
+      padding-left: 12px;
+      transition: opacity 0.4s ease;
+    }
+
+    .stats-hud {
+      display: flex;
+      gap: 12px;
+    }
+
+    .stat-pill {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 18px;
+      border-radius: 16px;
+      text-align: center;
+      min-width: 90px;
+    }
+
+    .stat-val {
+      font-size: 1.35rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(90deg, #fff, #bbb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-lbl {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* Morning Carry-Forward Intelligence Bar */
+    .carry-forward-card {
+      background: linear-gradient(135deg, rgba(255, 159, 10, 0.18), rgba(255, 45, 85, 0.15));
+      border: 1px solid rgba(255, 159, 10, 0.4);
+      border-radius: 18px;
+      padding: 14px 20px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 10px 25px rgba(255, 159, 10, 0.15);
+    }
+
+    .carry-forward-card.show {
+      display: flex;
+    }
+
+    /* Input Matrix */
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .input-box-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-field {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 16px 56px 16px 20px;
+      color: #fff;
+      font-size: 1.05rem;
+      outline: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .input-field:focus {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.65);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    }
+
+    /* Voice Dictation Button */
+    .btn-mic {
+      position: absolute;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-mic:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.08);
+    }
+
+    .btn-mic.listening {
+      background: #ff2d55;
+      border-color: #ff2d55;
+      box-shadow: 0 0 20px rgba(255, 45, 85, 0.75);
+      animation: micPulse 1.2s infinite alternate;
+    }
+
+    @keyframes micPulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.15); }
+    }
+
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .priority-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-btn:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+
+    .pill-btn.active[data-p="most-urgent"] {
+      background: rgba(255, 45, 85, 0.22);
+      border-color: var(--p-most-urgent);
+      color: #ff3b30;
+      box-shadow: 0 0 16px rgba(255, 45, 85, 0.35);
+    }
+
+    .pill-btn.active[data-p="urgent"] {
+      background: rgba(255, 159, 10, 0.22);
+      border-color: var(--p-urgent);
+      color: #ff9f0a;
+      box-shadow: 0 0 16px rgba(255, 159, 10, 0.35);
+    }
+
+    .pill-btn.active[data-p="important"] {
+      background: rgba(191, 90, 242, 0.22);
+      border-color: var(--p-important);
+      color: #bf5af2;
+      box-shadow: 0 0 16px rgba(191, 90, 242, 0.35);
+    }
+
+    .pill-btn.active[data-p="normal"] {
+      background: rgba(48, 209, 88, 0.22);
+      border-color: var(--p-normal);
+      color: #30d158;
+      box-shadow: 0 0 16px rgba(48, 209, 88, 0.35);
+    }
+
+    .button-group-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-create {
+      background: linear-gradient(135deg, #ffffff, #dcdcdc);
+      color: #000;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+      transition: all 0.25s ease;
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-create:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-util {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-util:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Task Lists Section */
+    .section-head {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .task-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Executive Task Cards */
+    .task-item {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s, box-shadow 0.25s;
+      cursor: grab;
+      position: relative;
+    }
+
+    .task-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .task-item:active { cursor: grabbing; }
+
+    .task-item.dragging {
+      opacity: 0.35;
+      border: 2px dashed rgba(255, 255, 255, 0.4);
+    }
+
+    /* Neon Priority Strips */
+    .task-item.most-urgent { border-left: 5px solid var(--p-most-urgent); box-shadow: -4px 0 20px rgba(255, 45, 85, 0.22); }
+    .task-item.urgent { border-left: 5px solid var(--p-urgent); box-shadow: -4px 0 20px rgba(255, 159, 10, 0.18); }
+    .task-item.important { border-left: 5px solid var(--p-important); box-shadow: -4px 0 20px rgba(191, 90, 242, 0.18); }
+    .task-item.normal { border-left: 5px solid var(--p-normal); box-shadow: -4px 0 20px rgba(48, 209, 88, 0.15); }
+
+    /* Custom Checkbox */
+    .check-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .check-circle:hover {
+      border-color: #fff;
+      transform: scale(1.1);
+    }
+
+    .check-circle.completed {
+      background: #30d158;
+      border-color: #30d158;
+      box-shadow: 0 0 14px rgba(48, 209, 88, 0.6);
+    }
+
+    .check-circle.completed::after {
+      content: '✓';
+      color: #000;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .task-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .task-text {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .task-sub-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .p-tag {
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+    }
+
+    .p-tag.most-urgent { background: rgba(255, 45, 85, 0.2); color: #ff3b30; }
+    .p-tag.urgent { background: rgba(255, 159, 10, 0.2); color: #ff9f0a; }
+    .p-tag.important { background: rgba(191, 90, 242, 0.2); color: #bf5af2; }
+    .p-tag.normal { background: rgba(48, 209, 88, 0.2); color: #30d158; }
+
+    /* Smart Action Badges (Direct Call & WhatsApp) */
+    .smart-actions {
+      display: inline-flex;
+      gap: 6px;
+      margin-left: 4px;
+    }
+
+    .smart-btn {
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+
+    .smart-btn.call {
+      background: rgba(48, 209, 88, 0.15);
+      border: 1px solid rgba(48, 209, 88, 0.4);
+      color: #30d158;
+    }
+
+    .smart-btn.whatsapp {
+      background: rgba(37, 211, 102, 0.15);
+      border: 1px solid rgba(37, 211, 102, 0.4);
+      color: #25d366;
+    }
+
+    .smart-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.2);
+    }
+
+    /* Shift & Action Buttons */
+    .task-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-shift {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      border-radius: 8px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: all 0.2s;
+    }
+
+    .btn-shift:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .btn-action {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+    }
+
+    .btn-action.edit:hover {
+      color: #0071e3;
+      background: rgba(0, 113, 227, 0.15);
+    }
+
+    .btn-action.delete:hover {
+      color: #ff2d55;
+      background: rgba(255, 45, 85, 0.15);
+    }
+
+    /* Completed List */
+    .task-item.done-card {
+      opacity: 0.55;
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 5px solid #48484a;
+      box-shadow: none;
+    }
+
+    .task-item.done-card .task-text {
+      text-decoration: line-through;
+      color: #8e8e93;
+    }
+
+    .done-timestamp {
+      font-size: 0.74rem;
+      color: #30d158;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* Edit Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(20px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-overlay.show { display: flex; }
+
+    .modal-glass {
+      background: linear-gradient(135deg, rgba(30, 30, 45, 0.95), rgba(15, 15, 22, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 28px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+    }
+
+    /* CEO Zen Focus Mode Overlay */
+    .zen-overlay {
+      position: fixed;
+      inset: 0;
+      background: #000000;
+      z-index: 2000;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .zen-overlay.active { display: flex; }
+
+    .zen-halo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 45, 85, 0.25), transparent 70%);
+      filter: blur(40px);
+      position: absolute;
+      animation: pulseHalo 4s infinite alternate ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes pulseHalo {
+      0% { transform: scale(0.9); opacity: 0.5; }
+      100% { transform: scale(1.3); opacity: 0.9; }
+    }
+
+    .zen-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      max-width: 700px;
+      line-height: 1.35;
+      margin-bottom: 24px;
+      background: linear-gradient(110deg, #fff, #bbb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 2;
+    }
+
+    /* Official Footer */
+    footer {
+      margin-top: 45px;
+      width: 100%;
+      max-width: 880px;
+      text-align: center;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #71717a;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .company-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #ff2d55, #ff9f0a, #30d158, #0071e3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+
+    .contact-line {
+      margin-top: 4px;
+      font-size: 0.82rem;
+      color: #a1a1aa;
+    }
+
+    .contact-line a {
+      color: #00f2fe;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Animated Glowing Background -->
+  <div class="aurora-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="container">
+    
+    <!-- Header / Executive Status HUD with CA Logo -->
+    <header class="glass-panel top-header">
+      <div class="status-row">
+        <div class="status-left-group">
+          <!-- CA Logo Box -->
+          <div class="brand-logo-frame" title="Cool Art Executive Logo">
+            <img src="CA_logo.png" alt="CA Logo" onerror="this.parentElement.innerHTML='<span style=\'font-weight:900; background:linear-gradient(135deg,#ff2d55,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;\'>CA</span>'">
+          </div>
+
+          <div class="status-badge">
+            <div class="status-dot"></div>
+            COOL ART COMMAND ACTIVE
+          </div>
+        </div>
+
+        <div class="cloud-sync-status" id="syncStatusIndicator">
+          <span>●</span> GOOGLE SHEETS LIVE SYNCED
+        </div>
+        <div id="liveClock" style="font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; color: #a1a1aa; letter-spacing: 0.5px;">--:-- --</div>
+      </div>
+
+      <div class="header-content">
+        <div>
+          <h1 class="master-title">आज के मुख्य मिशन क्या हैं?</h1>
+          <div class="quote-box" id="quoteTicker">"समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।"</div>
+        </div>
+
+        <div class="stats-hud">
+          <div class="stat-pill">
+            <div class="stat-val" id="activeCounter">0</div>
+            <div class="stat-lbl">लंबित (Active)</div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-val" id="doneCounter">0</div>
+            <div class="stat-lbl">सम्पन्न (Done)</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Morning Carry-Forward Intelligence Card -->
+    <div class="carry-forward-card" id="carryForwardAlert">
+      <div>
+        <strong style="color: #ff9f0a; font-size: 0.95rem;">🌅 मॉर्निंग इंटेलिजेंस:</strong>
+        <span id="carryForwardText" style="font-size: 0.88rem; margin-left: 6px; color: #fff;">कल के कुछ काम अधूरे रह गए थे।</span>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="pill-btn active" style="padding: 5px 12px; background: rgba(255, 159, 10, 0.3);" onclick="approveCarryForward()">✓ आज में शिफ्ट करें</button>
+        <button class="pill-btn" style="padding: 5px 10px;" onclick="dismissCarryForward()">✕</button>
+      </div>
+    </div>
+
+    <!-- Task Input Panel -->
+    <section class="glass-panel input-wrapper">
+      <div class="input-box-row">
+        <input type="text" id="taskInput" class="input-field" placeholder="नया कार्य या मिशन दर्ज करें (बोलने के लिए माइक दबाएँ)..." autofocus>
+        <button class="btn-mic" id="voiceBtn" title="बोलकर टास्क लिखें (Voice Typing)">🎙️</button>
+      </div>
+      
+      <div class="action-row">
+        <div class="priority-pills">
+          <div class="pill-btn active" data-p="most-urgent">🔥 Most Urgent</div>
+          <div class="pill-btn" data-p="urgent">⚡ Urgent</div>
+          <div class="pill-btn" data-p="important">⭐ Important</div>
+          <div class="pill-btn" data-p="normal">🟢 Normal</div>
+        </div>
+
+        <div class="button-group-right">
+          <button class="btn-util" id="zenBtn" title="Focus Mode (Press Z)">🧘 ZEN MODE</button>
+          <button class="btn-create" id="addTaskBtn">+ ADD TASK</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Utility Bar (Excel & Daily Wrap) -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div style="font-size: 0.85rem; color: #a1a1aa;">
+        <span>शॉर्टकट: </span><kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Enter</kbd> जोड़ें | <kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Z</kbd> फोकस
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button class="btn-util" onclick="exportToExcel()" title="Excel फ़ाइल डाउनलोड करें">📊 DOWNLOAD EXCEL</button>
+        <button class="btn-util" onclick="shareDailyBrief()" style="color: #25d366; border-color: rgba(37, 211, 102, 0.4);" title="WhatsApp पर रिपोर्ट भेजें">📲 DAILY WRAP</button>
+      </div>
+    </div>
+
+    <!-- Active Tasks Section (Draggable & Shiftable) -->
+    <section>
+      <div class="section-head">
+        <span>पेंडिंग मिशन सूची (ड्रैग या शिफ्ट करके ऊपर-नीचे करें)</span>
+        <span id="priorityStatusNote" style="color: #ff3b30;"></span>
+      </div>
+      <div class="task-container" id="activeContainer"></div>
+    </section>
+
+    <!-- Completed History Section -->
+    <section style="margin-top: 15px;">
+      <div class="section-head">
+        <span>पूरे हो चुके मिशन (Log History)</span>
+        <span id="completedPercentage" style="color: #30d158;"></span>
+      </div>
+      <div class="task-container" id="completedContainer"></div>
+    </section>
+
+    <!-- Official Signature Footer -->
+    <footer>
+      <div>Designed & Produced for High Performance by</div>
+      <div class="company-name">COOL ART ADVERTISING</div>
+      <div class="contact-line">
+        180, Banasha Tower, Village Nahal, Atrauli, Aligarh (UP) 202131<br>
+        Direct Hotline: <a href="tel:+919458614610">+91 9458614610</a> | Email: coolartadvertising@gmail.com
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Edit Task Modal -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal-glass">
+      <h3 style="margin-bottom: 16px; font-size: 1.25rem;">कार्य संपादित करें (Edit Task)</h3>
+      <input type="text" id="editInput" class="input-field" style="margin-bottom: 16px;">
+      
+      <div style="margin-bottom: 20px;">
+        <label style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">प्राथमिकता बदलें:</label>
+        <div class="priority-pills" style="margin-top: 8px;">
+          <div class="pill-btn edit-pill" data-p="most-urgent">🔥 Most Urgent</div>
+          <div class="pill-btn edit-pill" data-p="urgent">⚡ Urgent</div>
+          <div class="pill-btn edit-pill" data-p="important">⭐ Important</div>
+          <div class="pill-btn edit-pill" data-p="normal">🟢 Normal</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button class="pill-btn" onclick="closeEditModal()">रद्द करें</button>
+        <button class="btn-create" id="saveEditBtn">अपडेट करें</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CEO Zen Mode Overlay -->
+  <div class="zen-overlay" id="zenOverlay">
+    <div class="zen-halo"></div>
+    <div style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #ff2d55; margin-bottom: 14px; z-index: 2;">🔥 MOST URGENT TARGET MISSION</div>
+    <div class="zen-title" id="zenTaskTitle">कोई मोस्ट अर्जेंट कार्य नहीं मिला</div>
+    <button class="btn-create" onclick="toggleZenMode()" style="z-index: 2;">EXIT ZEN (ESC)</button>
+  </div>
+
+  <script>
+    // Embedded Google Sheets Webhook URL
+    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxakWNTge9m8DApB8hEHfjHlWkxgiBK3n2ElLLuHAOvzLfdFHJ7vtolbIUgufzrtmX_6A/exec";
+
+    // Executive Motivational Quotes
+    const quotes = [
+      "समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।",
+      "महान काम तब होते हैं जब आप प्राथमिकताओं पर बिना रुके प्रहार करते हैं।",
+      "हर एक टिक किया गया टास्क आपको आपकी मंज़िल के एक कदम और करीब ले जाता है।",
+      "दबाव ही कोयले को हीरा बनाता है। मोस्ट अर्जेंट कामों को पहले ध्वस्त करें।",
+      "जो आज पूरा कर लिया, कल वह आपका साम्राज्य खड़ा करेगा।"
+    ];
+
+    let quoteIndex = 0;
+    setInterval(() => {
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+      const qElem = document.getElementById('quoteTicker');
+      qElem.style.opacity = '0';
+      setTimeout(() => {
+        qElem.innerText = `"\${quotes[quoteIndex]}"`;
+        qElem.style.opacity = '1';
+      }, 400);
+    }, 10000);
+
+    // State & Storage (Key Protection guaranteed)
+    let tasks = JSON.parse(localStorage.getItem('coolart_executive_tasks')) || [];
+    let selectedPriority = 'most-urgent';
+    let editTaskId = null;
+    let editSelectedPriority = 'most-urgent';
+    let audioCtx = null;
+
+    const pLabels = {
+      'most-urgent': 'Most Urgent',
+      'urgent': 'Urgent',
+      'important': 'Important',
+      'normal': 'Normal'
+    };
+
+    // Synthesized Apple Tactile Audio Feedback
+    function playTactileClick() {
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(1760, audioCtx.currentTime + 0.08);
+        gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.13);
+      } catch (e) {}
+    }
+
+    // Save, Render and Auto-Sync with Google Sheets
+    function save(syncToCloud = true) {
+      localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
+      render();
+      if (syncToCloud) syncWithGoogleSheets();
+    }
+
+    // Sync payload directly to Google Sheet
+    function syncWithGoogleSheets() {
+      const syncStatus = document.getElementById('syncStatusIndicator');
+      syncStatus.innerHTML = `<span>⏳</span> SYNCING...`;
+      syncStatus.style.color = '#ff9f0a';
+
+      const activeRows = tasks.filter(t => !t.completed).map(t => [
+        t.id, t.title, pLabels[t.priority], "Pending", t.contact || "", t.createdAt
+      ]);
+
+      const historyRows = tasks.filter(t => t.completed).map(t => [
+        t.id, t.title, pLabels[t.priority], "Done", t.contact || "", t.createdAt, t.completedAt || ""
+      ]);
+
+      const payload = {
+        action: "sync_all",
+        active: activeRows,
+        history: historyRows
+      };
+
+      fetch(GOOGLE_SHEETS_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(() => {
+        syncStatus.innerHTML = `<span>●</span> GOOGLE SHEETS LIVE SYNCED`;
+        syncStatus.style.color = '#30d158';
+      }).catch(err => {
+        console.warn('Sync notice:', err);
+        syncStatus.innerHTML = `<span>●</span> LOCAL SAVED`;
+        syncStatus.style.color = '#ffd60a';
+      });
+    }
+
+    // Pull Fresh Data from Google Sheets on Boot
+    function pullFromGoogleSheets() {
+      fetch(`\${GOOGLE_SHEETS_URL}?action=read`)
+        .then(res => res.json())
+        .then(data => {
+          if (data && (data.active.length > 0 || data.history.length > 0)) {
+            const cloudTasks = [];
+            
+            // Format Active
+            data.active.forEach(row => {
+              if (row[0] && row[1]) {
+                cloudTasks.push({
+                  id: String(row[0]),
+                  title: String(row[1]),
+                  priority: getPriorityKey(row[2]),
+                  completed: false,
+                  contact: String(row[4] || ''),
+                  createdAt: String(row[5] || ''),
+                  completedAt: null
+                });
+              }
+            });
+
+            // Format History
+            data.history.forEach(row => {
+              if (row[0] && row[1]) {
+                cloudTasks.push({
+                  id: String(row[0]),
+                  title: String(row[1]),
+                  priority: getPriorityKey(row[2]),
+                  completed: true,
+                  contact: String(row[4] || ''),
+                  createdAt: String(row[5] || ''),
+                  completedAt: String(row[6] || '')
+                });
+              }
+            });
+
+            if (cloudTasks.length > 0) {
+              tasks = cloudTasks;
+              save(false);
+            }
+          }
+        }).catch(e => console.log('Using local vault.'));
+    }
+
+    function getPriorityKey(val) {
+      val = String(val).toLowerCase();
+      if (val.includes('most')) return 'most-urgent';
+      if (val.includes('urgent')) return 'urgent';
+      if (val.includes('important')) return 'important';
+      return 'normal';
+    }
+
+    // Live Clock
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('liveClock').innerText = now.toLocaleDateString('hi-IN', { weekday: 'short', day: 'numeric', month: 'short' }) + ' • ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Priority Selection buttons
+    document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedPriority = btn.getAttribute('data-p');
+      });
+    });
+
+    document.querySelectorAll('.edit-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.edit-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        editSelectedPriority = btn.getAttribute('data-p');
+      });
+    });
+
+    // Detect Phone Number
+    function extractPhoneNumber(str) {
+      const match = str.match(/\b[6-9]\d{9}\b/);
+      return match ? match[0] : null;
+    }
+
+    // Add Task
+    function addTask(customText = null) {
+      const input = document.getElementById('taskInput');
+      const val = (customText || input.value).trim();
+      if (!val) return;
+
+      const phone = extractPhoneNumber(val);
+      const now = new Date();
+      const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+      const newTask = {
+        id: 'TSK-' + Math.floor(1000 + Math.random() * 9000),
+        title: val,
+        priority: selectedPriority,
+        completed: false,
+        contact: phone || '',
+        createdAt: timeFormatted,
+        completedAt: null
+      };
+
+      tasks.unshift(newTask);
+      input.value = '';
+      playTactileClick();
+      save();
+    }
+
+    document.getElementById('addTaskBtn').addEventListener('click', () => addTask());
+    document.getElementById('taskInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') addTask();
+    });
+
+    // Toggle Task Complete
+    function toggleCheck(id) {
+      const task = tasks.find(t => t.id === id);
+      if (!task) return;
+
+      task.completed = !task.completed;
+      if (task.completed) {
+        const now = new Date();
+        task.completedAt = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        playTactileClick();
+      } else {
+        task.completedAt = null;
+      }
+      save();
+    }
+
+    // Delete Task
+    function deleteTask(id) {
+      tasks = tasks.filter(t => t.id !== id);
+      save();
+    }
+
+    // Shift Task Up/Down
+    function moveTask(id, direction) {
+      const activeTasks = tasks.filter(t => !t.completed);
+      const index = activeTasks.findIndex(t => t.id === id);
+      if (index === -1) return;
+
+      if (direction === 'up' && index > 0) {
+        swapTasks(id, activeTasks[index - 1].id);
+      } else if (direction === 'down' && index < activeTasks.length - 1) {
+        swapTasks(id, activeTasks[index + 1].id);
+      }
+    }
+
+    function swapTasks(id1, id2) {
+      const i1 = tasks.findIndex(t => t.id === id1);
+      const i2 = tasks.findIndex(t => t.id === id2);
+      const temp = tasks[i1];
+      tasks[i1] = tasks[i2];
+      tasks[i2] = temp;
+      save();
+    }
+
+    // Edit Modal Logic
+    function openEditModal(id) {
+      const task = tasks.find(t => t.id === id);
+      if (!task) return;
+      editTaskId = id;
+      editSelectedPriority = task.priority;
+
+      document.getElementById('editInput').value = task.title;
+      document.querySelectorAll('.edit-pill').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-p') === task.priority);
+      });
+
+      document.getElementById('editModal').classList.add('show');
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('show');
+      editTaskId = null;
+    }
+
+    document.getElementById('saveEditBtn').addEventListener('click', () => {
+      if (!editTaskId) return;
+      const task = tasks.find(t => t.id === editTaskId);
+      const newVal = document.getElementById('editInput').value.trim();
+      if (task && newVal) {
+        task.title = newVal;
+        task.priority = editSelectedPriority;
+        task.contact = extractPhoneNumber(newVal) || '';
+        save();
+        closeEditModal();
+      }
+    });
+
+    // Drag & Drop
+    let dragSrcId = null;
+
+    function handleDragStart(e) {
+      dragSrcId = this.getAttribute('data-id');
+      this.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function handleDragOver(e) {
+      if (e.preventDefault) e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      return false;
+    }
+
+    function handleDrop(e) {
+      if (e.stopPropagation) e.stopPropagation();
+      const dropTargetId = this.getAttribute('data-id');
+      if (dragSrcId && dropTargetId && dragSrcId !== dropTargetId) {
+        swapTasks(dragSrcId, dropTargetId);
+      }
+      return false;
+    }
+
+    function handleDragEnd() {
+      document.querySelectorAll('.task-item').forEach(el => el.classList.remove('dragging'));
+    }
+
+    // Voice Dictation (Speech Recognition Engine)
+    const voiceBtn = document.getElementById('voiceBtn');
+    let recognition = null;
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'hi-IN';
+
+      recognition.onstart = () => {
+        voiceBtn.classList.add('listening');
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        if (transcript) {
+          const input = document.getElementById('taskInput');
+          input.value = transcript;
+          input.focus();
+        }
+      };
+
+      recognition.onerror = (event) => {
+        console.warn('Speech error:', event.error);
+        voiceBtn.classList.remove('listening');
+      };
+
+      recognition.onend = () => {
+        voiceBtn.classList.remove('listening');
+      };
+
+      voiceBtn.addEventListener('click', () => {
+        try {
+          recognition.start();
+        } catch(e) {
+          recognition.stop();
+        }
+      });
+    } else {
+      voiceBtn.title = "Voice recognition not supported in this browser version.";
+    }
+
+    // CEO Zen Focus Mode Toggle
+    function toggleZenMode() {
+      const overlay = document.getElementById('zenOverlay');
+      overlay.classList.toggle('active');
+      if (overlay.classList.contains('active')) {
+        const activeMostUrgent = tasks.find(t => !t.completed && t.priority === 'most-urgent') || tasks.find(t => !t.completed);
+        document.getElementById('zenTaskTitle').innerText = activeMostUrgent ? `"\${activeMostUrgent.title}"` : "सभी मुख्य मिशन सम्पन्न हो चुके हैं!";
+      }
+    }
+
+    document.getElementById('zenBtn').addEventListener('click', toggleZenMode);
+    window.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'z' && document.activeElement.tagName !== 'INPUT') {
+        toggleZenMode();
+      }
+      if (e.key === 'Escape') {
+        document.getElementById('zenOverlay').classList.remove('active');
+        closeEditModal();
+      }
+    });
+
+    // Morning Carry Forward Engine
+    function checkCarryForward() {
+      const todayStr = new Date().toLocaleDateString('hi-IN', { day: 'numeric', month: 'short' });
+      const pendingOld = tasks.filter(t => !t.completed && t.createdAt && !t.createdAt.includes(todayStr));
+      if (pendingOld.length > 0) {
+        document.getElementById('carryForwardText').innerText = `कल के \${pendingOld.length} अधूरे काम हैं। क्या इन्हें आज के टॉप मिशन में री-शेड्यूल करें?`;
+        document.getElementById('carryForwardAlert').classList.add('show');
+      }
+    }
+
+    function approveCarryForward() {
+      const now = new Date();
+      const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+      tasks.forEach(t => {
+        if (!t.completed) t.createdAt = timeFormatted;
+      });
+      dismissCarryForward();
+      save();
+    }
+
+    function dismissCarryForward() {
+      document.getElementById('carryForwardAlert').classList.remove('show');
+    }
+
+    // Render Engine
+    function render() {
+      const activeContainer = document.getElementById('activeContainer');
+      const completedContainer = document.getElementById('completedContainer');
+
+      activeContainer.innerHTML = '';
+      completedContainer.innerHTML = '';
+
+      const activeList = tasks.filter(t => !t.completed);
+      const completedList = tasks.filter(t => t.completed);
+
+      document.getElementById('activeCounter').innerText = activeList.length;
+      document.getElementById('doneCounter').innerText = completedList.length;
+
+      const mostUrgentCount = activeList.filter(t => t.priority === 'most-urgent').length;
+      const noteElem = document.getElementById('priorityStatusNote');
+      if (mostUrgentCount > 0) {
+        noteElem.innerText = `🔥 \${mostUrgentCount} अति आवश्यक कार्य टॉप पर हैं`;
+      } else {
+        noteElem.innerText = ``;
+      }
+
+      // Render Active
+      if (activeList.length === 0) {
+        activeContainer.innerHTML = `<div style="text-align:center; padding:32px; color:#71717a; font-size:0.95rem;">✨ कोई लंबित कार्य नहीं है। नया मिशन ऊपर दर्ज करें।</div>`;
+      } else {
+        activeList.forEach((t, idx) => {
+          const card = document.createElement('div');
+          card.className = `task-item ${t.priority}`;
+          card.setAttribute('draggable', 'true');
+          card.setAttribute('data-id', t.id);
+
+          card.addEventListener('dragstart', handleDragStart);
+          card.addEventListener('dragover', handleDragOver);
+          card.addEventListener('drop', handleDrop);
+          card.addEventListener('dragend', handleDragEnd);
+
+          let smartActionsHtml = '';
+          if (t.contact) {
+            smartActionsHtml = `
+              <div class="smart-actions">
+                <a class="smart-btn call" href="tel:${t.contact}" title="कॉल करें">📞 ${t.contact}</a>
+                <a class="smart-btn whatsapp" href="https://wa.me/91${t.contact}" target="_blank" title="WhatsApp भेजें">💬 Chat</a>
+              </div>
+            `;
+          }
+
+          card.innerHTML = `
+            <div class="check-circle" onclick="toggleCheck('${t.id}')"></div>
+            <div class="task-details">
+              <div class="task-text">${escapeHtml(t.title)}</div>
+              <div class="task-sub-meta">
+                <span class="p-tag ${t.priority}">${pLabels[t.priority]}</span>
+                <span>#${idx + 1}</span>
+                <span>🕒 ${t.createdAt}</span>
+                ${smartActionsHtml}
+              </div>
+            </div>
+            <div class="task-actions">
+              <button class="btn-shift" title="ऊपर करें" onclick="moveTask('${t.id}', 'up')">▲</button>
+              <button class="btn-shift" title="नीचे करें" onclick="moveTask('${t.id}', 'down')">▼</button>
+              <button class="btn-action edit" title="एडिट करें" onclick="openEditModal('${t.id}')">✏️</button>
+              <button class="btn-action delete" title="हटाएं" onclick="deleteTask('${t.id}')">✕</button>
+            </div>
+          `;
+          activeContainer.appendChild(card);
+        });
+      }
+
+      // Render Completed
+      if (completedList.length === 0) {
+        completedContainer.innerHTML = `<div style="text-align:center; padding:20px; color:#52525b; font-size:0.85rem;">पूर्ण किए गए कार्यों का इतिहास यहाँ दर्ज होगा।</div>`;
+      } else {
+        completedList.forEach(t => {
+          const card = document.createElement('div');
+          card.className = 'task-item done-card';
+          card.innerHTML = `
+            <div class="check-circle completed" onclick="toggleCheck('${t.id}')"></div>
+            <div class="task-details">
+              <div class="task-text">${escapeHtml(t.title)}</div>
+              <div class="task-sub-meta">
+                <span class="p-tag ${t.priority}">${pLabels[t.priority]}</span>
+                <span class="done-timestamp">✓ Finished at: ${t.completedAt}</span>
+              </div>
+            </div>
+            <div class="task-actions">
+              <button class="btn-action delete" title="हटाएं" onclick="deleteTask('${t.id}')">✕</button>
+            </div>
+          `;
+          completedContainer.appendChild(card);
+        });
+      }
+    }
+
+    // Export to Excel / CSV File
+    function exportToExcel() {
+      let csv = "\uFEFFTask ID,Mission Title,Priority,Status,Contact,Created At,Completed At\n";
+      tasks.forEach(t => {
+        const cleanTitle = `"${t.title.replace(/"/g, '""')}"`;
+        const status = t.completed ? "Done" : "Pending";
+        csv += `${t.id},${cleanTitle},${pLabels[t.priority]},${status},${t.contact || ''},"${t.createdAt}","${t.completedAt || ''}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `CoolArt_Tasks_${new Date().toISOString().slice(0, 10)}.csv`;
+      link.click();
+    }
+
+    // WhatsApp Daily Wrap Export
+    function shareDailyBrief() {
+      const done = tasks.filter(t => t.completed);
+      let text = `*📊 DAILY EXECUTIVE BRIEF - COOL ART ADVERTISING*\n`;
+      text += `📅 Date: ${new Date().toLocaleDateString('hi-IN')}\n`;
+      text += `✅ Completed Missions (${done.length}):\n`;
+      done.slice(0, 10).forEach((t, i) => {
+        text += `${i + 1}. ${t.title} (Finished: ${t.completedAt})\n`;
+      });
+      const pending = tasks.filter(t => !t.completed).length;
+      text += `\n⏳ Pending for Tomorrow: ${pending} tasks.`;
+
+      const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function escapeHtml(text) {
+      const d = document.createElement('div');
+      d.innerText = text;
+      return d.innerHTML;
+    }
+
+    // Initialize System
+    render();
+    pullFromGoogleSheets();
+    checkCarryForward();
+  </script>
+</body>
+</html>
