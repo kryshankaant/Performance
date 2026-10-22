@@ -2,6 +2,7 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COMMAND CENTER | Cool Art Advertising</title>
   
@@ -9,20 +10,21 @@
   <link rel="icon" type="image/png" href="CA_logo.png">
   <link rel="apple-touch-icon" href="CA_logo.png">
 
+  <!-- Crisp Devanagari Hindi & Modern Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --text-main: #fbfbfd;
-      --text-muted: #98989d;
+      --text-muted: #a1a1aa;
       --p-most-urgent: #ff2d55;
       --p-urgent: #ff9f0a;
       --p-important: #bf5af2;
       --p-normal: #30d158;
-      --glass-surface: rgba(255, 255, 255, 0.04);
-      --glass-border: rgba(255, 255, 255, 0.12);
-      --glass-glow: rgba(255, 255, 255, 0.08);
+      --glass-surface: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.14);
       --sheet-connected: #30d158;
     }
 
@@ -30,7 +32,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "SF Pro Display", sans-serif;
+      font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -43,7 +45,7 @@
       align-items: center;
       position: relative;
       overflow-x: hidden;
-      padding: 24px 16px 50px;
+      padding: 20px 14px 50px;
     }
 
     /* Ambient Liquid Aurora Background */
@@ -61,19 +63,19 @@
     .orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(110px);
+      filter: blur(100px);
       opacity: 0.38;
       animation: floatOrb 22s infinite alternate ease-in-out;
     }
 
-    .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, #ff2d55, transparent); top: -12%; left: -8%; }
-    .orb-2 { width: 600px; height: 600px; background: radial-gradient(circle, #0071e3, #5856d6); bottom: -18%; right: -6%; animation-duration: 26s; }
-    .orb-3 { width: 420px; height: 420px; background: radial-gradient(circle, #30d158, #00c7be); top: 30%; right: 15%; animation-duration: 19s; }
+    .orb-1 { width: 480px; height: 480px; background: radial-gradient(circle, #ff2d55, transparent); top: -12%; left: -8%; }
+    .orb-2 { width: 580px; height: 580px; background: radial-gradient(circle, #0071e3, #5856d6); bottom: -18%; right: -6%; animation-duration: 26s; }
+    .orb-3 { width: 400px; height: 400px; background: radial-gradient(circle, #30d158, #00c7be); top: 30%; right: 15%; animation-duration: 19s; }
 
     @keyframes floatOrb {
       0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(60px, 45px) scale(1.15); }
-      100% { transform: translate(-50px, 70px) scale(0.92); }
+      50% { transform: translate(50px, 40px) scale(1.12); }
+      100% { transform: translate(-40px, 60px) scale(0.94); }
     }
 
     .container {
@@ -81,26 +83,25 @@
       max-width: 880px;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
       z-index: 10;
     }
 
-    /* Master Apple Glassmorphism Panel */
+    /* Master Glassmorphism Panel */
     .glass-panel {
       background: var(--glass-surface);
       backdrop-filter: blur(34px) saturate(190%);
       -webkit-backdrop-filter: blur(34px) saturate(190%);
       border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      padding: 24px 26px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      border-radius: 22px;
+      padding: 22px 24px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.16);
       position: relative;
     }
 
-    /* Executive Top Status Bar with CA Logo Integration */
+    /* Executive Top Bar */
     .top-header {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
     .status-row {
@@ -147,7 +148,7 @@
       border: 1px solid rgba(48, 209, 88, 0.35);
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       color: #30d158;
       text-transform: uppercase;
       font-family: 'Space Grotesk', sans-serif;
@@ -175,6 +176,7 @@
       color: var(--sheet-connected);
       font-family: 'Space Grotesk', sans-serif;
       letter-spacing: 0.5px;
+      cursor: pointer;
     }
 
     .header-content {
@@ -187,22 +189,28 @@
     }
 
     .master-title {
-      font-size: 1.85rem;
+      font-size: 1.75rem;
       font-weight: 800;
       letter-spacing: -0.5px;
-      background: linear-gradient(110deg, #ffffff 10%, #d4d4d8 60%, #a1a1aa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+    }
+
+    /* Fixed Clean High-Visibility Hindi Quotes */
+    .quote-container {
+      margin-top: 10px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-left: 4px solid #ff2d55;
+      padding: 10px 16px;
+      border-radius: 12px;
+      max-width: 580px;
     }
 
     .quote-box {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      color: #e4e4e7;
-      line-height: 1.45;
-      font-weight: 400;
-      border-left: 3px solid #ff2d55;
-      padding-left: 12px;
+      font-size: 0.98rem;
+      color: #ffd60a;
+      line-height: 1.5;
+      font-weight: 600;
       transition: opacity 0.4s ease;
     }
 
@@ -224,9 +232,7 @@
       font-size: 1.35rem;
       font-weight: 700;
       font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(90deg, #fff, #bbb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #fff;
     }
 
     .stat-lbl {
@@ -238,20 +244,17 @@
 
     /* Morning Carry-Forward Intelligence Bar */
     .carry-forward-card {
-      background: linear-gradient(135deg, rgba(255, 159, 10, 0.18), rgba(255, 45, 85, 0.15));
-      border: 1px solid rgba(255, 159, 10, 0.4);
-      border-radius: 18px;
-      padding: 14px 20px;
+      background: linear-gradient(135deg, rgba(255, 159, 10, 0.2), rgba(255, 45, 85, 0.15));
+      border: 1px solid rgba(255, 159, 10, 0.45);
+      border-radius: 16px;
+      padding: 12px 18px;
       display: none;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      box-shadow: 0 10px 25px rgba(255, 159, 10, 0.15);
     }
 
-    .carry-forward-card.show {
-      display: flex;
-    }
+    .carry-forward-card.show { display: flex; }
 
     /* Input Matrix */
     .input-wrapper {
@@ -269,48 +272,44 @@
     .input-field {
       width: 100%;
       background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 16px;
-      padding: 16px 56px 16px 20px;
+      padding: 15px 56px 15px 18px;
       color: #fff;
       font-size: 1.05rem;
       outline: none;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.3s ease;
     }
 
     .input-field:focus {
       border-color: rgba(255, 255, 255, 0.5);
       background: rgba(0, 0, 0, 0.65);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
     }
 
-    /* Voice Dictation Button */
+    /* Voice Button */
     .btn-mic {
       position: absolute;
-      right: 14px;
+      right: 12px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.18);
       color: #fff;
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       transition: all 0.25s ease;
     }
 
-    .btn-mic:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: scale(1.08);
-    }
-
+    .btn-mic:hover { background: rgba(255, 255, 255, 0.22); transform: scale(1.08); }
     .btn-mic.listening {
       background: #ff2d55;
       border-color: #ff2d55;
-      box-shadow: 0 0 20px rgba(255, 45, 85, 0.75);
+      box-shadow: 0 0 20px rgba(255, 45, 85, 0.8);
       animation: micPulse 1.2s infinite alternate;
     }
 
@@ -334,13 +333,13 @@
     }
 
     .pill-btn {
-      padding: 8px 15px;
+      padding: 8px 14px;
       border-radius: 30px;
       font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--text-muted);
       transition: all 0.25s ease;
       display: flex;
@@ -351,28 +350,28 @@
     .pill-btn:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
 
     .pill-btn.active[data-p="most-urgent"] {
-      background: rgba(255, 45, 85, 0.22);
+      background: rgba(255, 45, 85, 0.25);
       border-color: var(--p-most-urgent);
       color: #ff3b30;
       box-shadow: 0 0 16px rgba(255, 45, 85, 0.35);
     }
 
     .pill-btn.active[data-p="urgent"] {
-      background: rgba(255, 159, 10, 0.22);
+      background: rgba(255, 159, 10, 0.25);
       border-color: var(--p-urgent);
       color: #ff9f0a;
       box-shadow: 0 0 16px rgba(255, 159, 10, 0.35);
     }
 
     .pill-btn.active[data-p="important"] {
-      background: rgba(191, 90, 242, 0.22);
+      background: rgba(191, 90, 242, 0.25);
       border-color: var(--p-important);
       color: #bf5af2;
       box-shadow: 0 0 16px rgba(191, 90, 242, 0.35);
     }
 
     .pill-btn.active[data-p="normal"] {
-      background: rgba(48, 209, 88, 0.22);
+      background: rgba(48, 209, 88, 0.25);
       border-color: var(--p-normal);
       color: #30d158;
       box-shadow: 0 0 16px rgba(48, 209, 88, 0.35);
@@ -408,7 +407,7 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: #fff;
-      padding: 9px 16px;
+      padding: 8px 16px;
       border-radius: 20px;
       font-size: 0.8rem;
       cursor: pointer;
@@ -419,9 +418,7 @@
       gap: 6px;
     }
 
-    .btn-util:hover {
-      background: rgba(255, 255, 255, 0.18);
-    }
+    .btn-util:hover { background: rgba(255, 255, 255, 0.18); }
 
     /* Task Lists Section */
     .section-head {
@@ -442,16 +439,16 @@
       gap: 12px;
     }
 
-    /* Executive Task Cards */
+    /* Task Cards */
     .task-item {
-      background: rgba(255, 255, 255, 0.035);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 18px 22px;
+      border-radius: 18px;
+      padding: 16px 20px;
       display: flex;
       align-items: center;
-      gap: 16px;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s, box-shadow 0.25s;
+      gap: 14px;
+      transition: all 0.25s ease;
       cursor: grab;
       position: relative;
     }
@@ -470,7 +467,6 @@
       border: 2px dashed rgba(255, 255, 255, 0.4);
     }
 
-    /* Neon Priority Strips */
     .task-item.most-urgent { border-left: 5px solid var(--p-most-urgent); box-shadow: -4px 0 20px rgba(255, 45, 85, 0.22); }
     .task-item.urgent { border-left: 5px solid var(--p-urgent); box-shadow: -4px 0 20px rgba(255, 159, 10, 0.18); }
     .task-item.important { border-left: 5px solid var(--p-important); box-shadow: -4px 0 20px rgba(191, 90, 242, 0.18); }
@@ -490,11 +486,7 @@
       transition: all 0.2s ease;
     }
 
-    .check-circle:hover {
-      border-color: #fff;
-      transform: scale(1.1);
-    }
-
+    .check-circle:hover { border-color: #fff; transform: scale(1.1); }
     .check-circle.completed {
       background: #30d158;
       border-color: #30d158;
@@ -512,7 +504,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
 
     .task-text {
@@ -545,7 +537,7 @@
     .p-tag.important { background: rgba(191, 90, 242, 0.2); color: #bf5af2; }
     .p-tag.normal { background: rgba(48, 209, 88, 0.2); color: #30d158; }
 
-    /* Smart Action Badges (Direct Call & WhatsApp) */
+    /* Smart Action Badges (Phone & WhatsApp) */
     .smart-actions {
       display: inline-flex;
       gap: 6px;
@@ -576,16 +568,13 @@
       color: #25d366;
     }
 
-    .smart-btn:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.2);
-    }
+    .smart-btn:hover { transform: translateY(-1px); filter: brightness(1.2); }
 
     /* Shift & Action Buttons */
     .task-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .btn-shift {
@@ -603,10 +592,7 @@
       transition: all 0.2s;
     }
 
-    .btn-shift:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-    }
+    .btn-shift:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
 
     .btn-action {
       background: transparent;
@@ -619,15 +605,8 @@
       transition: all 0.2s;
     }
 
-    .btn-action.edit:hover {
-      color: #0071e3;
-      background: rgba(0, 113, 227, 0.15);
-    }
-
-    .btn-action.delete:hover {
-      color: #ff2d55;
-      background: rgba(255, 45, 85, 0.15);
-    }
+    .btn-action.edit:hover { color: #0071e3; background: rgba(0, 113, 227, 0.15); }
+    .btn-action.delete:hover { color: #ff2d55; background: rgba(255, 45, 85, 0.15); }
 
     /* Completed List */
     .task-item.done-card {
@@ -673,7 +652,7 @@
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
     }
 
-    /* CEO Zen Focus Mode Overlay */
+    /* CEO Zen Mode Overlay */
     .zen-overlay {
       position: fixed;
       inset: 0;
@@ -706,14 +685,12 @@
     }
 
     .zen-title {
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       font-weight: 800;
       max-width: 700px;
       line-height: 1.35;
       margin-bottom: 24px;
-      background: linear-gradient(110deg, #fff, #bbb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #fff;
       z-index: 2;
     }
 
@@ -767,7 +744,7 @@
     <header class="glass-panel top-header">
       <div class="status-row">
         <div class="status-left-group">
-          <!-- CA Logo Box -->
+          <!-- CA Logo Frame -->
           <div class="brand-logo-frame" title="Cool Art Executive Logo">
             <img src="CA_logo.png" alt="CA Logo" onerror="this.parentElement.innerHTML='<span style=\'font-weight:900; background:linear-gradient(135deg,#ff2d55,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;\'>CA</span>'">
           </div>
@@ -778,8 +755,8 @@
           </div>
         </div>
 
-        <div class="cloud-sync-status" id="syncStatusIndicator">
-          <span>●</span> GOOGLE SHEETS LIVE SYNCED
+        <div class="cloud-sync-status" id="syncStatusIndicator" onclick="fetchLiveGoogleSheetsData(true)" title="क्लिक करके रिफ्रेश करें">
+          <span>●</span> LIVE CLOUD CONNECTED
         </div>
         <div id="liveClock" style="font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; color: #a1a1aa; letter-spacing: 0.5px;">--:-- --</div>
       </div>
@@ -787,7 +764,10 @@
       <div class="header-content">
         <div>
           <h1 class="master-title">आज के मुख्य मिशन क्या हैं?</h1>
-          <div class="quote-box" id="quoteTicker">"समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।"</div>
+          <!-- High-Contrast Clean Hindi Quotes -->
+          <div class="quote-container">
+            <div class="quote-box" id="quoteTicker">"समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।"</div>
+          </div>
         </div>
 
         <div class="stats-hud">
@@ -843,6 +823,7 @@
         <span>शॉर्टकट: </span><kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Enter</kbd> जोड़ें | <kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Z</kbd> फोकस
       </div>
       <div style="display: flex; gap: 10px;">
+        <button class="btn-util" onclick="fetchLiveGoogleSheetsData(true)" title="क्लाउड से तुरंत री-सिंक करें">🔄 REFRESH CLOUD</button>
         <button class="btn-util" onclick="exportToExcel()" title="Excel फ़ाइल डाउनलोड करें">📊 DOWNLOAD EXCEL</button>
         <button class="btn-util" onclick="shareDailyBrief()" style="color: #25d366; border-color: rgba(37, 211, 102, 0.4);" title="WhatsApp पर रिपोर्ट भेजें">📲 DAILY WRAP</button>
       </div>
@@ -913,13 +894,13 @@
     // Embedded Google Sheets Webhook URL
     const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxakWNTge9m8DApB8hEHfjHlWkxgiBK3n2ElLLuHAOvzLfdFHJ7vtolbIUgufzrtmX_6A/exec";
 
-    // Executive Motivational Quotes
+    // 100% Clean Hindi Executive Quotes
     const quotes = [
       "समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।",
       "महान काम तब होते हैं जब आप प्राथमिकताओं पर बिना रुके प्रहार करते हैं।",
       "हर एक टिक किया गया टास्क आपको आपकी मंज़िल के एक कदम और करीब ले जाता है।",
-      "दबाव ही कोयले को हीरा बनाता है। मोस्ट अर्जेंट कामों को पहले ध्वस्त करें।",
-      "जो आज पूरा कर लिया, कल वह आपका साम्राज्य खड़ा करेगा।"
+      "दबाव ही कोयले को हीरा बनाता है। मोस्ट अर्जेंट कामों को पहले समाप्त करें।",
+      "जो आज पूरा कर लिया, कल वह आपका नया साम्राज्य खड़ा करेगा।"
     ];
 
     let quoteIndex = 0;
@@ -930,10 +911,10 @@
       setTimeout(() => {
         qElem.innerText = `"\${quotes[quoteIndex]}"`;
         qElem.style.opacity = '1';
-      }, 400);
-    }, 10000);
+      }, 350);
+    }, 9000);
 
-    // State & Storage (Key Protection guaranteed)
+    // State & Storage
     let tasks = JSON.parse(localStorage.getItem('coolart_executive_tasks')) || [];
     let selectedPriority = 'most-urgent';
     let editTaskId = null;
@@ -965,17 +946,17 @@
       } catch (e) {}
     }
 
-    // Save, Render and Auto-Sync with Google Sheets
+    // Save and Sync to Cloud
     function save(syncToCloud = true) {
       localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
       render();
       if (syncToCloud) syncWithGoogleSheets();
     }
 
-    // Sync payload directly to Google Sheet
+    // Direct Push to Google Sheet
     function syncWithGoogleSheets() {
       const syncStatus = document.getElementById('syncStatusIndicator');
-      syncStatus.innerHTML = `<span>⏳</span> SYNCING...`;
+      syncStatus.innerHTML = `<span>⏳</span> SYNCING TO CLOUD...`;
       syncStatus.style.color = '#ff9f0a';
 
       const activeRows = tasks.filter(t => !t.completed).map(t => [
@@ -1001,21 +982,26 @@
         syncStatus.innerHTML = `<span>●</span> GOOGLE SHEETS LIVE SYNCED`;
         syncStatus.style.color = '#30d158';
       }).catch(err => {
-        console.warn('Sync notice:', err);
         syncStatus.innerHTML = `<span>●</span> LOCAL SAVED`;
         syncStatus.style.color = '#ffd60a';
       });
     }
 
-    // Pull Fresh Data from Google Sheets on Boot
-    function pullFromGoogleSheets() {
-      fetch(`\${GOOGLE_SHEETS_URL}?action=read`)
+    // Cross-Device Universal Pull Engine (Handles CORS & Device Sync)
+    function fetchLiveGoogleSheetsData(showStatus = false) {
+      const syncStatus = document.getElementById('syncStatusIndicator');
+      if (showStatus) {
+        syncStatus.innerHTML = `<span>⏳</span> FETCHING CLOUD...`;
+        syncStatus.style.color = '#ff9f0a';
+      }
+
+      fetch(`${GOOGLE_SHEETS_URL}?action=read&t=${Date.now()}`)
         .then(res => res.json())
         .then(data => {
           if (data && (data.active.length > 0 || data.history.length > 0)) {
             const cloudTasks = [];
             
-            // Format Active
+            // Format Active Tasks
             data.active.forEach(row => {
               if (row[0] && row[1]) {
                 cloudTasks.push({
@@ -1030,7 +1016,7 @@
               }
             });
 
-            // Format History
+            // Format History Tasks
             data.history.forEach(row => {
               if (row[0] && row[1]) {
                 cloudTasks.push({
@@ -1047,10 +1033,17 @@
 
             if (cloudTasks.length > 0) {
               tasks = cloudTasks;
-              save(false);
+              localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
+              render();
             }
           }
-        }).catch(e => console.log('Using local vault.'));
+          syncStatus.innerHTML = `<span>●</span> LIVE CLOUD CONNECTED`;
+          syncStatus.style.color = '#30d158';
+        })
+        .catch(() => {
+          syncStatus.innerHTML = `<span>●</span> LOCAL MODE`;
+          syncStatus.style.color = '#ffd60a';
+        });
     }
 
     function getPriorityKey(val) {
@@ -1228,7 +1221,7 @@
       document.querySelectorAll('.task-item').forEach(el => el.classList.remove('dragging'));
     }
 
-    // Voice Dictation (Speech Recognition Engine)
+    // Voice Dictation Engine
     const voiceBtn = document.getElementById('voiceBtn');
     let recognition = null;
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
@@ -1238,10 +1231,7 @@
       recognition.interimResults = false;
       recognition.lang = 'hi-IN';
 
-      recognition.onstart = () => {
-        voiceBtn.classList.add('listening');
-      };
-
+      recognition.onstart = () => { voiceBtn.classList.add('listening'); };
       recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         if (transcript) {
@@ -1250,25 +1240,12 @@
           input.focus();
         }
       };
-
-      recognition.onerror = (event) => {
-        console.warn('Speech error:', event.error);
-        voiceBtn.classList.remove('listening');
-      };
-
-      recognition.onend = () => {
-        voiceBtn.classList.remove('listening');
-      };
+      recognition.onerror = () => { voiceBtn.classList.remove('listening'); };
+      recognition.onend = () => { voiceBtn.classList.remove('listening'); };
 
       voiceBtn.addEventListener('click', () => {
-        try {
-          recognition.start();
-        } catch(e) {
-          recognition.stop();
-        }
+        try { recognition.start(); } catch(e) { recognition.stop(); }
       });
-    } else {
-      voiceBtn.title = "Voice recognition not supported in this browser version.";
     }
 
     // CEO Zen Focus Mode Toggle
@@ -1297,43 +1274,7 @@
       const todayStr = new Date().toLocaleDateString('hi-IN', { day: 'numeric', month: 'short' });
       const pendingOld = tasks.filter(t => !t.completed && t.createdAt && !t.createdAt.includes(todayStr));
       if (pendingOld.length > 0) {
-        document.getElementById('carryForwardText').innerText = `कल के \${pendingOld.length} अधूरे काम हैं। क्या इन्हें आज के टॉप मिशन में री-शेड्यूल करें?`;
-        document.getElementById('carryForwardAlert').classList.add('show');
-      }
-    }
-
-    function approveCarryForward() {
-      const now = new Date();
-      const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-      tasks.forEach(t => {
-        if (!t.completed) t.createdAt = timeFormatted;
-      });
-      dismissCarryForward();
-      save();
-    }
-
-    function dismissCarryForward() {
-      document.getElementById('carryForwardAlert').classList.remove('show');
-    }
-
-    // Render Engine
-    function render() {
-      const activeContainer = document.getElementById('activeContainer');
-      const completedContainer = document.getElementById('completedContainer');
-
-      activeContainer.innerHTML = '';
-      completedContainer.innerHTML = '';
-
-      const activeList = tasks.filter(t => !t.completed);
-      const completedList = tasks.filter(t => t.completed);
-
-      document.getElementById('activeCounter').innerText = activeList.length;
-      document.getElementById('doneCounter').innerText = completedList.length;
-
-      const mostUrgentCount = activeList.filter(t => t.priority === 'most-urgent').length;
-      const noteElem = document.getElementById('priorityStatusNote');
-      if (mostUrgentCount > 0) {
-        noteElem.innerText = `🔥 \${mostUrgentCount} अति आवश्यक कार्य टॉप पर हैं`;
+        document.getElementById('carryForwardText').innerText = `कल के ${pendingOld.length} अधूरे काम हैं। क्या इन्हें आज के टॉप मिशन में री-शेड्यूल करें?`; document.getElementById('carryForwardAlert').classList.add('show'); } }  function approveCarryForward() { const now = new Date(); const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }); tasks.forEach(t => { if (!t.completed) t.createdAt = timeFormatted; }); dismissCarryForward(); save(); }  function dismissCarryForward() { document.getElementById('carryForwardAlert').classList.remove('show'); }  // Render Engine function render() { const activeContainer = document.getElementById('activeContainer'); const completedContainer = document.getElementById('completedContainer');  activeContainer.innerHTML = ''; completedContainer.innerHTML = '';  const activeList = tasks.filter(t => !t.completed); const completedList = tasks.filter(t => t.completed);  document.getElementById('activeCounter').innerText = activeList.length; document.getElementById('doneCounter').innerText = completedList.length;  const mostUrgentCount = activeList.filter(t => t.priority === 'most-urgent').length; const noteElem = document.getElementById('priorityStatusNote'); if (mostUrgentCount > 0) { noteElem.innerText = `🔥 ${mostUrgentCount} अति आवश्यक कार्य टॉप पर हैं`;
       } else {
         noteElem.innerText = ``;
       }
@@ -1448,10 +1389,15 @@
       return d.innerHTML;
     }
 
-    // Initialize System
+    // Initial Launch Engine
     render();
-    pullFromGoogleSheets();
+    fetchLiveGoogleSheetsData(true);
     checkCarryForward();
+
+    // Auto-Sync Polling Every 12 Seconds (For Cross-Device Synchronisation)
+    setInterval(() => {
+      fetchLiveGoogleSheetsData(false);
+    }, 12000);
   </script>
 </body>
 </html>
