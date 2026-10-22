@@ -10,10 +10,10 @@
   <link rel="icon" type="image/png" href="CA_logo.png">
   <link rel="apple-touch-icon" href="CA_logo.png">
 
-  <!-- Crisp Devanagari Hindi & Modern Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -24,7 +24,7 @@
       --p-important: #bf5af2;
       --p-normal: #30d158;
       --glass-surface: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.14);
+      --glass-border: rgba(255, 255, 255, 0.15);
       --sheet-connected: #30d158;
     }
 
@@ -32,7 +32,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif;
+      font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -119,16 +119,16 @@
     }
 
     .brand-logo-frame {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow: 0 0 18px rgba(0, 242, 254, 0.25);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
       flex-shrink: 0;
     }
 
@@ -144,9 +144,9 @@
       gap: 8px;
       padding: 6px 14px;
       border-radius: 30px;
-      background: rgba(48, 209, 88, 0.12);
-      border: 1px solid rgba(48, 209, 88, 0.35);
-      font-size: 0.72rem;
+      background: rgba(48, 209, 88, 0.15);
+      border: 1px solid rgba(48, 209, 88, 0.4);
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 1.2px;
       color: #30d158;
@@ -155,8 +155,8 @@
     }
 
     .status-dot {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       background: #30d158;
       border-radius: 50%;
       box-shadow: 0 0 10px #30d158;
@@ -172,11 +172,24 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--sheet-connected);
       font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: 0.5px;
+      font-weight: 700;
       cursor: pointer;
+    }
+
+    /* Live Chronometer (Day, Date, Live Clock) */
+    .live-clock-box {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffd60a;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 6px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 214, 10, 0.3);
+      letter-spacing: 0.5px;
     }
 
     .header-content {
@@ -189,17 +202,17 @@
     }
 
     .master-title {
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: #ffffff;
     }
 
-    /* Fixed Clean High-Visibility Hindi Quotes */
+    /* Clean Hindi Quote Box */
     .quote-container {
       margin-top: 10px;
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-left: 4px solid #ff2d55;
       padding: 10px 16px;
       border-radius: 12px;
@@ -207,7 +220,7 @@
     }
 
     .quote-box {
-      font-size: 0.98rem;
+      font-size: 1rem;
       color: #ffd60a;
       line-height: 1.5;
       font-weight: 600;
@@ -220,34 +233,34 @@
     }
 
     .stat-pill {
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 10px 18px;
       border-radius: 16px;
       text-align: center;
-      min-width: 90px;
+      min-width: 95px;
     }
 
     .stat-val {
-      font-size: 1.35rem;
-      font-weight: 700;
+      font-size: 1.45rem;
+      font-weight: 800;
       font-family: 'Space Grotesk', sans-serif;
       color: #fff;
     }
 
     .stat-lbl {
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.8px;
     }
 
-    /* Morning Carry-Forward Intelligence Bar */
+    /* Carry Forward Alert */
     .carry-forward-card {
-      background: linear-gradient(135deg, rgba(255, 159, 10, 0.2), rgba(255, 45, 85, 0.15));
-      border: 1px solid rgba(255, 159, 10, 0.45);
+      background: linear-gradient(135deg, rgba(255, 159, 10, 0.25), rgba(255, 45, 85, 0.18));
+      border: 1px solid rgba(255, 159, 10, 0.5);
       border-radius: 16px;
-      padding: 12px 18px;
+      padding: 14px 20px;
       display: none;
       align-items: center;
       justify-content: space-between;
@@ -271,51 +284,54 @@
 
     .input-field {
       width: 100%;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 16px;
-      padding: 15px 56px 15px 18px;
+      padding: 16px 60px 16px 20px;
       color: #fff;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       outline: none;
       transition: all 0.3s ease;
     }
 
     .input-field:focus {
-      border-color: rgba(255, 255, 255, 0.5);
-      background: rgba(0, 0, 0, 0.65);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
     }
 
-    /* Voice Button */
+    /* High-Powered Voice Button */
     .btn-mic {
       position: absolute;
-      right: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      right: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       color: #fff;
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 1.15rem;
+      font-size: 1.3rem;
       transition: all 0.25s ease;
     }
 
-    .btn-mic:hover { background: rgba(255, 255, 255, 0.22); transform: scale(1.08); }
+    .btn-mic:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.1);
+    }
+
     .btn-mic.listening {
       background: #ff2d55;
       border-color: #ff2d55;
-      box-shadow: 0 0 20px rgba(255, 45, 85, 0.8);
-      animation: micPulse 1.2s infinite alternate;
+      box-shadow: 0 0 25px rgba(255, 45, 85, 0.9);
+      animation: micPulse 1s infinite alternate;
     }
 
     @keyframes micPulse {
       0% { transform: scale(1); }
-      100% { transform: scale(1.15); }
+      100% { transform: scale(1.2); }
     }
 
     .action-row {
@@ -333,13 +349,13 @@
     }
 
     .pill-btn {
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: var(--text-muted);
       transition: all 0.25s ease;
       display: flex;
@@ -347,34 +363,34 @@
       gap: 6px;
     }
 
-    .pill-btn:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+    .pill-btn:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
 
     .pill-btn.active[data-p="most-urgent"] {
-      background: rgba(255, 45, 85, 0.25);
+      background: rgba(255, 45, 85, 0.3);
       border-color: var(--p-most-urgent);
       color: #ff3b30;
-      box-shadow: 0 0 16px rgba(255, 45, 85, 0.35);
+      box-shadow: 0 0 18px rgba(255, 45, 85, 0.4);
     }
 
     .pill-btn.active[data-p="urgent"] {
-      background: rgba(255, 159, 10, 0.25);
+      background: rgba(255, 159, 10, 0.3);
       border-color: var(--p-urgent);
       color: #ff9f0a;
-      box-shadow: 0 0 16px rgba(255, 159, 10, 0.35);
+      box-shadow: 0 0 18px rgba(255, 159, 10, 0.4);
     }
 
     .pill-btn.active[data-p="important"] {
-      background: rgba(191, 90, 242, 0.25);
+      background: rgba(191, 90, 242, 0.3);
       border-color: var(--p-important);
       color: #bf5af2;
-      box-shadow: 0 0 16px rgba(191, 90, 242, 0.35);
+      box-shadow: 0 0 18px rgba(191, 90, 242, 0.4);
     }
 
     .pill-btn.active[data-p="normal"] {
-      background: rgba(48, 209, 88, 0.25);
+      background: rgba(48, 209, 88, 0.3);
       border-color: var(--p-normal);
       color: #30d158;
-      box-shadow: 0 0 16px rgba(48, 209, 88, 0.35);
+      box-shadow: 0 0 18px rgba(48, 209, 88, 0.4);
     }
 
     .button-group-right {
@@ -387,12 +403,12 @@
       background: linear-gradient(135deg, #ffffff, #dcdcdc);
       color: #000;
       border: none;
-      padding: 10px 24px;
+      padding: 11px 26px;
       border-radius: 30px;
-      font-size: 0.92rem;
-      font-weight: 700;
+      font-size: 0.95rem;
+      font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
       transition: all 0.25s ease;
       font-family: 'Space Grotesk', sans-serif;
       letter-spacing: 0.5px;
@@ -400,29 +416,29 @@
 
     .btn-create:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 12px 30px rgba(255, 255, 255, 0.5);
     }
 
     .btn-util {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #fff;
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.2s;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .btn-util:hover { background: rgba(255, 255, 255, 0.18); }
+    .btn-util:hover { background: rgba(255, 255, 255, 0.2); }
 
     /* Task Lists Section */
     .section-head {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 1.2px;
       color: var(--text-muted);
@@ -439,45 +455,40 @@
       gap: 12px;
     }
 
-    /* Task Cards */
+    /* Task Item Card */
     .task-item {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 18px;
-      padding: 16px 20px;
+      padding: 18px 22px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       transition: all 0.25s ease;
       cursor: grab;
       position: relative;
     }
 
     .task-item:hover {
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
     }
 
     .task-item:active { cursor: grabbing; }
 
-    .task-item.dragging {
-      opacity: 0.35;
-      border: 2px dashed rgba(255, 255, 255, 0.4);
-    }
-
-    .task-item.most-urgent { border-left: 5px solid var(--p-most-urgent); box-shadow: -4px 0 20px rgba(255, 45, 85, 0.22); }
-    .task-item.urgent { border-left: 5px solid var(--p-urgent); box-shadow: -4px 0 20px rgba(255, 159, 10, 0.18); }
-    .task-item.important { border-left: 5px solid var(--p-important); box-shadow: -4px 0 20px rgba(191, 90, 242, 0.18); }
-    .task-item.normal { border-left: 5px solid var(--p-normal); box-shadow: -4px 0 20px rgba(48, 209, 88, 0.15); }
+    .task-item.most-urgent { border-left: 6px solid var(--p-most-urgent); box-shadow: -4px 0 20px rgba(255, 45, 85, 0.25); }
+    .task-item.urgent { border-left: 6px solid var(--p-urgent); box-shadow: -4px 0 20px rgba(255, 159, 10, 0.2); }
+    .task-item.important { border-left: 6px solid var(--p-important); box-shadow: -4px 0 20px rgba(191, 90, 242, 0.2); }
+    .task-item.normal { border-left: 6px solid var(--p-normal); box-shadow: -4px 0 20px rgba(48, 209, 88, 0.18); }
 
     /* Custom Checkbox */
     .check-circle {
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.35);
+      border: 2px solid rgba(255, 255, 255, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -486,30 +497,30 @@
       transition: all 0.2s ease;
     }
 
-    .check-circle:hover { border-color: #fff; transform: scale(1.1); }
+    .check-circle:hover { border-color: #fff; transform: scale(1.12); }
     .check-circle.completed {
       background: #30d158;
       border-color: #30d158;
-      box-shadow: 0 0 14px rgba(48, 209, 88, 0.6);
+      box-shadow: 0 0 16px rgba(48, 209, 88, 0.7);
     }
 
     .check-circle.completed::after {
       content: '✓';
       color: #000;
-      font-weight: 800;
-      font-size: 0.9rem;
+      font-weight: 900;
+      font-size: 0.95rem;
     }
 
     .task-details {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
     }
 
     .task-text {
-      font-size: 1.05rem;
-      font-weight: 500;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: #fff;
       line-height: 1.4;
     }
@@ -519,36 +530,36 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 8px;
-      font-size: 0.76rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
 
     .p-tag {
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 8px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      font-size: 0.68rem;
+      font-size: 0.7rem;
     }
 
-    .p-tag.most-urgent { background: rgba(255, 45, 85, 0.2); color: #ff3b30; }
-    .p-tag.urgent { background: rgba(255, 159, 10, 0.2); color: #ff9f0a; }
-    .p-tag.important { background: rgba(191, 90, 242, 0.2); color: #bf5af2; }
-    .p-tag.normal { background: rgba(48, 209, 88, 0.2); color: #30d158; }
+    .p-tag.most-urgent { background: rgba(255, 45, 85, 0.25); color: #ff3b30; }
+    .p-tag.urgent { background: rgba(255, 159, 10, 0.25); color: #ff9f0a; }
+    .p-tag.important { background: rgba(191, 90, 242, 0.25); color: #bf5af2; }
+    .p-tag.normal { background: rgba(48, 209, 88, 0.25); color: #30d158; }
 
-    /* Smart Action Badges (Phone & WhatsApp) */
+    /* Smart Action Badges */
     .smart-actions {
       display: inline-flex;
       gap: 6px;
-      margin-left: 4px;
+      margin-left: 6px;
     }
 
     .smart-btn {
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-size: 0.72rem;
-      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -557,42 +568,42 @@
     }
 
     .smart-btn.call {
-      background: rgba(48, 209, 88, 0.15);
-      border: 1px solid rgba(48, 209, 88, 0.4);
+      background: rgba(48, 209, 88, 0.18);
+      border: 1px solid rgba(48, 209, 88, 0.5);
       color: #30d158;
     }
 
     .smart-btn.whatsapp {
-      background: rgba(37, 211, 102, 0.15);
-      border: 1px solid rgba(37, 211, 102, 0.4);
+      background: rgba(37, 211, 102, 0.18);
+      border: 1px solid rgba(37, 211, 102, 0.5);
       color: #25d366;
     }
 
-    .smart-btn:hover { transform: translateY(-1px); filter: brightness(1.2); }
+    .smart-btn:hover { transform: translateY(-1px); filter: brightness(1.25); }
 
-    /* Shift & Action Buttons */
+    /* Action Buttons */
     .task-actions {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .btn-shift {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       color: var(--text-muted);
       border-radius: 8px;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       transition: all 0.2s;
     }
 
-    .btn-shift:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
+    .btn-shift:hover { background: rgba(255, 255, 255, 0.25); color: #fff; }
 
     .btn-action {
       background: transparent;
@@ -601,18 +612,18 @@
       padding: 6px 8px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       transition: all 0.2s;
     }
 
-    .btn-action.edit:hover { color: #0071e3; background: rgba(0, 113, 227, 0.15); }
-    .btn-action.delete:hover { color: #ff2d55; background: rgba(255, 45, 85, 0.15); }
+    .btn-action.edit:hover { color: #0071e3; background: rgba(0, 113, 227, 0.2); }
+    .btn-action.delete:hover { color: #ff2d55; background: rgba(255, 45, 85, 0.2); }
 
     /* Completed List */
     .task-item.done-card {
       opacity: 0.55;
-      background: rgba(0, 0, 0, 0.25);
-      border-left: 5px solid #48484a;
+      background: rgba(0, 0, 0, 0.3);
+      border-left: 6px solid #48484a;
       box-shadow: none;
     }
 
@@ -622,16 +633,17 @@
     }
 
     .done-timestamp {
-      font-size: 0.74rem;
+      font-size: 0.78rem;
       color: #30d158;
       font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
     }
 
     /* Edit Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.78);
+      background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(20px);
       display: none;
       align-items: center;
@@ -643,16 +655,16 @@
     .modal-overlay.show { display: flex; }
 
     .modal-glass {
-      background: linear-gradient(135deg, rgba(30, 30, 45, 0.95), rgba(15, 15, 22, 0.98));
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: linear-gradient(135deg, rgba(30, 30, 45, 0.98), rgba(15, 15, 22, 0.99));
+      border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 24px;
       padding: 28px;
       width: 100%;
       max-width: 480px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
     }
 
-    /* CEO Zen Mode Overlay */
+    /* CEO Zen Mode */
     .zen-overlay {
       position: fixed;
       inset: 0;
@@ -669,11 +681,11 @@
     .zen-overlay.active { display: flex; }
 
     .zen-halo {
-      width: 280px;
-      height: 280px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 45, 85, 0.25), transparent 70%);
-      filter: blur(40px);
+      background: radial-gradient(circle, rgba(255, 45, 85, 0.3), transparent 70%);
+      filter: blur(45px);
       position: absolute;
       animation: pulseHalo 4s infinite alternate ease-in-out;
       pointer-events: none;
@@ -685,9 +697,9 @@
     }
 
     .zen-title {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       font-weight: 800;
-      max-width: 700px;
+      max-width: 720px;
       line-height: 1.35;
       margin-bottom: 24px;
       color: #fff;
@@ -701,15 +713,15 @@
       max-width: 880px;
       text-align: center;
       padding-top: 26px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      color: #71717a;
-      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #8e8e93;
+      font-size: 0.88rem;
       line-height: 1.6;
     }
 
     .company-name {
-      font-weight: 700;
-      font-size: 0.95rem;
+      font-weight: 800;
+      font-size: 1rem;
       letter-spacing: 1px;
       background: linear-gradient(90deg, #ff2d55, #ff9f0a, #30d158, #0071e3);
       -webkit-background-clip: text;
@@ -719,7 +731,7 @@
 
     .contact-line {
       margin-top: 4px;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: #a1a1aa;
     }
 
@@ -731,7 +743,7 @@
 </head>
 <body>
 
-  <!-- Ambient Animated Glowing Background -->
+  <!-- Ambient Glowing Background -->
   <div class="aurora-bg">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -740,7 +752,7 @@
 
   <div class="container">
     
-    <!-- Header / Executive Status HUD with CA Logo -->
+    <!-- Header / Executive Status HUD -->
     <header class="glass-panel top-header">
       <div class="status-row">
         <div class="status-left-group">
@@ -755,10 +767,12 @@
           </div>
         </div>
 
-        <div class="cloud-sync-status" id="syncStatusIndicator" onclick="fetchLiveGoogleSheetsData(true)" title="क्लिक करके रिफ्रेश करें">
+        <div class="cloud-sync-status" id="syncStatusIndicator" onclick="loadFromGoogleSheets(true)" title="क्लिक करके रिफ्रेश करें">
           <span>●</span> LIVE CLOUD CONNECTED
         </div>
-        <div id="liveClock" style="font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; color: #a1a1aa; letter-spacing: 0.5px;">--:-- --</div>
+        
+        <!-- Live Chronometer: Real-time Date, Day and Seconds Clock -->
+        <div class="live-clock-box" id="liveClockDisplay">--:--:-- --</div>
       </div>
 
       <div class="header-content">
@@ -783,15 +797,15 @@
       </div>
     </header>
 
-    <!-- Morning Carry-Forward Intelligence Card -->
+    <!-- Morning Carry-Forward Card -->
     <div class="carry-forward-card" id="carryForwardAlert">
       <div>
         <strong style="color: #ff9f0a; font-size: 0.95rem;">🌅 मॉर्निंग इंटेलिजेंस:</strong>
         <span id="carryForwardText" style="font-size: 0.88rem; margin-left: 6px; color: #fff;">कल के कुछ काम अधूरे रह गए थे।</span>
       </div>
       <div style="display: flex; gap: 8px;">
-        <button class="pill-btn active" style="padding: 5px 12px; background: rgba(255, 159, 10, 0.3);" onclick="approveCarryForward()">✓ आज में शिफ्ट करें</button>
-        <button class="pill-btn" style="padding: 5px 10px;" onclick="dismissCarryForward()">✕</button>
+        <button class="pill-btn active" style="padding: 6px 14px; background: rgba(255, 159, 10, 0.35);" onclick="approveCarryForward()">✓ आज में शिफ्ट करें</button>
+        <button class="pill-btn" style="padding: 6px 12px;" onclick="dismissCarryForward()">✕</button>
       </div>
     </div>
 
@@ -817,19 +831,19 @@
       </div>
     </section>
 
-    <!-- Utility Bar (Excel & Daily Wrap) -->
+    <!-- Utility Bar -->
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
       <div style="font-size: 0.85rem; color: #a1a1aa;">
         <span>शॉर्टकट: </span><kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Enter</kbd> जोड़ें | <kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Z</kbd> फोकस
       </div>
       <div style="display: flex; gap: 10px;">
-        <button class="btn-util" onclick="fetchLiveGoogleSheetsData(true)" title="क्लाउड से तुरंत री-सिंक करें">🔄 REFRESH CLOUD</button>
+        <button class="btn-util" onclick="loadFromGoogleSheets(true)" title="क्लाउड से डेटा खींचें">🔄 SYNC CLOUD</button>
         <button class="btn-util" onclick="exportToExcel()" title="Excel फ़ाइल डाउनलोड करें">📊 DOWNLOAD EXCEL</button>
         <button class="btn-util" onclick="shareDailyBrief()" style="color: #25d366; border-color: rgba(37, 211, 102, 0.4);" title="WhatsApp पर रिपोर्ट भेजें">📲 DAILY WRAP</button>
       </div>
     </div>
 
-    <!-- Active Tasks Section (Draggable & Shiftable) -->
+    <!-- Active Tasks Section -->
     <section>
       <div class="section-head">
         <span>पेंडिंग मिशन सूची (ड्रैग या शिफ्ट करके ऊपर-नीचे करें)</span>
@@ -862,11 +876,11 @@
   <!-- Edit Task Modal -->
   <div class="modal-overlay" id="editModal">
     <div class="modal-glass">
-      <h3 style="margin-bottom: 16px; font-size: 1.25rem;">कार्य संपादित करें (Edit Task)</h3>
+      <h3 style="margin-bottom: 16px; font-size: 1.3rem;">कार्य संपादित करें (Edit Task)</h3>
       <input type="text" id="editInput" class="input-field" style="margin-bottom: 16px;">
       
       <div style="margin-bottom: 20px;">
-        <label style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">प्राथमिकता बदलें:</label>
+        <label style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">प्राथमिकता बदलें:</label>
         <div class="priority-pills" style="margin-top: 8px;">
           <div class="pill-btn edit-pill" data-p="most-urgent">🔥 Most Urgent</div>
           <div class="pill-btn edit-pill" data-p="urgent">⚡ Urgent</div>
@@ -885,16 +899,15 @@
   <!-- CEO Zen Mode Overlay -->
   <div class="zen-overlay" id="zenOverlay">
     <div class="zen-halo"></div>
-    <div style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #ff2d55; margin-bottom: 14px; z-index: 2;">🔥 MOST URGENT TARGET MISSION</div>
+    <div style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; color: #ff2d55; margin-bottom: 14px; z-index: 2;">🔥 MOST URGENT TARGET MISSION</div>
     <div class="zen-title" id="zenTaskTitle">कोई मोस्ट अर्जेंट कार्य नहीं मिला</div>
     <button class="btn-create" onclick="toggleZenMode()" style="z-index: 2;">EXIT ZEN (ESC)</button>
   </div>
 
   <script>
-    // Embedded Google Sheets Webhook URL
     const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxakWNTge9m8DApB8hEHfjHlWkxgiBK3n2ElLLuHAOvzLfdFHJ7vtolbIUgufzrtmX_6A/exec";
 
-    // 100% Clean Hindi Executive Quotes
+    // Clean Hindi Quotes
     const quotes = [
       "समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।",
       "महान काम तब होते हैं जब आप प्राथमिकताओं पर बिना रुके प्रहार करते हैं।",
@@ -914,7 +927,7 @@
       }, 350);
     }, 9000);
 
-    // State & Storage
+    // Master State
     let tasks = JSON.parse(localStorage.getItem('coolart_executive_tasks')) || [];
     let selectedPriority = 'most-urgent';
     let editTaskId = null;
@@ -928,7 +941,31 @@
       'normal': 'Normal'
     };
 
-    // Synthesized Apple Tactile Audio Feedback
+    // 1. Live Chronometer: Real-time Day, Date & Seconds Clock
+    function updateLiveClock() {
+      const now = new Date();
+      const days = ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'];
+      const months = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
+      
+      const dayName = days[now.getDay()];
+      const dateNum = now.getDate();
+      const monthName = months[now.getMonth()];
+      const year = now.getFullYear();
+
+      let hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      const formattedHours = String(hours).padStart(2, '0');
+
+      document.getElementById('liveClockDisplay').innerText = 
+        `${dayName},${dateNum} ${monthName}${year} • ${formattedHours}:${minutes}:${seconds}${ampm}`;
+    }
+    setInterval(updateLiveClock, 1000);
+    updateLiveClock();
+
+    // Tactile Click Audio
     function playTactileClick() {
       try {
         if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -937,7 +974,7 @@
         osc.type = 'sine';
         osc.frequency.setValueAtTime(880, audioCtx.currentTime);
         osc.frequency.exponentialRampToValueAtTime(1760, audioCtx.currentTime + 0.08);
-        gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
@@ -946,17 +983,17 @@
       } catch (e) {}
     }
 
-    // Save and Sync to Cloud
+    // Save & Local Update
     function save(syncToCloud = true) {
       localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
       render();
-      if (syncToCloud) syncWithGoogleSheets();
+      if (syncToCloud) syncToGoogleSheets();
     }
 
-    // Direct Push to Google Sheet
-    function syncWithGoogleSheets() {
+    // 2. Push to Google Sheets
+    function syncToGoogleSheets() {
       const syncStatus = document.getElementById('syncStatusIndicator');
-      syncStatus.innerHTML = `<span>⏳</span> SYNCING TO CLOUD...`;
+      syncStatus.innerHTML = `<span>⏳</span> SYNCING...`;
       syncStatus.style.color = '#ff9f0a';
 
       const activeRows = tasks.filter(t => !t.completed).map(t => [
@@ -981,30 +1018,34 @@
       }).then(() => {
         syncStatus.innerHTML = `<span>●</span> GOOGLE SHEETS LIVE SYNCED`;
         syncStatus.style.color = '#30d158';
-      }).catch(err => {
+      }).catch(() => {
         syncStatus.innerHTML = `<span>●</span> LOCAL SAVED`;
         syncStatus.style.color = '#ffd60a';
       });
     }
 
-    // Cross-Device Universal Pull Engine (Handles CORS & Device Sync)
-    function fetchLiveGoogleSheetsData(showStatus = false) {
+    // 3. Robust Google Sheets Reader (Pulls Sheet Data to Screen)
+    function loadFromGoogleSheets(showNotice = false) {
       const syncStatus = document.getElementById('syncStatusIndicator');
-      if (showStatus) {
-        syncStatus.innerHTML = `<span>⏳</span> FETCHING CLOUD...`;
+      if (showNotice) {
+        syncStatus.innerHTML = `<span>⏳</span> CONNECTING SHEET...`;
         syncStatus.style.color = '#ff9f0a';
       }
 
-      fetch(`${GOOGLE_SHEETS_URL}?action=read&t=${Date.now()}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data && (data.active.length > 0 || data.history.length > 0)) {
-            const cloudTasks = [];
-            
-            // Format Active Tasks
+      // Fetch with redirect follow
+      fetch(`${GOOGLE_SHEETS_URL}?action=read&t=${Date.now()}`, {
+        method: 'GET',
+        redirect: 'follow'
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && (data.active || data.history)) {
+          const freshTasks = [];
+
+          if (Array.isArray(data.active)) {
             data.active.forEach(row => {
-              if (row[0] && row[1]) {
-                cloudTasks.push({
+              if (row && row[0] && row[1]) {
+                freshTasks.push({
                   id: String(row[0]),
                   title: String(row[1]),
                   priority: getPriorityKey(row[2]),
@@ -1015,11 +1056,12 @@
                 });
               }
             });
+          }
 
-            // Format History Tasks
+          if (Array.isArray(data.history)) {
             data.history.forEach(row => {
-              if (row[0] && row[1]) {
-                cloudTasks.push({
+              if (row && row[0] && row[1]) {
+                freshTasks.push({
                   id: String(row[0]),
                   title: String(row[1]),
                   priority: getPriorityKey(row[2]),
@@ -1030,39 +1072,32 @@
                 });
               }
             });
-
-            if (cloudTasks.length > 0) {
-              tasks = cloudTasks;
-              localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
-              render();
-            }
           }
-          syncStatus.innerHTML = `<span>●</span> LIVE CLOUD CONNECTED`;
-          syncStatus.style.color = '#30d158';
-        })
-        .catch(() => {
-          syncStatus.innerHTML = `<span>●</span> LOCAL MODE`;
-          syncStatus.style.color = '#ffd60a';
-        });
+
+          if (freshTasks.length > 0) {
+            tasks = freshTasks;
+            localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
+            render();
+          }
+        }
+        syncStatus.innerHTML = `<span>●</span> LIVE CLOUD CONNECTED`;
+        syncStatus.style.color = '#30d158';
+      })
+      .catch(err => {
+        syncStatus.innerHTML = `<span>●</span> LOCAL MODE (OFFLINE)`;
+        syncStatus.style.color = '#ffd60a';
+      });
     }
 
     function getPriorityKey(val) {
-      val = String(val).toLowerCase();
+      val = String(val || '').toLowerCase();
       if (val.includes('most')) return 'most-urgent';
       if (val.includes('urgent')) return 'urgent';
       if (val.includes('important')) return 'important';
       return 'normal';
     }
 
-    // Live Clock
-    function updateClock() {
-      const now = new Date();
-      document.getElementById('liveClock').innerText = now.toLocaleDateString('hi-IN', { weekday: 'short', day: 'numeric', month: 'short' }) + ' • ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
-    // Priority Selection buttons
+    // Priority Selection
     document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(b => b.classList.remove('active'));
@@ -1086,9 +1121,9 @@
     }
 
     // Add Task
-    function addTask(customText = null) {
+    function addTask() {
       const input = document.getElementById('taskInput');
-      const val = (customText || input.value).trim();
+      const val = input.value.trim();
       if (!val) return;
 
       const phone = extractPhoneNumber(val);
@@ -1111,12 +1146,12 @@
       save();
     }
 
-    document.getElementById('addTaskBtn').addEventListener('click', () => addTask());
+    document.getElementById('addTaskBtn').addEventListener('click', addTask);
     document.getElementById('taskInput').addEventListener('keypress', (e) => {
       if (e.key === 'Enter') addTask();
     });
 
-    // Toggle Task Complete
+    // Check Task Done
     function toggleCheck(id) {
       const task = tasks.find(t => t.id === id);
       if (!task) return;
@@ -1138,7 +1173,7 @@
       save();
     }
 
-    // Shift Task Up/Down
+    // Move Task
     function moveTask(id, direction) {
       const activeTasks = tasks.filter(t => !t.completed);
       const index = activeTasks.findIndex(t => t.id === id);
@@ -1160,7 +1195,7 @@
       save();
     }
 
-    // Edit Modal Logic
+    // Edit Modal
     function openEditModal(id) {
       const task = tasks.find(t => t.id === id);
       if (!task) return;
@@ -1195,19 +1230,16 @@
 
     // Drag & Drop
     let dragSrcId = null;
-
     function handleDragStart(e) {
       dragSrcId = this.getAttribute('data-id');
       this.classList.add('dragging');
       e.dataTransfer.effectAllowed = 'move';
     }
-
     function handleDragOver(e) {
       if (e.preventDefault) e.preventDefault();
       e.dataTransfer.dropEffect = 'move';
       return false;
     }
-
     function handleDrop(e) {
       if (e.stopPropagation) e.stopPropagation();
       const dropTargetId = this.getAttribute('data-id');
@@ -1216,39 +1248,61 @@
       }
       return false;
     }
-
     function handleDragEnd() {
       document.querySelectorAll('.task-item').forEach(el => el.classList.remove('dragging'));
     }
 
-    // Voice Dictation Engine
+    // 4. Fully Activated Voice Engine
     const voiceBtn = document.getElementById('voiceBtn');
     let recognition = null;
+    let isListening = false;
+
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       recognition = new SpeechRecognition();
       recognition.continuous = false;
-      recognition.interimResults = false;
+      recognition.interimResults = true;
       recognition.lang = 'hi-IN';
 
-      recognition.onstart = () => { voiceBtn.classList.add('listening'); };
+      recognition.onstart = () => {
+        isListening = true;
+        voiceBtn.classList.add('listening');
+      };
+
       recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          transcript += event.results[i][0].transcript;
+        }
         if (transcript) {
-          const input = document.getElementById('taskInput');
-          input.value = transcript;
-          input.focus();
+          document.getElementById('taskInput').value = transcript;
         }
       };
-      recognition.onerror = () => { voiceBtn.classList.remove('listening'); };
-      recognition.onend = () => { voiceBtn.classList.remove('listening'); };
+
+      recognition.onerror = () => {
+        isListening = false;
+        voiceBtn.classList.remove('listening');
+      };
+
+      recognition.onend = () => {
+        isListening = false;
+        voiceBtn.classList.remove('listening');
+      };
 
       voiceBtn.addEventListener('click', () => {
-        try { recognition.start(); } catch(e) { recognition.stop(); }
+        if (isListening) {
+          recognition.stop();
+        } else {
+          try {
+            recognition.start();
+          } catch(e) {
+            recognition.stop();
+          }
+        }
       });
     }
 
-    // CEO Zen Focus Mode Toggle
+    // CEO Zen Mode
     function toggleZenMode() {
       const overlay = document.getElementById('zenOverlay');
       overlay.classList.toggle('active');
@@ -1257,31 +1311,64 @@
         document.getElementById('zenTaskTitle').innerText = activeMostUrgent ? `"\${activeMostUrgent.title}"` : "सभी मुख्य मिशन सम्पन्न हो चुके हैं!";
       }
     }
-
     document.getElementById('zenBtn').addEventListener('click', toggleZenMode);
     window.addEventListener('keydown', (e) => {
-      if (e.key.toLowerCase() === 'z' && document.activeElement.tagName !== 'INPUT') {
-        toggleZenMode();
-      }
+      if (e.key.toLowerCase() === 'z' && document.activeElement.tagName !== 'INPUT') toggleZenMode();
       if (e.key === 'Escape') {
         document.getElementById('zenOverlay').classList.remove('active');
         closeEditModal();
       }
     });
 
-    // Morning Carry Forward Engine
+    // Morning Carry Forward
     function checkCarryForward() {
       const todayStr = new Date().toLocaleDateString('hi-IN', { day: 'numeric', month: 'short' });
       const pendingOld = tasks.filter(t => !t.completed && t.createdAt && !t.createdAt.includes(todayStr));
       if (pendingOld.length > 0) {
-        document.getElementById('carryForwardText').innerText = `कल के ${pendingOld.length} अधूरे काम हैं। क्या इन्हें आज के टॉप मिशन में री-शेड्यूल करें?`; document.getElementById('carryForwardAlert').classList.add('show'); } }  function approveCarryForward() { const now = new Date(); const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }); tasks.forEach(t => { if (!t.completed) t.createdAt = timeFormatted; }); dismissCarryForward(); save(); }  function dismissCarryForward() { document.getElementById('carryForwardAlert').classList.remove('show'); }  // Render Engine function render() { const activeContainer = document.getElementById('activeContainer'); const completedContainer = document.getElementById('completedContainer');  activeContainer.innerHTML = ''; completedContainer.innerHTML = '';  const activeList = tasks.filter(t => !t.completed); const completedList = tasks.filter(t => t.completed);  document.getElementById('activeCounter').innerText = activeList.length; document.getElementById('doneCounter').innerText = completedList.length;  const mostUrgentCount = activeList.filter(t => t.priority === 'most-urgent').length; const noteElem = document.getElementById('priorityStatusNote'); if (mostUrgentCount > 0) { noteElem.innerText = `🔥 ${mostUrgentCount} अति आवश्यक कार्य टॉप पर हैं`;
+        document.getElementById('carryForwardText').innerText = `कल के \${pendingOld.length} काम अधूरे हैं। क्या इन्हें आज के टॉप मिशन में जोड़ें?`;
+        document.getElementById('carryForwardAlert').classList.add('show');
+      }
+    }
+
+    function approveCarryForward() {
+      const now = new Date();
+      const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+      tasks.forEach(t => {
+        if (!t.completed) t.createdAt = timeFormatted;
+      });
+      dismissCarryForward();
+      save();
+    }
+
+    function dismissCarryForward() {
+      document.getElementById('carryForwardAlert').classList.remove('show');
+    }
+
+    // Render Engine
+    function render() {
+      const activeContainer = document.getElementById('activeContainer');
+      const completedContainer = document.getElementById('completedContainer');
+
+      activeContainer.innerHTML = '';
+      completedContainer.innerHTML = '';
+
+      const activeList = tasks.filter(t => !t.completed);
+      const completedList = tasks.filter(t => t.completed);
+
+      document.getElementById('activeCounter').innerText = activeList.length;
+      document.getElementById('doneCounter').innerText = completedList.length;
+
+      const mostUrgentCount = activeList.filter(t => t.priority === 'most-urgent').length;
+      const noteElem = document.getElementById('priorityStatusNote');
+      if (mostUrgentCount > 0) {
+        noteElem.innerText = `🔥 \${mostUrgentCount} अति आवश्यक कार्य टॉप पर हैं`;
       } else {
         noteElem.innerText = ``;
       }
 
-      // Render Active
+      // Active
       if (activeList.length === 0) {
-        activeContainer.innerHTML = `<div style="text-align:center; padding:32px; color:#71717a; font-size:0.95rem;">✨ कोई लंबित कार्य नहीं है। नया मिशन ऊपर दर्ज करें।</div>`;
+        activeContainer.innerHTML = `<div style="text-align:center; padding:32px; color:#71717a; font-size:1rem;">✨ कोई लंबित कार्य नहीं है। नया मिशन ऊपर दर्ज करें।</div>`;
       } else {
         activeList.forEach((t, idx) => {
           const card = document.createElement('div');
@@ -1326,7 +1413,7 @@
         });
       }
 
-      // Render Completed
+      // Completed
       if (completedList.length === 0) {
         completedContainer.innerHTML = `<div style="text-align:center; padding:20px; color:#52525b; font-size:0.85rem;">पूर्ण किए गए कार्यों का इतिहास यहाँ दर्ज होगा।</div>`;
       } else {
@@ -1351,7 +1438,7 @@
       }
     }
 
-    // Export to Excel / CSV File
+    // Export to Excel / CSV
     function exportToExcel() {
       let csv = "\uFEFFTask ID,Mission Title,Priority,Status,Contact,Created At,Completed At\n";
       tasks.forEach(t => {
@@ -1367,7 +1454,7 @@
       link.click();
     }
 
-    // WhatsApp Daily Wrap Export
+    // WhatsApp Daily Wrap
     function shareDailyBrief() {
       const done = tasks.filter(t => t.completed);
       let text = `*📊 DAILY EXECUTIVE BRIEF - COOL ART ADVERTISING*\n`;
@@ -1389,15 +1476,15 @@
       return d.innerHTML;
     }
 
-    // Initial Launch Engine
+    // Initial Engine Start
     render();
-    fetchLiveGoogleSheetsData(true);
+    loadFromGoogleSheets(true);
     checkCarryForward();
 
-    // Auto-Sync Polling Every 12 Seconds (For Cross-Device Synchronisation)
+    // Auto Background Sync Every 10 Seconds
     setInterval(() => {
-      fetchLiveGoogleSheetsData(false);
-    }, 12000);
+      loadFromGoogleSheets(false);
+    }, 10000);
   </script>
 </body>
 </html>
