@@ -1,134 +1,134 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COMMAND CENTER | Cool Art Advertising</title>
+  <title>COMMAND CENTER | Cool Art Advertising Executive OS</title>
   
   <!-- CA Favicon Setup -->
   <link rel="icon" type="image/png" href="CA_logo.png">
   <link rel="apple-touch-icon" href="CA_logo.png">
 
-  <!-- Fonts -->
+  <!-- Apple SF & Executive Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --text-main: #fbfbfd;
-      --text-muted: #a1a1aa;
-      --p-most-urgent: #ff2d55;
-      --p-urgent: #ff9f0a;
-      --p-important: #bf5af2;
-      --p-normal: #30d158;
-      --glass-surface: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.15);
-      --sheet-connected: #30d158;
+      --bg-base: #07080c;
+      --panel-surface: rgba(18, 20, 29, 0.65);
+      --panel-border: rgba(255, 255, 255, 0.08);
+      --panel-hover: rgba(255, 255, 255, 0.03);
+      --text-pure: #ffffff;
+      --text-secondary: #9aa0a6;
+      --text-muted: #5f6368;
+      
+      /* Subtle Monochrome Accents with Single Highlight */
+      --accent-gold: #e5c07b;
+      --accent-blue: #2997ff;
+      --priority-urgent: #ff453a;
+      --priority-important: #bf5af2;
+      --priority-normal: #30d158;
+      --card-line: rgba(255, 255, 255, 0.05);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "SF Pro Display", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
     body {
-      background-color: #05060a;
-      color: var(--text-main);
+      background-color: var(--bg-base);
+      color: var(--text-pure);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
       overflow-x: hidden;
-      padding: 20px 14px 50px;
+      padding: 24px 16px 60px;
     }
 
-    /* Ambient Liquid Aurora Background */
-    .aurora-bg {
+    /* Ambient Subtle Deep Lighting */
+    .ambient-glow {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
-      z-index: -1;
       pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
     }
 
-    .orb {
+    .glow-orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.38;
-      animation: floatOrb 22s infinite alternate ease-in-out;
+      filter: blur(140px);
+      opacity: 0.15;
     }
 
-    .orb-1 { width: 480px; height: 480px; background: radial-gradient(circle, #ff2d55, transparent); top: -12%; left: -8%; }
-    .orb-2 { width: 580px; height: 580px; background: radial-gradient(circle, #0071e3, #5856d6); bottom: -18%; right: -6%; animation-duration: 26s; }
-    .orb-3 { width: 400px; height: 400px; background: radial-gradient(circle, #30d158, #00c7be); top: 30%; right: 15%; animation-duration: 19s; }
-
-    @keyframes floatOrb {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(50px, 40px) scale(1.12); }
-      100% { transform: translate(-40px, 60px) scale(0.94); }
-    }
+    .glow-1 { width: 500px; height: 500px; background: #2997ff; top: -10%; left: -5%; }
+    .glow-2 { width: 600px; height: 600px; background: #e5c07b; bottom: -15%; right: -5%; }
 
     .container {
       width: 100%;
-      max-width: 880px;
+      max-width: 920px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
       z-index: 10;
     }
 
-    /* Master Glassmorphism Panel */
-    .glass-panel {
-      background: var(--glass-surface);
-      backdrop-filter: blur(34px) saturate(190%);
-      -webkit-backdrop-filter: blur(34px) saturate(190%);
-      border: 1px solid var(--glass-border);
-      border-radius: 22px;
-      padding: 22px 24px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    /* Apple-Style Glass Surface */
+    .glass-box {
+      background: var(--panel-surface);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      padding: 20px 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
       position: relative;
     }
 
-    /* Executive Top Bar */
+    /* Top Command Header */
     .top-header {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      padding: 18px 24px;
     }
 
-    .status-row {
+    .header-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 14px;
     }
 
-    .status-left-group {
+    .brand-identity {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .brand-logo-frame {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(0, 0, 0, 0.5);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #000;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
       flex-shrink: 0;
     }
 
@@ -138,357 +138,430 @@
       object-fit: cover;
     }
 
-    .status-badge {
+    .status-capsule {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
-      border-radius: 30px;
-      background: rgba(48, 209, 88, 0.15);
-      border: 1px solid rgba(48, 209, 88, 0.4);
-      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(48, 209, 88, 0.08);
+      border: 1px solid rgba(48, 209, 88, 0.25);
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 0.8px;
       color: #30d158;
-      text-transform: uppercase;
       font-family: 'Space Grotesk', sans-serif;
     }
 
-    .status-dot {
-      width: 9px;
-      height: 9px;
+    .pulse-point {
+      width: 6px;
+      height: 6px;
       background: #30d158;
       border-radius: 50%;
-      box-shadow: 0 0 10px #30d158;
-      animation: pulseDot 1.6s infinite alternate;
+      box-shadow: 0 0 8px #30d158;
+      animation: pulse 1.6s infinite alternate;
     }
 
-    @keyframes pulseDot {
-      0% { opacity: 0.4; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1.3); }
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.2); }
     }
 
-    .cloud-sync-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.78rem;
-      color: var(--sheet-connected);
+    .chronometer-view {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    /* Live Chronometer (Day, Date, Live Clock) */
-    .live-clock-box {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #ffd60a;
-      background: rgba(0, 0, 0, 0.45);
+      font-size: 0.88rem;
+      font-weight: 600;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 6px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 214, 10, 0.3);
+      border-radius: 10px;
+      color: var(--accent-gold);
       letter-spacing: 0.5px;
     }
 
-    .header-content {
-      margin-top: 18px;
+    .header-summary {
+      margin-top: 14px;
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 14px;
     }
 
-    .master-title {
-      font-size: 1.85rem;
-      font-weight: 800;
+    .executive-title {
+      font-size: 1.55rem;
+      font-weight: 700;
       letter-spacing: -0.5px;
       color: #ffffff;
     }
 
-    /* Clean Hindi Quote Box */
-    .quote-container {
-      margin-top: 10px;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-left: 4px solid #ff2d55;
-      padding: 10px 16px;
-      border-radius: 12px;
-      max-width: 580px;
+    .quote-ribbon {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      transition: opacity 0.3s ease;
+      font-weight: 400;
     }
 
-    .quote-box {
-      font-size: 1rem;
-      color: #ffd60a;
-      line-height: 1.5;
-      font-weight: 600;
-      transition: opacity 0.4s ease;
-    }
-
-    .stats-hud {
+    .stats-tray {
       display: flex;
-      gap: 12px;
+      gap: 8px;
     }
 
-    .stat-pill {
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 10px 18px;
-      border-radius: 16px;
+    .stat-metric {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 6px 16px;
+      border-radius: 10px;
       text-align: center;
-      min-width: 95px;
+      min-width: 80px;
     }
 
-    .stat-val {
-      font-size: 1.45rem;
-      font-weight: 800;
+    .stat-num {
+      font-size: 1.25rem;
+      font-weight: 700;
       font-family: 'Space Grotesk', sans-serif;
       color: #fff;
     }
 
-    .stat-lbl {
-      font-size: 0.7rem;
+    .stat-label {
+      font-size: 0.62rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.8px;
+      font-weight: 600;
     }
 
-    /* Carry Forward Alert */
-    .carry-forward-card {
-      background: linear-gradient(135deg, rgba(255, 159, 10, 0.25), rgba(255, 45, 85, 0.18));
-      border: 1px solid rgba(255, 159, 10, 0.5);
+    /* Auto-Fading Executive Banner */
+    .banner-viewport {
+      width: 100%;
+      height: 150px;
       border-radius: 16px;
-      padding: 14px 20px;
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--panel-border);
+      background: #000;
     }
 
-    .carry-forward-card.show { display: flex; }
+    .banner-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      background-size: cover;
+      background-position: center;
+    }
 
-    /* Input Matrix */
-    .input-wrapper {
+    .banner-slide.active { opacity: 1; }
+
+    .banner-tint {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7, 8, 12, 0.9) 15%, rgba(7, 8, 12, 0.2) 100%);
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      justify-content: flex-end;
+      padding: 16px 20px;
     }
 
-    .input-box-row {
+    .banner-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-gold);
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .banner-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 2px;
+    }
+
+    /* Infinite Marquee Running Strip */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 10px 0;
       position: relative;
       display: flex;
       align-items: center;
     }
 
-    .input-field {
+    .marquee-track {
+      display: flex;
+      gap: 36px;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .brand-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .brand-pill-item i {
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+    }
+
+    /* Task Input System with Modern Sleek Mic */
+    .input-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .input-box-holder {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .task-input-field {
       width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 16px;
-      padding: 16px 60px 16px 20px;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 14px 50px 14px 16px;
       color: #fff;
-      font-size: 1.1rem;
+      font-size: 1rem;
       outline: none;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
     }
 
-    .input-field:focus {
-      border-color: rgba(255, 255, 255, 0.6);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    .task-input-field:focus {
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.06);
     }
 
-    /* High-Powered Voice Button */
-    .btn-mic {
+    /* Apple Siri-Style Modern Wave Mic */
+    .sleek-mic-btn {
       position: absolute;
-      right: 14px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
-      width: 42px;
-      height: 42px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 1.3rem;
-      transition: all 0.25s ease;
+      font-size: 1rem;
+      transition: all 0.2s ease;
     }
 
-    .btn-mic:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: scale(1.1);
+    .sleek-mic-btn:hover {
+      color: #fff;
+      transform: scale(1.08);
     }
 
-    .btn-mic.listening {
-      background: #ff2d55;
-      border-color: #ff2d55;
-      box-shadow: 0 0 25px rgba(255, 45, 85, 0.9);
-      animation: micPulse 1s infinite alternate;
+    .sleek-mic-btn.active-listening {
+      color: #ff453a;
+      animation: micPulse 1.2s infinite alternate;
     }
 
     @keyframes micPulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.2); }
+      0% { transform: scale(1); filter: drop-shadow(0 0 2px #ff453a); }
+      100% { transform: scale(1.18); filter: drop-shadow(0 0 10px #ff453a); }
     }
 
-    .action-row {
+    .input-action-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .priority-pills {
+    .priority-selector {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
-    .pill-btn {
-      padding: 9px 16px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 700;
+    .priority-tag-btn {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--text-muted);
-      transition: all 0.25s ease;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .pill-btn:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
-
-    .pill-btn.active[data-p="most-urgent"] {
-      background: rgba(255, 45, 85, 0.3);
-      border-color: var(--p-most-urgent);
-      color: #ff3b30;
-      box-shadow: 0 0 18px rgba(255, 45, 85, 0.4);
-    }
-
-    .pill-btn.active[data-p="urgent"] {
-      background: rgba(255, 159, 10, 0.3);
-      border-color: var(--p-urgent);
-      color: #ff9f0a;
-      box-shadow: 0 0 18px rgba(255, 159, 10, 0.4);
-    }
-
-    .pill-btn.active[data-p="important"] {
-      background: rgba(191, 90, 242, 0.3);
-      border-color: var(--p-important);
-      color: #bf5af2;
-      box-shadow: 0 0 18px rgba(191, 90, 242, 0.4);
-    }
-
-    .pill-btn.active[data-p="normal"] {
-      background: rgba(48, 209, 88, 0.3);
-      border-color: var(--p-normal);
-      color: #30d158;
-      box-shadow: 0 0 18px rgba(48, 209, 88, 0.4);
-    }
-
-    .button-group-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-create {
-      background: linear-gradient(135deg, #ffffff, #dcdcdc);
-      color: #000;
-      border: none;
-      padding: 11px 26px;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-      transition: all 0.25s ease;
-      font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-create:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(255, 255, 255, 0.5);
-    }
-
-    .btn-util {
+    .priority-tag-btn:hover {
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #fff;
-      padding: 9px 18px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      cursor: pointer;
+    }
+
+    .priority-tag-btn.active[data-p="most-urgent"] {
+      background: rgba(255, 69, 58, 0.15);
+      border-color: #ff453a;
+      color: #ff453a;
+    }
+
+    .priority-tag-btn.active[data-p="urgent"] {
+      background: rgba(229, 192, 123, 0.15);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    .priority-tag-btn.active[data-p="important"] {
+      background: rgba(191, 90, 242, 0.15);
+      border-color: var(--priority-important);
+      color: var(--priority-important);
+    }
+
+    .priority-tag-btn.active[data-p="normal"] {
+      background: rgba(48, 209, 88, 0.15);
+      border-color: var(--priority-normal);
+      color: var(--priority-normal);
+    }
+
+    .btn-dispatch {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 10px;
+      font-size: 0.85rem;
       font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .btn-dispatch:hover {
+      background: #e6e6e6;
+      transform: translateY(-1px);
+    }
+
+    /* Operation Controls Bar */
+    .utility-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .utility-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-ghost-util {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      font-weight: 600;
       transition: all 0.2s;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .btn-util:hover { background: rgba(255, 255, 255, 0.2); }
+    .btn-ghost-util:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
 
-    /* Task Lists Section */
-    .section-head {
-      font-size: 0.85rem;
+    /* Full-Width Linear Task Card Flow */
+    .section-title {
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'Space Grotesk', sans-serif;
     }
 
-    .task-container {
+    .task-stack {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
     }
 
-    /* Task Item Card */
-    .task-item {
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      padding: 18px 22px;
+    .task-card-row {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
-      gap: 16px;
-      transition: all 0.25s ease;
+      gap: 14px;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
       cursor: grab;
       position: relative;
     }
 
-    .task-item:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    .task-card-row:hover {
+      background: rgba(255, 255, 255, 0.045);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
     }
 
-    .task-item:active { cursor: grabbing; }
+    .task-card-row:active { cursor: grabbing; }
 
-    .task-item.most-urgent { border-left: 6px solid var(--p-most-urgent); box-shadow: -4px 0 20px rgba(255, 45, 85, 0.25); }
-    .task-item.urgent { border-left: 6px solid var(--p-urgent); box-shadow: -4px 0 20px rgba(255, 159, 10, 0.2); }
-    .task-item.important { border-left: 6px solid var(--p-important); box-shadow: -4px 0 20px rgba(191, 90, 242, 0.2); }
-    .task-item.normal { border-left: 6px solid var(--p-normal); box-shadow: -4px 0 20px rgba(48, 209, 88, 0.18); }
-
-    /* Custom Checkbox */
-    .check-circle {
-      width: 28px;
-      height: 28px;
+    /* Minimal Clean Priority Indicator Dot */
+    .priority-bullet {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.4);
+      flex-shrink: 0;
+    }
+
+    .priority-bullet.most-urgent { background: #ff453a; box-shadow: 0 0 6px rgba(255, 69, 58, 0.6); }
+    .priority-bullet.urgent { background: var(--accent-gold); box-shadow: 0 0 6px rgba(229, 192, 123, 0.6); }
+    .priority-bullet.important { background: var(--priority-important); }
+    .priority-bullet.normal { background: var(--priority-normal); }
+
+    /* Crisp iOS Checkbox */
+    .check-disc {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -497,150 +570,146 @@
       transition: all 0.2s ease;
     }
 
-    .check-circle:hover { border-color: #fff; transform: scale(1.12); }
-    .check-circle.completed {
+    .check-disc:hover {
+      border-color: #fff;
+    }
+
+    .check-disc.checked {
       background: #30d158;
       border-color: #30d158;
-      box-shadow: 0 0 16px rgba(48, 209, 88, 0.7);
     }
 
-    .check-circle.completed::after {
+    .check-disc.checked::after {
       content: '✓';
       color: #000;
-      font-weight: 900;
-      font-size: 0.95rem;
+      font-weight: 800;
+      font-size: 0.75rem;
     }
 
-    .task-details {
+    /* Core Content Block Utilizing Full Horizontal Space */
+    .task-core-content {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
+      min-width: 0;
     }
 
-    .task-text {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      line-height: 1.4;
+    .task-headline {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.45;
+      word-break: break-word;
     }
 
-    .task-sub-meta {
+    .task-sub-info {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       gap: 8px;
-      font-size: 0.78rem;
+      font-size: 0.7rem;
       color: var(--text-muted);
     }
 
-    .p-tag {
-      padding: 3px 10px;
-      border-radius: 8px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-    }
-
-    .p-tag.most-urgent { background: rgba(255, 45, 85, 0.25); color: #ff3b30; }
-    .p-tag.urgent { background: rgba(255, 159, 10, 0.25); color: #ff9f0a; }
-    .p-tag.important { background: rgba(191, 90, 242, 0.25); color: #bf5af2; }
-    .p-tag.normal { background: rgba(48, 209, 88, 0.25); color: #30d158; }
-
-    /* Smart Action Badges */
-    .smart-actions {
-      display: inline-flex;
-      gap: 6px;
-      margin-left: 6px;
-    }
-
-    .smart-btn {
-      padding: 3px 10px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 700;
+    .contact-link-tag {
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      transition: all 0.2s;
-    }
-
-    .smart-btn.call {
-      background: rgba(48, 209, 88, 0.18);
-      border: 1px solid rgba(48, 209, 88, 0.5);
+      background: rgba(48, 209, 88, 0.08);
+      border: 1px solid rgba(48, 209, 88, 0.2);
       color: #30d158;
     }
 
-    .smart-btn.whatsapp {
-      background: rgba(37, 211, 102, 0.18);
-      border: 1px solid rgba(37, 211, 102, 0.5);
-      color: #25d366;
-    }
-
-    .smart-btn:hover { transform: translateY(-1px); filter: brightness(1.25); }
-
-    /* Action Buttons */
-    .task-actions {
+    /* Sleek Actions Clustered on Edge */
+    .task-dock-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
+      flex-shrink: 0;
     }
 
-    .btn-shift {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+    .dock-btn {
+      background: transparent;
+      border: none;
       color: var(--text-muted);
-      border-radius: 8px;
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 0.8rem;
-      transition: all 0.2s;
+      font-size: 0.75rem;
+      transition: all 0.15s;
     }
 
-    .btn-shift:hover { background: rgba(255, 255, 255, 0.25); color: #fff; }
-
-    .btn-action {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      padding: 6px 8px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1.15rem;
-      transition: all 0.2s;
+    .dock-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
 
-    .btn-action.edit:hover { color: #0071e3; background: rgba(0, 113, 227, 0.2); }
-    .btn-action.delete:hover { color: #ff2d55; background: rgba(255, 45, 85, 0.2); }
+    .dock-btn.delete:hover {
+      color: #ff453a;
+      background: rgba(255, 69, 58, 0.12);
+    }
 
-    /* Completed List */
-    .task-item.done-card {
-      opacity: 0.55;
+    /* Historical Archive Accordion Section */
+    .archive-card {
+      border: 1px solid var(--panel-border);
       background: rgba(0, 0, 0, 0.3);
-      border-left: 6px solid #48484a;
-      box-shadow: none;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 10px;
     }
 
-    .task-item.done-card .task-text {
-      text-decoration: line-through;
-      color: #8e8e93;
-    }
-
-    .done-timestamp {
-      font-size: 0.78rem;
-      color: #30d158;
-      font-family: 'Space Grotesk', sans-serif;
+    .archive-header-trigger {
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.8rem;
       font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text-secondary);
+      user-select: none;
+    }
+
+    .archive-header-trigger:hover {
+      background: rgba(255, 255, 255, 0.02);
+      color: #fff;
+    }
+
+    .archive-contents {
+      display: none;
+      padding: 14px;
+      flex-direction: column;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .archive-contents.open { display: flex; }
+
+    .past-task-row {
+      opacity: 0.45;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px 14px;
+    }
+
+    .past-task-row .task-headline {
+      text-decoration: line-through;
+      color: var(--text-secondary);
     }
 
     /* Edit Modal */
-    .modal-overlay {
+    .modal-backdrop {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.8);
@@ -652,287 +721,248 @@
       padding: 20px;
     }
 
-    .modal-overlay.show { display: flex; }
+    .modal-backdrop.active { display: flex; }
 
-    .modal-glass {
-      background: linear-gradient(135deg, rgba(30, 30, 45, 0.98), rgba(15, 15, 22, 0.99));
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 24px;
-      padding: 28px;
+    .modal-slate {
+      background: #111218;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 22px;
       width: 100%;
-      max-width: 480px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      max-width: 460px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
     }
 
-    /* CEO Zen Mode */
-    .zen-overlay {
-      position: fixed;
-      inset: 0;
-      background: #000000;
-      z-index: 2000;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .zen-overlay.active { display: flex; }
-
-    .zen-halo {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 45, 85, 0.3), transparent 70%);
-      filter: blur(45px);
-      position: absolute;
-      animation: pulseHalo 4s infinite alternate ease-in-out;
-      pointer-events: none;
-    }
-
-    @keyframes pulseHalo {
-      0% { transform: scale(0.9); opacity: 0.5; }
-      100% { transform: scale(1.3); opacity: 0.9; }
-    }
-
-    .zen-title {
-      font-size: 2.3rem;
-      font-weight: 800;
-      max-width: 720px;
-      line-height: 1.35;
-      margin-bottom: 24px;
-      color: #fff;
-      z-index: 2;
-    }
-
-    /* Official Footer */
+    /* Minimal Official Footer */
     footer {
-      margin-top: 45px;
+      margin-top: 40px;
       width: 100%;
-      max-width: 880px;
+      max-width: 920px;
       text-align: center;
-      padding-top: 26px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #8e8e93;
-      font-size: 0.88rem;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      font-size: 0.8rem;
       line-height: 1.6;
     }
 
-    .company-name {
-      font-weight: 800;
-      font-size: 1rem;
+    .footer-brand {
+      font-weight: 700;
+      font-size: 0.88rem;
       letter-spacing: 1px;
-      background: linear-gradient(90deg, #ff2d55, #ff9f0a, #30d158, #0071e3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #fff;
       text-transform: uppercase;
-    }
-
-    .contact-line {
-      margin-top: 4px;
-      font-size: 0.85rem;
-      color: #a1a1aa;
-    }
-
-    .contact-line a {
-      color: #00f2fe;
-      text-decoration: none;
+      font-family: 'Space Grotesk', sans-serif;
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Glowing Background -->
-  <div class="aurora-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+  <!-- Ambient Light Backdrops -->
+  <div class="ambient-glow">
+    <div class="glow-orb glow-1"></div>
+    <div class="glow-orb glow-2"></div>
   </div>
 
   <div class="container">
     
-    <!-- Header / Executive Status HUD -->
-    <header class="glass-panel top-header">
-      <div class="status-row">
-        <div class="status-left-group">
-          <!-- CA Logo Frame -->
+    <!-- Top Executive Header -->
+    <header class="glass-box top-header">
+      <div class="header-nav">
+        <div class="brand-identity">
           <div class="brand-logo-frame" title="Cool Art Executive Logo">
-            <img src="CA_logo.png" alt="CA Logo" onerror="this.parentElement.innerHTML='<span style=\'font-weight:900; background:linear-gradient(135deg,#ff2d55,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;\'>CA</span>'">
+            <img src="CA_logo.png" alt="CA Logo" onerror="this.parentElement.innerHTML='<span style=\'font-weight:800; font-size:0.9rem; color:#fff;\'>CA</span>'">
           </div>
 
-          <div class="status-badge">
-            <div class="status-dot"></div>
-            COOL ART COMMAND ACTIVE
+          <div class="status-capsule">
+            <div class="pulse-point"></div>
+            COOL ART EXECUTIVE ACTIVE
           </div>
         </div>
 
-        <div class="cloud-sync-status" id="syncStatusIndicator" onclick="loadFromGoogleSheets(true)" title="क्लिक करके रिफ्रेश करें">
-          <span>●</span> LIVE CLOUD CONNECTED
-        </div>
-        
-        <!-- Live Chronometer: Real-time Date, Day and Seconds Clock -->
-        <div class="live-clock-box" id="liveClockDisplay">--:--:-- --</div>
+        <div class="chronometer-view" id="liveChronometer">--:--:-- --</div>
       </div>
 
-      <div class="header-content">
+      <div class="header-summary">
         <div>
-          <h1 class="master-title">आज के मुख्य मिशन क्या हैं?</h1>
-          <!-- High-Contrast Clean Hindi Quotes -->
-          <div class="quote-container">
-            <div class="quote-box" id="quoteTicker">"समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।"</div>
-          </div>
+          <h1 class="executive-title">EXECUTIVE COMMAND BOARD</h1>
+          <div class="quote-ribbon" id="quoteTicker">"Focus all energy on high-priority targets today."</div>
         </div>
 
-        <div class="stats-hud">
-          <div class="stat-pill">
-            <div class="stat-val" id="activeCounter">0</div>
-            <div class="stat-lbl">लंबित (Active)</div>
+        <div class="stats-tray">
+          <div class="stat-metric">
+            <div class="stat-num" id="activeCounter">0</div>
+            <div class="stat-label">ACTIVE</div>
           </div>
-          <div class="stat-pill">
-            <div class="stat-val" id="doneCounter">0</div>
-            <div class="stat-lbl">सम्पन्न (Done)</div>
+          <div class="stat-metric">
+            <div class="stat-num" id="doneCounter">0</div>
+            <div class="stat-label">RESOLVED</div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Morning Carry-Forward Card -->
-    <div class="carry-forward-card" id="carryForwardAlert">
-      <div>
-        <strong style="color: #ff9f0a; font-size: 0.95rem;">🌅 मॉर्निंग इंटेलिजेंस:</strong>
-        <span id="carryForwardText" style="font-size: 0.88rem; margin-left: 6px; color: #fff;">कल के कुछ काम अधूरे रह गए थे।</span>
-      </div>
-      <div style="display: flex; gap: 8px;">
-        <button class="pill-btn active" style="padding: 6px 14px; background: rgba(255, 159, 10, 0.35);" onclick="approveCarryForward()">✓ आज में शिफ्ट करें</button>
-        <button class="pill-btn" style="padding: 6px 12px;" onclick="dismissCarryForward()">✕</button>
-      </div>
-    </div>
+    <!-- Auto-Fading Executive Banner -->
+    <section class="banner-viewport">
+      <div class="banner-slide active" id="bSlide1" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900');"></div>
+      <div class="banner-slide" id="bSlide2" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&q=80&w=900');"></div>
+      <div class="banner-slide" id="bSlide3" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=900');"></div>
 
-    <!-- Task Input Panel -->
-    <section class="glass-panel input-wrapper">
-      <div class="input-box-row">
-        <input type="text" id="taskInput" class="input-field" placeholder="नया कार्य या मिशन दर्ज करें (बोलने के लिए माइक दबाएँ)..." autofocus>
-        <button class="btn-mic" id="voiceBtn" title="बोलकर टास्क लिखें (Voice Typing)">🎙️</button>
-      </div>
-      
-      <div class="action-row">
-        <div class="priority-pills">
-          <div class="pill-btn active" data-p="most-urgent">🔥 Most Urgent</div>
-          <div class="pill-btn" data-p="urgent">⚡ Urgent</div>
-          <div class="pill-btn" data-p="important">⭐ Important</div>
-          <div class="pill-btn" data-p="normal">🟢 Normal</div>
-        </div>
-
-        <div class="button-group-right">
-          <button class="btn-util" id="zenBtn" title="Focus Mode (Press Z)">🧘 ZEN MODE</button>
-          <button class="btn-create" id="addTaskBtn">+ ADD TASK</button>
-        </div>
+      <div class="banner-tint">
+        <span class="banner-tag" id="bannerTagLine">STRATEGIC LEADERSHIP</span>
+        <h3 class="banner-heading" id="bannerHeading">Precision advertising and media execution.</h3>
       </div>
     </section>
 
-    <!-- Utility Bar -->
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-      <div style="font-size: 0.85rem; color: #a1a1aa;">
-        <span>शॉर्टकट: </span><kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Enter</kbd> जोड़ें | <kbd style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px; font-size:0.75rem;">Z</kbd> फोकस
+    <!-- Infinite Marquee Running Strip of All Brand Enterprises -->
+    <section class="marquee-container">
+      <div class="marquee-track">
+        <span class="brand-pill-item"><i class="fa-solid fa-palette"></i> COOL ART ADVERTISING</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-newspaper"></i> DAINIK JAGRAN AGENCY</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-store"></i> SAB KUCHH GHAR BAITHE</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-bullhorn"></i> DAINIK BHASKAR TEHSIL COMMAND</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-camera"></i> COOL ART STUDIO NAHAL</span>
+        
+        <!-- Duplicated track for smooth infinite loop -->
+        <span class="brand-pill-item"><i class="fa-solid fa-palette"></i> COOL ART ADVERTISING</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-newspaper"></i> DAINIK JAGRAN AGENCY</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-store"></i> SAB KUCHH GHAR BAITHE</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-bullhorn"></i> DAINIK BHASKAR TEHSIL COMMAND</span>
+        <span class="brand-pill-item"><i class="fa-solid fa-camera"></i> COOL ART STUDIO NAHAL</span>
       </div>
-      <div style="display: flex; gap: 10px;">
-        <button class="btn-util" onclick="loadFromGoogleSheets(true)" title="क्लाउड से डेटा खींचें">🔄 SYNC CLOUD</button>
-        <button class="btn-util" onclick="exportToExcel()" title="Excel फ़ाइल डाउनलोड करें">📊 DOWNLOAD EXCEL</button>
-        <button class="btn-util" onclick="shareDailyBrief()" style="color: #25d366; border-color: rgba(37, 211, 102, 0.4);" title="WhatsApp पर रिपोर्ट भेजें">📲 DAILY WRAP</button>
+    </section>
+
+    <!-- Modern Task Input Panel -->
+    <section class="glass-box input-panel">
+      <div class="input-box-holder">
+        <input type="text" id="taskInput" class="task-input-field" placeholder="Enter executive mission or tap mic to speak in Hindi..." autofocus>
+        <button class="sleek-mic-btn" id="voiceBtn" title="Voice Typing (Hindi Supported)">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+      </div>
+
+      <div class="input-action-bar">
+        <div class="priority-selector">
+          <button class="priority-tag-btn active" data-p="most-urgent">🔥 Most Urgent</button>
+          <button class="priority-tag-btn" data-p="urgent">⚡ Urgent</button>
+          <button class="priority-tag-btn" data-p="important">⭐ Important</button>
+          <button class="priority-tag-btn" data-p="normal">🟢 Normal</button>
+        </div>
+
+        <button class="btn-dispatch" id="addTaskBtn">+ ADD TARGET</button>
+      </div>
+    </section>
+
+    <!-- Controls & Sync Utility -->
+    <div class="utility-bar">
+      <div id="cloudStatusText"><i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced</div>
+      <div class="utility-actions">
+        <button class="btn-ghost-util" onclick="fetchFromGoogleSheets(true)"><i class="fa-solid fa-rotate"></i> Refresh</button>
+        <button class="btn-ghost-util" onclick="exportToExcel()"><i class="fa-solid fa-file-excel"></i> Excel</button>
+        <button class="btn-ghost-util" onclick="shareDailyBrief()"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> Daily Wrap</button>
       </div>
     </div>
 
-    <!-- Active Tasks Section -->
+    <!-- Active Tasks Flow (Utilizing Full Linear Horizontal Width) -->
     <section>
-      <div class="section-head">
-        <span>पेंडिंग मिशन सूची (ड्रैग या शिफ्ट करके ऊपर-नीचे करें)</span>
-        <span id="priorityStatusNote" style="color: #ff3b30;"></span>
+      <div class="section-title">
+        <span>PENDING ACTIVE MISSIONS</span>
+        <span id="prioritySummaryNote" style="color:var(--priority-urgent)"></span>
       </div>
-      <div class="task-container" id="activeContainer"></div>
+      <div class="task-stack" id="activeContainer"></div>
     </section>
 
-    <!-- Completed History Section -->
-    <section style="margin-top: 15px;">
-      <div class="section-head">
-        <span>पूरे हो चुके मिशन (Log History)</span>
-        <span id="completedPercentage" style="color: #30d158;"></span>
+    <!-- Past Daily History Dropdown -->
+    <section class="archive-card">
+      <div class="archive-header-trigger" id="archiveToggleBtn">
+        <span><i class="fa-solid fa-folder-closed"></i> VIEW PAST RESOLVED ARCHIVE</span>
+        <span id="archiveChevron"><i class="fa-solid fa-chevron-down"></i></span>
       </div>
-      <div class="task-container" id="completedContainer"></div>
+      <div class="archive-contents" id="archiveContainer"></div>
     </section>
 
-    <!-- Official Signature Footer -->
+    <!-- Footer -->
     <footer>
-      <div>Designed & Produced for High Performance by</div>
-      <div class="company-name">COOL ART ADVERTISING</div>
-      <div class="contact-line">
-        180, Banasha Tower, Village Nahal, Atrauli, Aligarh (UP) 202131<br>
-        Direct Hotline: <a href="tel:+919458614610">+91 9458614610</a> | Email: coolartadvertising@gmail.com
-      </div>
+      <div class="footer-brand">COOL ART ADVERTISING</div>
+      <div>180, Banasha Tower, Village Nahal, Atrauli, Aligarh (UP) 202131</div>
+      <div>Direct Hotline: +91 9458614610 | coolartadvertising@gmail.com</div>
     </footer>
 
   </div>
 
   <!-- Edit Task Modal -->
-  <div class="modal-overlay" id="editModal">
-    <div class="modal-glass">
-      <h3 style="margin-bottom: 16px; font-size: 1.3rem;">कार्य संपादित करें (Edit Task)</h3>
-      <input type="text" id="editInput" class="input-field" style="margin-bottom: 16px;">
+  <div class="modal-backdrop" id="editModal">
+    <div class="modal-slate">
+      <h3 style="margin-bottom: 12px; font-size: 1.1rem; font-family:'Space Grotesk',sans-serif;">Edit Mission Command</h3>
+      <input type="text" id="editInput" class="task-input-field" style="margin-bottom: 14px;">
       
-      <div style="margin-bottom: 20px;">
-        <label style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase;">प्राथमिकता बदलें:</label>
-        <div class="priority-pills" style="margin-top: 8px;">
-          <div class="pill-btn edit-pill" data-p="most-urgent">🔥 Most Urgent</div>
-          <div class="pill-btn edit-pill" data-p="urgent">⚡ Urgent</div>
-          <div class="pill-btn edit-pill" data-p="important">⭐ Important</div>
-          <div class="pill-btn edit-pill" data-p="normal">🟢 Normal</div>
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Update Priority Tier:</label>
+        <div class="priority-selector" style="margin-top: 6px;">
+          <button class="priority-tag-btn edit-pill" data-p="most-urgent">Most Urgent</button>
+          <button class="priority-tag-btn edit-pill" data-p="urgent">Urgent</button>
+          <button class="priority-tag-btn edit-pill" data-p="important">Important</button>
+          <button class="priority-tag-btn edit-pill" data-p="normal">Normal</button>
         </div>
       </div>
 
-      <div style="display: flex; justify-content: flex-end; gap: 10px;">
-        <button class="pill-btn" onclick="closeEditModal()">रद्द करें</button>
-        <button class="btn-create" id="saveEditBtn">अपडेट करें</button>
+      <div style="display:flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn-ghost-util" onclick="closeEditModal()">Cancel</button>
+        <button class="btn-dispatch" id="saveEditBtn">Update</button>
       </div>
     </div>
-  </div>
-
-  <!-- CEO Zen Mode Overlay -->
-  <div class="zen-overlay" id="zenOverlay">
-    <div class="zen-halo"></div>
-    <div style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; color: #ff2d55; margin-bottom: 14px; z-index: 2;">🔥 MOST URGENT TARGET MISSION</div>
-    <div class="zen-title" id="zenTaskTitle">कोई मोस्ट अर्जेंट कार्य नहीं मिला</div>
-    <button class="btn-create" onclick="toggleZenMode()" style="z-index: 2;">EXIT ZEN (ESC)</button>
   </div>
 
   <script>
     const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxakWNTge9m8DApB8hEHfjHlWkxgiBK3n2ElLLuHAOvzLfdFHJ7vtolbIUgufzrtmX_6A/exec";
 
-    // Clean Hindi Quotes
-    const quotes = [
-      "समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।",
-      "महान काम तब होते हैं जब आप प्राथमिकताओं पर बिना रुके प्रहार करते हैं।",
-      "हर एक टिक किया गया टास्क आपको आपकी मंज़िल के एक कदम और करीब ले जाता है।",
-      "दबाव ही कोयले को हीरा बनाता है। मोस्ट अर्जेंट कामों को पहले समाप्त करें।",
-      "जो आज पूरा कर लिया, कल वह आपका नया साम्राज्य खड़ा करेगा।"
+    // Auto-Fading Banner Data
+    const bannerItems = [
+      { tag: "STRATEGIC LEADERSHIP", text: "Precision advertising and brand execution.", id: "bSlide1" },
+      { tag: "REGIONAL MEDIA DESK", text: "Timely news coverage & corporate communication.", id: "bSlide2" },
+      { tag: "GROWTH OPERATIONS", text: "Sab Kuchh Ghar Baithe logistical expansion.", id: "bSlide3" }
     ];
+    let bannerIdx = 0;
 
-    let quoteIndex = 0;
+    function rotateBanner() {
+      const current = document.getElementById(bannerItems[bannerIdx].id);
+      if (current) current.classList.remove('active');
+
+      bannerIdx = (bannerIdx + 1) % bannerItems.length;
+
+      const next = bannerItems[bannerIdx];
+      const nextSlide = document.getElementById(next.id);
+      if (nextSlide) nextSlide.classList.add('active');
+
+      document.getElementById('bannerTagLine').innerText = next.tag;
+      document.getElementById('bannerHeading').innerText = next.text;
+    }
+    setInterval(rotateBanner, 5000);
+
+    // Quotes Ticker
+    const quotes = [
+      "Focus all energy on high-priority targets today.",
+      "Speed of execution determines market dominance.",
+      "Clear pending missions before entering tomorrow.",
+      "Every finished mission builds commercial authority."
+    ];
+    let qIdx = 0;
     setInterval(() => {
-      quoteIndex = (quoteIndex + 1) % quotes.length;
+      qIdx = (qIdx + 1) % quotes.length;
       const qElem = document.getElementById('quoteTicker');
       qElem.style.opacity = '0';
       setTimeout(() => {
-        qElem.innerText = `"\${quotes[quoteIndex]}"`;
+        qElem.innerText = `"${quotes[qIdx]}"`;
         qElem.style.opacity = '1';
-      }, 350);
-    }, 9000);
+      }, 300);
+    }, 8000);
 
-    // Master State
+    // State
     let tasks = JSON.parse(localStorage.getItem('coolart_executive_tasks')) || [];
     let selectedPriority = 'most-urgent';
     let editTaskId = null;
     let editSelectedPriority = 'most-urgent';
-    let audioCtx = null;
+    let isArchiveOpen = false;
 
     const pLabels = {
       'most-urgent': 'Most Urgent',
@@ -941,166 +971,34 @@
       'normal': 'Normal'
     };
 
-    // 1. Live Chronometer: Real-time Day, Date & Seconds Clock
-    function updateLiveClock() {
+    // Live Chronometer (Date, Day, Seconds)
+    function updateChronometer() {
       const now = new Date();
-      const days = ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'];
-      const months = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
+      const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+      const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
       
-      const dayName = days[now.getDay()];
+      const day = days[now.getDay()];
       const dateNum = now.getDate();
-      const monthName = months[now.getMonth()];
+      const month = months[now.getMonth()];
       const year = now.getFullYear();
 
-      let hours = now.getHours();
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12 || 12;
-      const formattedHours = String(hours).padStart(2, '0');
+      let h = now.getHours();
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      const hh = String(h).padStart(2, '0');
 
-      document.getElementById('liveClockDisplay').innerText = 
-        `${dayName},${dateNum} ${monthName}${year} • ${formattedHours}:${minutes}:${seconds}${ampm}`;
+      document.getElementById('liveChronometer').innerText = 
+        `${day}, ${dateNum} ${month} ${year} • ${hh}:${m}:${s} ${ampm}`;
     }
-    setInterval(updateLiveClock, 1000);
-    updateLiveClock();
-
-    // Tactile Click Audio
-    function playTactileClick() {
-      try {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(880, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(1760, audioCtx.currentTime + 0.08);
-        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.13);
-      } catch (e) {}
-    }
-
-    // Save & Local Update
-    function save(syncToCloud = true) {
-      localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
-      render();
-      if (syncToCloud) syncToGoogleSheets();
-    }
-
-    // 2. Push to Google Sheets
-    function syncToGoogleSheets() {
-      const syncStatus = document.getElementById('syncStatusIndicator');
-      syncStatus.innerHTML = `<span>⏳</span> SYNCING...`;
-      syncStatus.style.color = '#ff9f0a';
-
-      const activeRows = tasks.filter(t => !t.completed).map(t => [
-        t.id, t.title, pLabels[t.priority], "Pending", t.contact || "", t.createdAt
-      ]);
-
-      const historyRows = tasks.filter(t => t.completed).map(t => [
-        t.id, t.title, pLabels[t.priority], "Done", t.contact || "", t.createdAt, t.completedAt || ""
-      ]);
-
-      const payload = {
-        action: "sync_all",
-        active: activeRows,
-        history: historyRows
-      };
-
-      fetch(GOOGLE_SHEETS_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      }).then(() => {
-        syncStatus.innerHTML = `<span>●</span> GOOGLE SHEETS LIVE SYNCED`;
-        syncStatus.style.color = '#30d158';
-      }).catch(() => {
-        syncStatus.innerHTML = `<span>●</span> LOCAL SAVED`;
-        syncStatus.style.color = '#ffd60a';
-      });
-    }
-
-    // 3. Robust Google Sheets Reader (Pulls Sheet Data to Screen)
-    function loadFromGoogleSheets(showNotice = false) {
-      const syncStatus = document.getElementById('syncStatusIndicator');
-      if (showNotice) {
-        syncStatus.innerHTML = `<span>⏳</span> CONNECTING SHEET...`;
-        syncStatus.style.color = '#ff9f0a';
-      }
-
-      // Fetch with redirect follow
-      fetch(`${GOOGLE_SHEETS_URL}?action=read&t=${Date.now()}`, {
-        method: 'GET',
-        redirect: 'follow'
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data && (data.active || data.history)) {
-          const freshTasks = [];
-
-          if (Array.isArray(data.active)) {
-            data.active.forEach(row => {
-              if (row && row[0] && row[1]) {
-                freshTasks.push({
-                  id: String(row[0]),
-                  title: String(row[1]),
-                  priority: getPriorityKey(row[2]),
-                  completed: false,
-                  contact: String(row[4] || ''),
-                  createdAt: String(row[5] || ''),
-                  completedAt: null
-                });
-              }
-            });
-          }
-
-          if (Array.isArray(data.history)) {
-            data.history.forEach(row => {
-              if (row && row[0] && row[1]) {
-                freshTasks.push({
-                  id: String(row[0]),
-                  title: String(row[1]),
-                  priority: getPriorityKey(row[2]),
-                  completed: true,
-                  contact: String(row[4] || ''),
-                  createdAt: String(row[5] || ''),
-                  completedAt: String(row[6] || '')
-                });
-              }
-            });
-          }
-
-          if (freshTasks.length > 0) {
-            tasks = freshTasks;
-            localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
-            render();
-          }
-        }
-        syncStatus.innerHTML = `<span>●</span> LIVE CLOUD CONNECTED`;
-        syncStatus.style.color = '#30d158';
-      })
-      .catch(err => {
-        syncStatus.innerHTML = `<span>●</span> LOCAL MODE (OFFLINE)`;
-        syncStatus.style.color = '#ffd60a';
-      });
-    }
-
-    function getPriorityKey(val) {
-      val = String(val || '').toLowerCase();
-      if (val.includes('most')) return 'most-urgent';
-      if (val.includes('urgent')) return 'urgent';
-      if (val.includes('important')) return 'important';
-      return 'normal';
-    }
+    setInterval(updateChronometer, 1000);
+    updateChronometer();
 
     // Priority Selection
-    document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(btn => {
+    document.querySelectorAll('.priority-selector .priority-tag-btn:not(.edit-pill)').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.priority-selector .priority-tag-btn:not(.edit-pill)').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         selectedPriority = btn.getAttribute('data-p');
       });
@@ -1120,6 +1018,88 @@
       return match ? match[0] : null;
     }
 
+    // Save and Sync
+    function save(syncCloud = true) {
+      localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
+      render();
+      if (syncCloud) syncToGoogleSheets();
+    }
+
+    // Google Sheets Push
+    function syncToGoogleSheets() {
+      const statusText = document.getElementById('cloudStatusText');
+      statusText.innerHTML = `<i class="fa-solid fa-spinner fa-spin" style="color:var(--accent-gold)"></i> Syncing...`;
+
+      const activeRows = tasks.filter(t => !t.completed).map(t => [
+        t.id, t.title, pLabels[t.priority], "Pending", t.contact || "", t.createdAt
+      ]);
+
+      const historyRows = tasks.filter(t => t.completed).map(t => [
+        t.id, t.title, pLabels[t.priority], "Done", t.contact || "", t.createdAt, t.completedAt || ""
+      ]);
+
+      fetch(GOOGLE_SHEETS_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "sync_all", active: activeRows, history: historyRows })
+      }).then(() => {
+        statusText.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced`;
+      }).catch(() => {
+        statusText.innerHTML = `<i class="fa-solid fa-cloud-slash" style="color:var(--text-muted)"></i> Offline Local`;
+      });
+    }
+
+    // Google Sheets Pull
+    function fetchFromGoogleSheets(notify = false) {
+      const statusText = document.getElementById('cloudStatusText');
+      if (notify) statusText.innerHTML = `<i class="fa-solid fa-rotate fa-spin"></i> Checking Cloud...`;
+
+      fetch(`${GOOGLE_SHEETS_URL}?action=read&t=${Date.now()}`, { method: 'GET', redirect: 'follow' })
+      .then(res => res.json())
+      .then(data => {
+        if (data && (data.active || data.history)) {
+          const fresh = [];
+          if (Array.isArray(data.active)) {
+            data.active.forEach(r => {
+              if (r && r[0] && r[1]) {
+                fresh.push({
+                  id: String(r[0]), title: String(r[1]), priority: normalizePriority(r[2]),
+                  completed: false, contact: String(r[4] || ''), createdAt: String(r[5] || ''), completedAt: null
+                });
+              }
+            });
+          }
+          if (Array.isArray(data.history)) {
+            data.history.forEach(r => {
+              if (r && r[0] && r[1]) {
+                fresh.push({
+                  id: String(r[0]), title: String(r[1]), priority: normalizePriority(r[2]),
+                  completed: true, contact: String(r[4] || ''), createdAt: String(r[5] || ''), completedAt: String(r[6] || '')
+                });
+              }
+            });
+          }
+          if (fresh.length > 0) {
+            tasks = fresh;
+            localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
+            render();
+          }
+        }
+        statusText.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced`;
+      }).catch(() => {
+        statusText.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced`;
+      });
+    }
+
+    function normalizePriority(val) {
+      val = String(val || '').toLowerCase();
+      if (val.includes('most')) return 'most-urgent';
+      if (val.includes('urgent')) return 'urgent';
+      if (val.includes('important')) return 'important';
+      return 'normal';
+    }
+
     // Add Task
     function addTask() {
       const input = document.getElementById('taskInput');
@@ -1128,9 +1108,9 @@
 
       const phone = extractPhoneNumber(val);
       const now = new Date();
-      const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+      const timeFormatted = `${now.getDate()} ${now.toLocaleDateString('en-US', {month:'short'})}, ${now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', hour12:true})}`;
 
-      const newTask = {
+      tasks.unshift({
         id: 'TSK-' + Math.floor(1000 + Math.random() * 9000),
         title: val,
         priority: selectedPriority,
@@ -1138,11 +1118,9 @@
         contact: phone || '',
         createdAt: timeFormatted,
         completedAt: null
-      };
+      });
 
-      tasks.unshift(newTask);
       input.value = '';
-      playTactileClick();
       save();
     }
 
@@ -1151,38 +1129,35 @@
       if (e.key === 'Enter') addTask();
     });
 
-    // Check Task Done
+    // Check Task
     function toggleCheck(id) {
       const task = tasks.find(t => t.id === id);
       if (!task) return;
-
       task.completed = !task.completed;
       if (task.completed) {
         const now = new Date();
-        task.completedAt = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-        playTactileClick();
+        task.completedAt = `${now.getDate()} ${now.toLocaleDateString('en-US', {month:'short'})}, ${now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', hour12:true})}`;
       } else {
         task.completedAt = null;
       }
       save();
     }
 
-    // Delete Task
     function deleteTask(id) {
       tasks = tasks.filter(t => t.id !== id);
       save();
     }
 
-    // Move Task
-    function moveTask(id, direction) {
-      const activeTasks = tasks.filter(t => !t.completed);
-      const index = activeTasks.findIndex(t => t.id === id);
-      if (index === -1) return;
+    // Move Task (Up/Down)
+    function moveTask(id, dir) {
+      const active = tasks.filter(t => !t.completed);
+      const idx = active.findIndex(t => t.id === id);
+      if (idx === -1) return;
 
-      if (direction === 'up' && index > 0) {
-        swapTasks(id, activeTasks[index - 1].id);
-      } else if (direction === 'down' && index < activeTasks.length - 1) {
-        swapTasks(id, activeTasks[index + 1].id);
+      if (dir === 'up' && idx > 0) {
+        swapTasks(id, active[idx - 1].id);
+      } else if (dir === 'down' && idx < active.length - 1) {
+        swapTasks(id, active[idx + 1].id);
       }
     }
 
@@ -1201,17 +1176,17 @@
       if (!task) return;
       editTaskId = id;
       editSelectedPriority = task.priority;
-
       document.getElementById('editInput').value = task.title;
+
       document.querySelectorAll('.edit-pill').forEach(b => {
         b.classList.toggle('active', b.getAttribute('data-p') === task.priority);
       });
 
-      document.getElementById('editModal').classList.add('show');
+      document.getElementById('editModal').classList.add('active');
     }
 
     function closeEditModal() {
-      document.getElementById('editModal').classList.remove('show');
+      document.getElementById('editModal').classList.remove('active');
       editTaskId = null;
     }
 
@@ -1228,129 +1203,56 @@
       }
     });
 
-    // Drag & Drop
-    let dragSrcId = null;
-    function handleDragStart(e) {
-      dragSrcId = this.getAttribute('data-id');
-      this.classList.add('dragging');
-      e.dataTransfer.effectAllowed = 'move';
-    }
-    function handleDragOver(e) {
-      if (e.preventDefault) e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-      return false;
-    }
-    function handleDrop(e) {
-      if (e.stopPropagation) e.stopPropagation();
-      const dropTargetId = this.getAttribute('data-id');
-      if (dragSrcId && dropTargetId && dragSrcId !== dropTargetId) {
-        swapTasks(dragSrcId, dropTargetId);
-      }
-      return false;
-    }
-    function handleDragEnd() {
-      document.querySelectorAll('.task-item').forEach(el => el.classList.remove('dragging'));
-    }
-
-    // 4. Fully Activated Voice Engine
+    // Sleek Voice Engine with Native Hindi Speech Transcription
     const voiceBtn = document.getElementById('voiceBtn');
     let recognition = null;
     let isListening = false;
 
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      recognition = new SpeechRecognition();
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognition = new SR();
       recognition.continuous = false;
       recognition.interimResults = true;
       recognition.lang = 'hi-IN';
 
       recognition.onstart = () => {
         isListening = true;
-        voiceBtn.classList.add('listening');
+        voiceBtn.classList.add('active-listening');
       };
 
-      recognition.onresult = (event) => {
-        let transcript = '';
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          transcript += event.results[i][0].transcript;
+      recognition.onresult = (e) => {
+        let txt = '';
+        for (let i = e.resultIndex; i < e.results.length; ++i) {
+          txt += e.results[i][0].transcript;
         }
-        if (transcript) {
-          document.getElementById('taskInput').value = transcript;
-        }
+        if (txt) document.getElementById('taskInput').value = txt;
       };
 
       recognition.onerror = () => {
         isListening = false;
-        voiceBtn.classList.remove('listening');
+        voiceBtn.classList.remove('active-listening');
       };
 
       recognition.onend = () => {
         isListening = false;
-        voiceBtn.classList.remove('listening');
+        voiceBtn.classList.remove('active-listening');
       };
 
       voiceBtn.addEventListener('click', () => {
-        if (isListening) {
-          recognition.stop();
-        } else {
-          try {
-            recognition.start();
-          } catch(e) {
-            recognition.stop();
-          }
+        if (isListening) recognition.stop();
+        else {
+          try { recognition.start(); } catch(err) { recognition.stop(); }
         }
       });
     }
 
-    // CEO Zen Mode
-    function toggleZenMode() {
-      const overlay = document.getElementById('zenOverlay');
-      overlay.classList.toggle('active');
-      if (overlay.classList.contains('active')) {
-        const activeMostUrgent = tasks.find(t => !t.completed && t.priority === 'most-urgent') || tasks.find(t => !t.completed);
-        document.getElementById('zenTaskTitle').innerText = activeMostUrgent ? `"\${activeMostUrgent.title}"` : "सभी मुख्य मिशन सम्पन्न हो चुके हैं!";
-      }
-    }
-    document.getElementById('zenBtn').addEventListener('click', toggleZenMode);
-    window.addEventListener('keydown', (e) => {
-      if (e.key.toLowerCase() === 'z' && document.activeElement.tagName !== 'INPUT') toggleZenMode();
-      if (e.key === 'Escape') {
-        document.getElementById('zenOverlay').classList.remove('active');
-        closeEditModal();
-      }
-    });
-
-    // Morning Carry Forward
-    function checkCarryForward() {
-      const todayStr = new Date().toLocaleDateString('hi-IN', { day: 'numeric', month: 'short' });
-      const pendingOld = tasks.filter(t => !t.completed && t.createdAt && !t.createdAt.includes(todayStr));
-      if (pendingOld.length > 0) {
-        document.getElementById('carryForwardText').innerText = `कल के \${pendingOld.length} काम अधूरे हैं। क्या इन्हें आज के टॉप मिशन में जोड़ें?`;
-        document.getElementById('carryForwardAlert').classList.add('show');
-      }
-    }
-
-    function approveCarryForward() {
-      const now = new Date();
-      const timeFormatted = now.toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-      tasks.forEach(t => {
-        if (!t.completed) t.createdAt = timeFormatted;
-      });
-      dismissCarryForward();
-      save();
-    }
-
-    function dismissCarryForward() {
-      document.getElementById('carryForwardAlert').classList.remove('show');
-    }
-
-    // Render Engine
+    // Render Function
     function render() {
       const activeContainer = document.getElementById('activeContainer');
-      const completedContainer = document.getElementById('completedContainer');
+      const archiveContainer = document.getElementById('archiveContainer');
 
       activeContainer.innerHTML = '';
-      completedContainer.innerHTML = '';
+      archiveContainer.innerHTML = '';
 
       const activeList = tasks.filter(t => !t.completed);
       const completedList = tasks.filter(t => t.completed);
@@ -1359,115 +1261,105 @@
       document.getElementById('doneCounter').innerText = completedList.length;
 
       const mostUrgentCount = activeList.filter(t => t.priority === 'most-urgent').length;
-      const noteElem = document.getElementById('priorityStatusNote');
-      if (mostUrgentCount > 0) {
-        noteElem.innerText = `🔥 \${mostUrgentCount} अति आवश्यक कार्य टॉप पर हैं`;
-      } else {
-        noteElem.innerText = ``;
-      }
+      const noteElem = document.getElementById('prioritySummaryNote');
+      noteElem.innerText = mostUrgentCount > 0 ? `🔥 ${mostUrgentCount} Most Urgent` : '';
 
-      // Active
+      // Active Stack
       if (activeList.length === 0) {
-        activeContainer.innerHTML = `<div style="text-align:center; padding:32px; color:#71717a; font-size:1rem;">✨ कोई लंबित कार्य नहीं है। नया मिशन ऊपर दर्ज करें।</div>`;
+        activeContainer.innerHTML = `<div style="text-align:center; padding:28px; color:var(--text-muted); font-size:0.85rem;">All active missions resolved.</div>`;
       } else {
         activeList.forEach((t, idx) => {
-          const card = document.createElement('div');
-          card.className = `task-item ${t.priority}`;
-          card.setAttribute('draggable', 'true');
-          card.setAttribute('data-id', t.id);
+          const row = document.createElement('div');
+          row.className = 'task-card-row';
 
-          card.addEventListener('dragstart', handleDragStart);
-          card.addEventListener('dragover', handleDragOver);
-          card.addEventListener('drop', handleDrop);
-          card.addEventListener('dragend', handleDragEnd);
-
-          let smartActionsHtml = '';
+          let phoneBadge = '';
           if (t.contact) {
-            smartActionsHtml = `
-              <div class="smart-actions">
-                <a class="smart-btn call" href="tel:${t.contact}" title="कॉल करें">📞 ${t.contact}</a>
-                <a class="smart-btn whatsapp" href="https://wa.me/91${t.contact}" target="_blank" title="WhatsApp भेजें">💬 Chat</a>
-              </div>
-            `;
+            phoneBadge = `<a class="contact-link-tag" href="tel:${t.contact}"><i class="fa-solid fa-phone"></i> ${t.contact}</a>`;
           }
 
-          card.innerHTML = `
-            <div class="check-circle" onclick="toggleCheck('${t.id}')"></div>
-            <div class="task-details">
-              <div class="task-text">${escapeHtml(t.title)}</div>
-              <div class="task-sub-meta">
-                <span class="p-tag ${t.priority}">${pLabels[t.priority]}</span>
+          row.innerHTML = `
+            <div class="priority-bullet ${t.priority}"></div>
+            <div class="check-disc" onclick="toggleCheck('${t.id}')"></div>
+            
+            <div class="task-core-content">
+              <div class="task-headline">${escapeHtml(t.title)}</div>
+              <div class="task-sub-info">
                 <span>#${idx + 1}</span>
-                <span>🕒 ${t.createdAt}</span>
-                ${smartActionsHtml}
+                <span>• ${t.createdAt}</span>
+                ${phoneBadge}
               </div>
             </div>
-            <div class="task-actions">
-              <button class="btn-shift" title="ऊपर करें" onclick="moveTask('${t.id}', 'up')">▲</button>
-              <button class="btn-shift" title="नीचे करें" onclick="moveTask('${t.id}', 'down')">▼</button>
-              <button class="btn-action edit" title="एडिट करें" onclick="openEditModal('${t.id}')">✏️</button>
-              <button class="btn-action delete" title="हटाएं" onclick="deleteTask('${t.id}')">✕</button>
+
+            <div class="task-dock-actions">
+              <button class="dock-btn" title="Shift Up" onclick="moveTask('${t.id}', 'up')"><i class="fa-solid fa-arrow-up"></i></button>
+              <button class="dock-btn" title="Shift Down" onclick="moveTask('${t.id}', 'down')"><i class="fa-solid fa-arrow-down"></i></button>
+              <button class="dock-btn" title="Edit" onclick="openEditModal('${t.id}')"><i class="fa-solid fa-pen"></i></button>
+              <button class="dock-btn delete" title="Delete" onclick="deleteTask('${t.id}')"><i class="fa-solid fa-xmark"></i></button>
             </div>
           `;
-          activeContainer.appendChild(card);
+          activeContainer.appendChild(row);
         });
       }
 
-      // Completed
+      // Past Archive Dropdown
       if (completedList.length === 0) {
-        completedContainer.innerHTML = `<div style="text-align:center; padding:20px; color:#52525b; font-size:0.85rem;">पूर्ण किए गए कार्यों का इतिहास यहाँ दर्ज होगा।</div>`;
+        archiveContainer.innerHTML = `<div style="text-align:center; padding:10px; color:var(--text-muted); font-size:0.75rem;">No historical records yet.</div>`;
       } else {
         completedList.forEach(t => {
-          const card = document.createElement('div');
-          card.className = 'task-item done-card';
-          card.innerHTML = `
-            <div class="check-circle completed" onclick="toggleCheck('${t.id}')"></div>
-            <div class="task-details">
-              <div class="task-text">${escapeHtml(t.title)}</div>
-              <div class="task-sub-meta">
-                <span class="p-tag ${t.priority}">${pLabels[t.priority]}</span>
-                <span class="done-timestamp">✓ Finished at: ${t.completedAt}</span>
+          const row = document.createElement('div');
+          row.className = 'task-card-row past-task-row';
+          row.innerHTML = `
+            <div class="check-disc checked" onclick="toggleCheck('${t.id}')"></div>
+            <div class="task-core-content">
+              <div class="task-headline">${escapeHtml(t.title)}</div>
+              <div class="task-sub-info">
+                <span style="color:#30d158">✓ Finished: ${t.completedAt}</span>
               </div>
             </div>
-            <div class="task-actions">
-              <button class="btn-action delete" title="हटाएं" onclick="deleteTask('${t.id}')">✕</button>
+            <div class="task-dock-actions">
+              <button class="dock-btn delete" onclick="deleteTask('${t.id}')"><i class="fa-solid fa-trash"></i></button>
             </div>
           `;
-          completedContainer.appendChild(card);
+          archiveContainer.appendChild(row);
         });
       }
     }
 
-    // Export to Excel / CSV
+    // Archive Toggle
+    document.getElementById('archiveToggleBtn').addEventListener('click', () => {
+      const container = document.getElementById('archiveContainer');
+      const chevron = document.getElementById('archiveChevron');
+      isArchiveOpen = !isArchiveOpen;
+      container.classList.toggle('open', isArchiveOpen);
+      chevron.innerHTML = isArchiveOpen ? `<i class="fa-solid fa-chevron-up"></i>` : `<i class="fa-solid fa-chevron-down"></i>`;
+    });
+
+    // Excel Export
     function exportToExcel() {
       let csv = "\uFEFFTask ID,Mission Title,Priority,Status,Contact,Created At,Completed At\n";
       tasks.forEach(t => {
-        const cleanTitle = `"${t.title.replace(/"/g, '""')}"`;
-        const status = t.completed ? "Done" : "Pending";
-        csv += `${t.id},${cleanTitle},${pLabels[t.priority]},${status},${t.contact || ''},"${t.createdAt}","${t.completedAt || ''}"\n`;
+        csv += `${t.id},"${t.title.replace(/"/g, '""')}",${pLabels[t.priority]},${t.completed ? "Done" : "Pending"},${t.contact || ''},"${t.createdAt}","${t.completedAt || ''}"\n`;
       });
-
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = `CoolArt_Tasks_${new Date().toISOString().slice(0, 10)}.csv`;
+      link.download = `CoolArt_Executive_Tasks_${new Date().toISOString().slice(0, 10)}.csv`;
       link.click();
     }
 
     // WhatsApp Daily Wrap
     function shareDailyBrief() {
       const done = tasks.filter(t => t.completed);
-      let text = `*📊 DAILY EXECUTIVE BRIEF - COOL ART ADVERTISING*\n`;
-      text += `📅 Date: ${new Date().toLocaleDateString('hi-IN')}\n`;
-      text += `✅ Completed Missions (${done.length}):\n`;
+      let msg = `*📊 DAILY EXECUTIVE BRIEF - COOL ART ADVERTISING*\n`;
+      msg += `📅 Date: ${new Date().toLocaleDateString('en-US')}\n`;
+      msg += `✅ Completed Targets (${done.length}):\n`;
       done.slice(0, 10).forEach((t, i) => {
-        text += `${i + 1}. ${t.title} (Finished: ${t.completedAt})\n`;
+        msg += `${i + 1}. ${t.title} (${t.completedAt})\n`;
       });
       const pending = tasks.filter(t => !t.completed).length;
-      text += `\n⏳ Pending for Tomorrow: ${pending} tasks.`;
+      msg += `\n⏳ Active for Tomorrow: ${pending} tasks.`;
 
-      const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-      window.open(waUrl, '_blank');
+      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     function escapeHtml(text) {
@@ -1476,15 +1368,14 @@
       return d.innerHTML;
     }
 
-    // Initial Engine Start
+    // Launch Engine
     render();
-    loadFromGoogleSheets(true);
-    checkCarryForward();
+    fetchFromGoogleSheets(true);
 
-    // Auto Background Sync Every 10 Seconds
+    // Background Auto Sync Every 12 Seconds
     setInterval(() => {
-      loadFromGoogleSheets(false);
-    }, 10000);
+      fetchFromGoogleSheets(false);
+    }, 12000);
   </script>
 </body>
 </html>
