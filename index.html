@@ -1,1006 +1,813 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COMMAND CENTER | Cool Art Advertising Executive OS</title>
+  <title>COMMAND CENTER | Cool Art Advertising</title>
   
-  <!-- CA Favicon Setup -->
   <link rel="icon" type="image/png" href="CA_logo.png">
   <link rel="apple-touch-icon" href="CA_logo.png">
 
-  <!-- Apple SF & Executive Fonts -->
+  <!-- Apple Standard Unified Clean Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --bg-base: #07080c;
-      --panel-surface: rgba(18, 20, 29, 0.65);
-      --panel-border: rgba(255, 255, 255, 0.08);
-      --panel-hover: rgba(255, 255, 255, 0.03);
-      --text-pure: #ffffff;
-      --text-secondary: #9aa0a6;
-      --text-muted: #5f6368;
+      --bg: #090a0f;
+      --card-bg: rgba(18, 20, 28, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --text-sub: #9ca3af;
+      --text-dim: #6b7280;
       
-      /* Subtle Monochrome Accents with Single Highlight */
-      --accent-gold: #e5c07b;
-      --accent-blue: #2997ff;
-      --priority-urgent: #ff453a;
-      --priority-important: #bf5af2;
-      --priority-normal: #30d158;
-      --card-line: rgba(255, 255, 255, 0.05);
+      --accent: #2997ff;
+      --gold: #d4af37;
+      --p-urgent: #ff453a;
+      --p-normal: #30d158;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "SF Pro Display", sans-serif;
+      font-family: 'Inter', 'Noto Sans Devanagari', -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
     body {
-      background-color: var(--bg-base);
-      color: var(--text-pure);
+      background-color: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
-      overflow-x: hidden;
-      padding: 24px 16px 60px;
+      padding: 16px 12px 60px;
     }
-
-    /* Ambient Subtle Deep Lighting */
-    .ambient-glow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .glow-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(140px);
-      opacity: 0.15;
-    }
-
-    .glow-1 { width: 500px; height: 500px; background: #2997ff; top: -10%; left: -5%; }
-    .glow-2 { width: 600px; height: 600px; background: #e5c07b; bottom: -15%; right: -5%; }
 
     .container {
       width: 100%;
-      max-width: 920px;
+      max-width: 680px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      z-index: 10;
-    }
-
-    /* Apple-Style Glass Surface */
-    .glass-box {
-      background: var(--panel-surface);
-      backdrop-filter: blur(40px) saturate(180%);
-      -webkit-backdrop-filter: blur(40px) saturate(180%);
-      border: 1px solid var(--panel-border);
-      border-radius: 18px;
-      padding: 20px 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-      position: relative;
-    }
-
-    /* Top Command Header */
-    .top-header {
-      padding: 18px 24px;
-    }
-
-    .header-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      padding-bottom: 14px;
-    }
-
-    .brand-identity {
-      display: flex;
-      align-items: center;
       gap: 14px;
     }
 
-    .brand-logo-frame {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: #000;
+    /* Clean Frosted Surfaces */
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Top Executive HUD */
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .brand-box {
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: #000;
       overflow: hidden;
       flex-shrink: 0;
     }
 
-    .brand-logo-frame img {
+    .brand-icon img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .status-capsule {
+    .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       padding: 4px 10px;
       border-radius: 20px;
-      background: rgba(48, 209, 88, 0.08);
+      background: rgba(48, 209, 88, 0.1);
       border: 1px solid rgba(48, 209, 88, 0.25);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      color: #30d158;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .pulse-point {
-      width: 6px;
-      height: 6px;
-      background: #30d158;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #30d158;
-      animation: pulse 1.6s infinite alternate;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.3; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1.2); }
-    }
-
-    .chronometer-view {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.88rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 6px 14px;
-      border-radius: 10px;
-      color: var(--accent-gold);
+      color: var(--p-normal);
       letter-spacing: 0.5px;
     }
 
-    .header-summary {
-      margin-top: 14px;
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--p-normal);
+      border-radius: 50%;
+    }
+
+    .clock-badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 5px 10px;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-main {
+      margin-top: 12px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
+      align-items: flex-end;
     }
 
-    .executive-title {
-      font-size: 1.55rem;
+    .main-heading {
+      font-size: 1.25rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      color: #ffffff;
+      color: #fff;
     }
 
-    .quote-ribbon {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
+    .quote-txt {
+      font-size: 0.78rem;
+      color: var(--text-sub);
       margin-top: 4px;
-      transition: opacity 0.3s ease;
-      font-weight: 400;
+      max-width: 440px;
+      line-height: 1.4;
     }
 
-    .stats-tray {
+    .metrics-group {
       display: flex;
       gap: 8px;
     }
 
-    .stat-metric {
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 6px 16px;
+    .metric-pill {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 6px 14px;
       border-radius: 10px;
       text-align: center;
-      min-width: 80px;
+      min-width: 65px;
     }
 
-    .stat-num {
-      font-size: 1.25rem;
+    .metric-val {
+      font-size: 1.15rem;
       font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
       color: #fff;
     }
 
-    .stat-label {
-      font-size: 0.62rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+    .metric-lbl {
+      font-size: 0.58rem;
+      color: var(--text-dim);
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
-    /* Auto-Fading Executive Banner */
-    .banner-viewport {
+    /* 16:9 Ultra-Clean Visual Banner (1200x500 standard) */
+    .banner-box {
       width: 100%;
-      height: 150px;
-      border-radius: 16px;
+      height: 140px;
+      border-radius: 14px;
       overflow: hidden;
       position: relative;
-      border: 1px solid var(--panel-border);
+      border: 1px solid var(--card-border);
       background: #000;
     }
 
-    .banner-slide {
+    .banner-img {
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 1s ease-in-out;
       background-size: cover;
       background-position: center;
     }
 
-    .banner-slide.active { opacity: 1; }
+    .banner-img.active { opacity: 1; }
 
-    .banner-tint {
+    .banner-gradient {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(7, 8, 12, 0.9) 15%, rgba(7, 8, 12, 0.2) 100%);
+      background: linear-gradient(to top, rgba(9,10,15,0.92) 10%, rgba(9,10,15,0.2) 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 16px 20px;
+      padding: 14px;
     }
 
     .banner-tag {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent-gold);
+      font-size: 0.65rem;
+      color: var(--gold);
       font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 1px;
     }
 
-    .banner-heading {
-      font-size: 1.05rem;
+    .banner-title {
+      font-size: 0.95rem;
       font-weight: 600;
       color: #fff;
       margin-top: 2px;
     }
 
-    /* Infinite Marquee Running Strip */
-    .marquee-container {
+    /* Infinite Scrolling Logo Marquee (120x120 standard icons) */
+    .marquee-shell {
       width: 100%;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
       border-radius: 12px;
-      padding: 10px 0;
-      position: relative;
+      padding: 8px 0;
       display: flex;
       align-items: center;
     }
 
     .marquee-track {
       display: flex;
-      gap: 36px;
+      gap: 32px;
       width: max-content;
-      animation: marqueeScroll 28s linear infinite;
+      animation: smoothScroll 25s linear infinite;
     }
 
-    .marquee-track:hover {
-      animation-play-state: paused;
-    }
+    .marquee-track:hover { animation-play-state: paused; }
 
-    @keyframes marqueeScroll {
+    @keyframes smoothScroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    .brand-pill-item {
+    .logo-item {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      color: var(--text-secondary);
-      font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: 0.5px;
+      color: var(--text-sub);
       white-space: nowrap;
     }
 
-    .brand-pill-item i {
-      color: var(--accent-gold);
-      font-size: 0.85rem;
+    .logo-item img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      border-radius: 4px;
     }
 
-    /* Task Input System with Modern Sleek Mic */
-    .input-panel {
+    /* Input & Sleek Wave Mic */
+    .input-shell {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .input-box-holder {
+    .field-wrapper {
       position: relative;
       display: flex;
       align-items: center;
     }
 
-    .task-input-field {
+    .clean-input {
       width: 100%;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 12px;
-      padding: 14px 50px 14px 16px;
+      padding: 12px 48px 12px 14px;
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       outline: none;
-      transition: all 0.25s ease;
+      transition: border-color 0.2s;
     }
 
-    .task-input-field:focus {
-      border-color: rgba(255, 255, 255, 0.35);
-      background: rgba(0, 0, 0, 0.6);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.06);
+    .clean-input:focus {
+      border-color: rgba(255,255,255,0.35);
     }
 
-    /* Apple Siri-Style Modern Wave Mic */
-    .sleek-mic-btn {
+    .mic-button {
       position: absolute;
-      right: 12px;
+      right: 10px;
       background: transparent;
       border: none;
-      color: var(--text-secondary);
+      color: var(--text-sub);
       width: 32px;
       height: 32px;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       font-size: 1rem;
-      transition: all 0.2s ease;
+      transition: all 0.2s;
     }
 
-    .sleek-mic-btn:hover {
-      color: #fff;
-      transform: scale(1.08);
+    .mic-button:hover { color: #fff; }
+    .mic-button.listening {
+      color: var(--p-urgent);
+      animation: pulseMic 1.2s infinite alternate;
     }
 
-    .sleek-mic-btn.active-listening {
-      color: #ff453a;
-      animation: micPulse 1.2s infinite alternate;
+    @keyframes pulseMic {
+      0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--p-urgent)); }
+      100% { transform: scale(1.2); filter: drop-shadow(0 0 8px var(--p-urgent)); }
     }
 
-    @keyframes micPulse {
-      0% { transform: scale(1); filter: drop-shadow(0 0 2px #ff453a); }
-      100% { transform: scale(1.18); filter: drop-shadow(0 0 10px #ff453a); }
-    }
-
-    .input-action-bar {
+    .controls-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
-    .priority-selector {
+    .priority-pills {
       display: flex;
-      gap: 6px;
+      gap: 5px;
       flex-wrap: wrap;
     }
 
-    .priority-tag-btn {
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
+    .pill-btn {
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 500;
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--text-secondary);
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-sub);
+      transition: all 0.15s;
     }
 
-    .priority-tag-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-    }
-
-    .priority-tag-btn.active[data-p="most-urgent"] {
-      background: rgba(255, 69, 58, 0.15);
-      border-color: #ff453a;
-      color: #ff453a;
-    }
-
-    .priority-tag-btn.active[data-p="urgent"] {
-      background: rgba(229, 192, 123, 0.15);
-      border-color: var(--accent-gold);
-      color: var(--accent-gold);
-    }
-
-    .priority-tag-btn.active[data-p="important"] {
-      background: rgba(191, 90, 242, 0.15);
-      border-color: var(--priority-important);
-      color: var(--priority-important);
-    }
-
-    .priority-tag-btn.active[data-p="normal"] {
-      background: rgba(48, 209, 88, 0.15);
-      border-color: var(--priority-normal);
-      color: var(--priority-normal);
-    }
+    .pill-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .pill-btn.active[data-p="most-urgent"] { background: rgba(255,69,58,0.15); border-color: var(--p-urgent); color: var(--p-urgent); }
+    .pill-btn.active[data-p="urgent"] { background: rgba(212,175,55,0.15); border-color: var(--gold); color: var(--gold); }
+    .pill-btn.active[data-p="important"] { background: rgba(191,90,242,0.15); border-color: #bf5af2; color: #bf5af2; }
+    .pill-btn.active[data-p="normal"] { background: rgba(48,209,88,0.15); border-color: var(--p-normal); color: var(--p-normal); }
 
     .btn-dispatch {
       background: #ffffff;
       color: #000000;
       border: none;
-      padding: 8px 20px;
-      border-radius: 10px;
-      font-size: 0.85rem;
-      font-weight: 700;
+      padding: 7px 18px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: 'Space Grotesk', sans-serif;
+      transition: opacity 0.15s;
     }
 
-    .btn-dispatch:hover {
-      background: #e6e6e6;
-      transform: translateY(-1px);
-    }
+    .btn-dispatch:hover { opacity: 0.9; }
 
-    /* Operation Controls Bar */
-    .utility-bar {
+    /* Utility Bar */
+    .bar-utility {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .utility-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .btn-ghost-util {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--text-secondary);
-      padding: 6px 12px;
-      border-radius: 8px;
       font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+
+    .util-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--text-sub);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.7rem;
       cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s;
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      gap: 5px;
+    }
+
+    .util-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+    /* FULL-WIDTH LINEAR TASK CARD (No Broken Lines) */
+    .task-list {
+      display: flex;
+      flex-direction: column;
       gap: 6px;
     }
 
-    .btn-ghost-util:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
-
-    /* Full-Width Linear Task Card Flow */
-    .section-title {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
+    .task-row {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 12px 14px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      gap: 12px;
+      transition: background 0.15s;
     }
 
-    .task-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .task-row:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.1);
     }
 
-    .task-card-row {
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-      cursor: grab;
-      position: relative;
-    }
-
-    .task-card-row:hover {
-      background: rgba(255, 255, 255, 0.045);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-1px);
-    }
-
-    .task-card-row:active { cursor: grabbing; }
-
-    /* Minimal Clean Priority Indicator Dot */
-    .priority-bullet {
+    .dot-priority {
       width: 7px;
       height: 7px;
       border-radius: 50%;
+      margin-top: 6px;
       flex-shrink: 0;
     }
 
-    .priority-bullet.most-urgent { background: #ff453a; box-shadow: 0 0 6px rgba(255, 69, 58, 0.6); }
-    .priority-bullet.urgent { background: var(--accent-gold); box-shadow: 0 0 6px rgba(229, 192, 123, 0.6); }
-    .priority-bullet.important { background: var(--priority-important); }
-    .priority-bullet.normal { background: var(--priority-normal); }
+    .dot-priority.most-urgent { background: var(--p-urgent); box-shadow: 0 0 6px rgba(255,69,58,0.5); }
+    .dot-priority.urgent { background: var(--gold); }
+    .dot-priority.important { background: #bf5af2; }
+    .dot-priority.normal { background: var(--p-normal); }
 
-    /* Crisp iOS Checkbox */
-    .check-disc {
-      width: 22px;
-      height: 22px;
+    .check-box {
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border: 1.5px solid rgba(255,255,255,0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      margin-top: 1px;
       flex-shrink: 0;
-      transition: all 0.2s ease;
     }
 
-    .check-disc:hover {
-      border-color: #fff;
+    .check-box.done {
+      background: var(--p-normal);
+      border-color: var(--p-normal);
     }
 
-    .check-disc.checked {
-      background: #30d158;
-      border-color: #30d158;
-    }
-
-    .check-disc.checked::after {
+    .check-box.done::after {
       content: '✓';
       color: #000;
+      font-size: 0.65rem;
       font-weight: 800;
-      font-size: 0.75rem;
     }
 
-    /* Core Content Block Utilizing Full Horizontal Space */
-    .task-core-content {
+    /* 100% Horizontal Flow for Text */
+    .task-body {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
       min-width: 0;
     }
 
-    .task-headline {
-      font-size: 0.98rem;
+    .task-title {
+      font-size: 0.92rem;
       font-weight: 500;
       color: #ffffff;
       line-height: 1.45;
       word-break: break-word;
     }
 
-    .task-sub-info {
+    /* Meta and Actions in bottom horizontal line */
+    .task-meta-line {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      padding-top: 2px;
     }
 
-    .contact-link-tag {
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-size: 0.68rem;
-      font-weight: 600;
+    .meta-details {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .phone-tag {
+      color: var(--p-normal);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      background: rgba(48, 209, 88, 0.08);
-      border: 1px solid rgba(48, 209, 88, 0.2);
-      color: #30d158;
+      gap: 3px;
     }
 
-    /* Sleek Actions Clustered on Edge */
-    .task-dock-actions {
+    .actions-cluster {
       display: flex;
       align-items: center;
-      gap: 4px;
-      flex-shrink: 0;
+      gap: 6px;
     }
 
-    .dock-btn {
+    .action-icon {
       background: transparent;
       border: none;
-      color: var(--text-muted);
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--text-dim);
       cursor: pointer;
-      font-size: 0.75rem;
-      transition: all 0.15s;
+      font-size: 0.72rem;
+      padding: 2px 4px;
+      transition: color 0.15s;
     }
 
-    .dock-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
+    .action-icon:hover { color: #fff; }
+    .action-icon.del:hover { color: var(--p-urgent); }
 
-    .dock-btn.delete:hover {
-      color: #ff453a;
-      background: rgba(255, 69, 58, 0.12);
-    }
-
-    /* Historical Archive Accordion Section */
-    .archive-card {
-      border: 1px solid var(--panel-border);
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 14px;
+    /* Archive */
+    .archive-shell {
+      border: 1px solid var(--card-border);
+      background: rgba(0,0,0,0.25);
+      border-radius: 12px;
       overflow: hidden;
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
-    .archive-header-trigger {
-      padding: 12px 18px;
+    .archive-header {
+      padding: 10px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      font-family: 'Space Grotesk', sans-serif;
-      color: var(--text-secondary);
-      user-select: none;
+      color: var(--text-sub);
     }
 
-    .archive-header-trigger:hover {
-      background: rgba(255, 255, 255, 0.02);
-      color: #fff;
-    }
-
-    .archive-contents {
+    .archive-list {
       display: none;
-      padding: 14px;
+      padding: 10px;
       flex-direction: column;
-      gap: 8px;
-      background: rgba(0, 0, 0, 0.2);
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      gap: 6px;
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
 
-    .archive-contents.open { display: flex; }
+    .archive-list.open { display: flex; }
 
-    .past-task-row {
+    .done-row {
       opacity: 0.45;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 10px 14px;
     }
 
-    .past-task-row .task-headline {
+    .done-row .task-title {
       text-decoration: line-through;
-      color: var(--text-secondary);
+      color: var(--text-sub);
     }
 
-    /* Edit Modal */
-    .modal-backdrop {
+    /* Modal */
+    .modal-veil {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(20px);
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(16px);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 1000;
-      padding: 20px;
+      padding: 16px;
     }
 
-    .modal-backdrop.active { display: flex; }
+    .modal-veil.show { display: flex; }
 
-    .modal-slate {
-      background: #111218;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 16px;
-      padding: 22px;
+    .modal-box {
+      background: #11131a;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 18px;
       width: 100%;
-      max-width: 460px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+      max-width: 440px;
     }
 
-    /* Minimal Official Footer */
+    /* Footer */
     footer {
-      margin-top: 40px;
-      width: 100%;
-      max-width: 920px;
+      margin-top: 30px;
       text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      line-height: 1.6;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.5;
     }
 
-    .footer-brand {
-      font-weight: 700;
-      font-size: 0.88rem;
-      letter-spacing: 1px;
-      color: #fff;
-      text-transform: uppercase;
-      font-family: 'Space Grotesk', sans-serif;
+    .footer-title {
+      color: var(--text-sub);
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Light Backdrops -->
-  <div class="ambient-glow">
-    <div class="glow-orb glow-1"></div>
-    <div class="glow-orb glow-2"></div>
-  </div>
-
   <div class="container">
     
-    <!-- Top Executive Header -->
-    <header class="glass-box top-header">
-      <div class="header-nav">
-        <div class="brand-identity">
-          <div class="brand-logo-frame" title="Cool Art Executive Logo">
-            <img src="CA_logo.png" alt="CA Logo" onerror="this.parentElement.innerHTML='<span style=\'font-weight:800; font-size:0.9rem; color:#fff;\'>CA</span>'">
+    <!-- Top HUD -->
+    <header class="glass-card">
+      <div class="header-top">
+        <div class="brand-box">
+          <div class="brand-icon">
+            <img src="CA_logo.png" alt="CA" onerror="this.parentElement.innerHTML='<span style=\'font-size:0.8rem; font-weight:700; color:#fff;\'>CA</span>'">
           </div>
-
-          <div class="status-capsule">
-            <div class="pulse-point"></div>
-            COOL ART EXECUTIVE ACTIVE
+          <div class="status-pill">
+            <div class="status-dot"></div>
+            EXECUTIVE COMMAND
           </div>
         </div>
-
-        <div class="chronometer-view" id="liveChronometer">--:--:-- --</div>
+        <div class="clock-badge" id="hudClock">--:-- --</div>
       </div>
 
-      <div class="header-summary">
+      <div class="header-main">
         <div>
-          <h1 class="executive-title">EXECUTIVE COMMAND BOARD</h1>
-          <div class="quote-ribbon" id="quoteTicker">"Focus all energy on high-priority targets today."</div>
+          <h1 class="main-heading">मिशन डैशबोर्ड</h1>
+          <div class="quote-txt" id="quoteTicker">"समय सबसे बड़ा धन है। जो महत्वपूर्ण है, उसे पूरी ताकत से समाप्त करें।"</div>
         </div>
 
-        <div class="stats-tray">
-          <div class="stat-metric">
-            <div class="stat-num" id="activeCounter">0</div>
-            <div class="stat-label">ACTIVE</div>
+        <div class="metrics-group">
+          <div class="metric-pill">
+            <div class="metric-val" id="activeCnt">0</div>
+            <div class="metric-lbl">ACTIVE</div>
           </div>
-          <div class="stat-metric">
-            <div class="stat-num" id="doneCounter">0</div>
-            <div class="stat-label">RESOLVED</div>
+          <div class="metric-pill">
+            <div class="metric-val" id="doneCnt">0</div>
+            <div class="metric-lbl">RESOLVED</div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Auto-Fading Executive Banner -->
-    <section class="banner-viewport">
-      <div class="banner-slide active" id="bSlide1" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900');"></div>
-      <div class="banner-slide" id="bSlide2" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&q=80&w=900');"></div>
-      <div class="banner-slide" id="bSlide3" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=900');"></div>
+    <!-- 16:9 Clean Visual Banner (1200x500 standard) -->
+    <section class="banner-box">
+      <div class="banner-img active" id="slideA" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200');"></div>
+      <div class="banner-img" id="slideB" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200');"></div>
+      <div class="banner-img" id="slideC" style="background-image: url('https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&q=80&w=1200');"></div>
 
-      <div class="banner-tint">
-        <span class="banner-tag" id="bannerTagLine">STRATEGIC LEADERSHIP</span>
-        <h3 class="banner-heading" id="bannerHeading">Precision advertising and media execution.</h3>
+      <div class="banner-gradient">
+        <span class="banner-tag" id="bannerTag">OPERATIONS & MEDIA</span>
+        <h3 class="banner-title" id="bannerHeadline">Cool Art Advertising Corporate Command</h3>
       </div>
     </section>
 
-    <!-- Infinite Marquee Running Strip of All Brand Enterprises -->
-    <section class="marquee-container">
+    <!-- Infinite Scrolling Logo Strip (Standard 120x120 Icon Places) -->
+    <section class="marquee-shell">
       <div class="marquee-track">
-        <span class="brand-pill-item"><i class="fa-solid fa-palette"></i> COOL ART ADVERTISING</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-newspaper"></i> DAINIK JAGRAN AGENCY</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-store"></i> SAB KUCHH GHAR BAITHE</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-bullhorn"></i> DAINIK BHASKAR TEHSIL COMMAND</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-camera"></i> COOL ART STUDIO NAHAL</span>
-        
-        <!-- Duplicated track for smooth infinite loop -->
-        <span class="brand-pill-item"><i class="fa-solid fa-palette"></i> COOL ART ADVERTISING</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-newspaper"></i> DAINIK JAGRAN AGENCY</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-store"></i> SAB KUCHH GHAR BAITHE</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-bullhorn"></i> DAINIK BHASKAR TEHSIL COMMAND</span>
-        <span class="brand-pill-item"><i class="fa-solid fa-camera"></i> COOL ART STUDIO NAHAL</span>
+        <span class="logo-item"><img src="CA_logo.png" onerror="this.style.display='none'"> COOL ART ADVERTISING</span>
+        <span class="logo-item"><i class="fa-solid fa-newspaper" style="color:var(--gold)"></i> DAINIK JAGRAN AGENCY</span>
+        <span class="logo-item"><i class="fa-solid fa-store" style="color:var(--accent)"></i> SAB KUCHH GHAR BAITHE</span>
+        <span class="logo-item"><i class="fa-solid fa-bullhorn" style="color:var(--p-urgent)"></i> DAINIK BHASKAR COMMAND</span>
+        <span class="logo-item"><i class="fa-solid fa-camera" style="color:var(--p-normal)"></i> COOL ART STUDIO NAHAL</span>
+
+        <!-- Repeated for seamless loop -->
+        <span class="logo-item"><img src="CA_logo.png" onerror="this.style.display='none'"> COOL ART ADVERTISING</span>
+        <span class="logo-item"><i class="fa-solid fa-newspaper" style="color:var(--gold)"></i> DAINIK JAGRAN AGENCY</span>
+        <span class="logo-item"><i class="fa-solid fa-store" style="color:var(--accent)"></i> SAB KUCHH GHAR BAITHE</span>
+        <span class="logo-item"><i class="fa-solid fa-bullhorn" style="color:var(--p-urgent)"></i> DAINIK BHASKAR COMMAND</span>
+        <span class="logo-item"><i class="fa-solid fa-camera" style="color:var(--p-normal)"></i> COOL ART STUDIO NAHAL</span>
       </div>
     </section>
 
-    <!-- Modern Task Input Panel -->
-    <section class="glass-box input-panel">
-      <div class="input-box-holder">
-        <input type="text" id="taskInput" class="task-input-field" placeholder="Enter executive mission or tap mic to speak in Hindi..." autofocus>
-        <button class="sleek-mic-btn" id="voiceBtn" title="Voice Typing (Hindi Supported)">
+    <!-- Task Input System with Smart Wave Mic -->
+    <section class="glass-card input-shell">
+      <div class="field-wrapper">
+        <input type="text" id="taskInput" class="clean-input" placeholder="नया मिशन दर्ज करें (बोलने के लिए माइक दबाएँ)..." autofocus>
+        <button class="mic-button" id="voiceBtn" title="Speak in Hindi/English">
           <i class="fa-solid fa-microphone"></i>
         </button>
       </div>
 
-      <div class="input-action-bar">
-        <div class="priority-selector">
-          <button class="priority-tag-btn active" data-p="most-urgent">🔥 Most Urgent</button>
-          <button class="priority-tag-btn" data-p="urgent">⚡ Urgent</button>
-          <button class="priority-tag-btn" data-p="important">⭐ Important</button>
-          <button class="priority-tag-btn" data-p="normal">🟢 Normal</button>
+      <div class="controls-row">
+        <div class="priority-pills">
+          <button class="pill-btn active" data-p="most-urgent">🔥 Most Urgent</button>
+          <button class="pill-btn" data-p="urgent">⚡ Urgent</button>
+          <button class="pill-btn" data-p="important">⭐ Important</button>
+          <button class="pill-btn" data-p="normal">🟢 Normal</button>
         </div>
 
         <button class="btn-dispatch" id="addTaskBtn">+ ADD TARGET</button>
       </div>
     </section>
 
-    <!-- Controls & Sync Utility -->
-    <div class="utility-bar">
-      <div id="cloudStatusText"><i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced</div>
-      <div class="utility-actions">
-        <button class="btn-ghost-util" onclick="fetchFromGoogleSheets(true)"><i class="fa-solid fa-rotate"></i> Refresh</button>
-        <button class="btn-ghost-util" onclick="exportToExcel()"><i class="fa-solid fa-file-excel"></i> Excel</button>
-        <button class="btn-ghost-util" onclick="shareDailyBrief()"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> Daily Wrap</button>
+    <!-- Utility Bar -->
+    <div class="bar-utility">
+      <div id="syncStatus"><i class="fa-solid fa-cloud" style="color:var(--p-normal)"></i> Google Sheets Synced</div>
+      <div style="display:flex; gap:6px;">
+        <button class="util-btn" onclick="fetchLive(true)"><i class="fa-solid fa-rotate"></i> Sync</button>
+        <button class="util-btn" onclick="exportExcel()"><i class="fa-solid fa-file-excel"></i> Excel</button>
+        <button class="util-btn" onclick="shareWhatsapp()"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> Wrap</button>
       </div>
     </div>
 
-    <!-- Active Tasks Flow (Utilizing Full Linear Horizontal Width) -->
+    <!-- Active Tasks (100% Horizontal Width Utilization) -->
     <section>
-      <div class="section-title">
-        <span>PENDING ACTIVE MISSIONS</span>
-        <span id="prioritySummaryNote" style="color:var(--priority-urgent)"></span>
-      </div>
-      <div class="task-stack" id="activeContainer"></div>
+      <div class="task-list" id="activeStack"></div>
     </section>
 
     <!-- Past Daily History Dropdown -->
-    <section class="archive-card">
-      <div class="archive-header-trigger" id="archiveToggleBtn">
-        <span><i class="fa-solid fa-folder-closed"></i> VIEW PAST RESOLVED ARCHIVE</span>
-        <span id="archiveChevron"><i class="fa-solid fa-chevron-down"></i></span>
+    <section class="archive-shell">
+      <div class="archive-header" id="archiveTrigger">
+        <span><i class="fa-solid fa-folder-closed"></i> VIEW PAST RESOLVED LOGS</span>
+        <span id="archiveCaret"><i class="fa-solid fa-chevron-down"></i></span>
       </div>
-      <div class="archive-contents" id="archiveContainer"></div>
+      <div class="archive-list" id="archiveStack"></div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <div class="footer-brand">COOL ART ADVERTISING</div>
+      <div class="footer-title">COOL ART ADVERTISING</div>
       <div>180, Banasha Tower, Village Nahal, Atrauli, Aligarh (UP) 202131</div>
       <div>Direct Hotline: +91 9458614610 | coolartadvertising@gmail.com</div>
     </footer>
 
   </div>
 
-  <!-- Edit Task Modal -->
-  <div class="modal-backdrop" id="editModal">
-    <div class="modal-slate">
-      <h3 style="margin-bottom: 12px; font-size: 1.1rem; font-family:'Space Grotesk',sans-serif;">Edit Mission Command</h3>
-      <input type="text" id="editInput" class="task-input-field" style="margin-bottom: 14px;">
+  <!-- Edit Modal -->
+  <div class="modal-veil" id="editModal">
+    <div class="modal-box">
+      <h3 style="font-size:0.95rem; margin-bottom:10px;">कार्य संपादित करें</h3>
+      <input type="text" id="editField" class="clean-input" style="margin-bottom:12px;">
       
-      <div style="margin-bottom: 16px;">
-        <label style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Update Priority Tier:</label>
-        <div class="priority-selector" style="margin-top: 6px;">
-          <button class="priority-tag-btn edit-pill" data-p="most-urgent">Most Urgent</button>
-          <button class="priority-tag-btn edit-pill" data-p="urgent">Urgent</button>
-          <button class="priority-tag-btn edit-pill" data-p="important">Important</button>
-          <button class="priority-tag-btn edit-pill" data-p="normal">Normal</button>
+      <div style="margin-bottom:14px;">
+        <div class="priority-pills">
+          <button class="pill-btn edit-pill" data-p="most-urgent">Most Urgent</button>
+          <button class="pill-btn edit-pill" data-p="urgent">Urgent</button>
+          <button class="pill-btn edit-pill" data-p="important">Important</button>
+          <button class="pill-btn edit-pill" data-p="normal">Normal</button>
         </div>
       </div>
 
-      <div style="display:flex; justify-content: flex-end; gap: 8px;">
-        <button class="btn-ghost-util" onclick="closeEditModal()">Cancel</button>
-        <button class="btn-dispatch" id="saveEditBtn">Update</button>
+      <div style="display:flex; justify-content:flex-end; gap:6px;">
+        <button class="util-btn" onclick="closeEdit()">रद्द करें</button>
+        <button class="btn-dispatch" id="saveEditBtn">अपडेट करें</button>
       </div>
     </div>
   </div>
 
   <script>
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxakWNTge9m8DApB8hEHfjHlWkxgiBK3n2ElLLuHAOvzLfdFHJ7vtolbIUgufzrtmX_6A/exec";
+    const SHEETS_URL = "https://script.google.com/macros/s/AKfycbxakWNTge9m8DApB8hEHfjHlWkxgiBK3n2ElLLuHAOvzLfdFHJ7vtolbIUgufzrtmX_6A/exec";
 
-    // Auto-Fading Banner Data
-    const bannerItems = [
-      { tag: "STRATEGIC LEADERSHIP", text: "Precision advertising and brand execution.", id: "bSlide1" },
-      { tag: "REGIONAL MEDIA DESK", text: "Timely news coverage & corporate communication.", id: "bSlide2" },
-      { tag: "GROWTH OPERATIONS", text: "Sab Kuchh Ghar Baithe logistical expansion.", id: "bSlide3" }
+    // Carousel Data
+    const slides = [
+      { tag: "OPERATIONS & MEDIA", title: "Cool Art Advertising Corporate Command", id: "slideA" },
+      { tag: "CREATIVE STRATEGY", title: "Brand Identity, Flex & Offset Print Infrastructure", id: "slideB" },
+      { tag: "REGIONAL EXPANSION", title: "Sab Kuchh Ghar Baithe Digital Commerce Hub", id: "slideC" }
     ];
-    let bannerIdx = 0;
+    let sIdx = 0;
+    setInterval(() => {
+      const cur = document.getElementById(slides[sIdx].id);
+      if (cur) cur.classList.remove('active');
+      sIdx = (sIdx + 1) % slides.length;
+      const next = slides[sIdx];
+      const nextElem = document.getElementById(next.id);
+      if (nextElem) nextElem.classList.add('active');
+      document.getElementById('bannerTag').innerText = next.tag;
+      document.getElementById('bannerHeadline').innerText = next.title;
+    }, 5000);
 
-    function rotateBanner() {
-      const current = document.getElementById(bannerItems[bannerIdx].id);
-      if (current) current.classList.remove('active');
-
-      bannerIdx = (bannerIdx + 1) % bannerItems.length;
-
-      const next = bannerItems[bannerIdx];
-      const nextSlide = document.getElementById(next.id);
-      if (nextSlide) nextSlide.classList.add('active');
-
-      document.getElementById('bannerTagLine').innerText = next.tag;
-      document.getElementById('bannerHeading').innerText = next.text;
-    }
-    setInterval(rotateBanner, 5000);
-
-    // Quotes Ticker
-    const quotes = [
-      "Focus all energy on high-priority targets today.",
-      "Speed of execution determines market dominance.",
-      "Clear pending missions before entering tomorrow.",
-      "Every finished mission builds commercial authority."
+    // Guaranteed Clean Quotes (Unicode Escaped)
+    const quoteList = [
+      "\u0938\u092e\u092f \u0938\u092c\u0938\u0947 \u092c\u0921\u093c\u093e \u0927\u0928 \u0939\u0948\u0964 \u091c\u094b \u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u0939\u0948, \u0909\u0938\u0947 \u092a\u0942\u0930\u0940 \u0924\u093e\u0915\u0924 \u0938\u0947 \u0938\u092e\u093e\u092a\u094d\u0924 \u0915\u0930\u0947\u0902\u0964",
+      "\u092e\u0939\u093e\u0928 \u0915\u093e\u092e \u0924\u092c \u0939\u094b\u0924\u0947 \u0939\u0948\u0902 \u091c\u092c \u0906\u092a \u092a\u094d\u0930\u093e\u0925\u092e\u093f\u0915\u0924\u093e\u0913\u0902 \u092a\u0930 \u092c\u093f\u0928\u093e \u0930\u0941\u0915\u0947 \u092a\u094d\u0930\u0939\u093e\u0930 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964",
+      "\u0939\u0930 \u090f\u0915 \u091f\u093f\u0915 \u0915\u093f\u092f\u093e \u0917\u092f\u093e \u091f\u093e\u0938\u094d\u0915 \u0906\u092a\u0915\u094b \u0906\u092a\u0915\u0940 \u092e\u0902\u091c\u093c\u093f\u0932 \u0915\u0947 \u0915\u0930\u0940\u092c \u0932\u0947 \u091c\u093e\u0924\u093e \u0939\u0948\u0964"
     ];
     let qIdx = 0;
     setInterval(() => {
-      qIdx = (qIdx + 1) % quotes.length;
+      qIdx = (qIdx + 1) % quoteList.length;
       const qElem = document.getElementById('quoteTicker');
       qElem.style.opacity = '0';
       setTimeout(() => {
-        qElem.innerText = `"${quotes[qIdx]}"`;
+        qElem.textContent = `"${quoteList[qIdx]}"`;
         qElem.style.opacity = '1';
       }, 300);
     }, 8000);
 
     // State
     let tasks = JSON.parse(localStorage.getItem('coolart_executive_tasks')) || [];
-    let selectedPriority = 'most-urgent';
-    let editTaskId = null;
-    let editSelectedPriority = 'most-urgent';
-    let isArchiveOpen = false;
+    let priorityVal = 'most-urgent';
+    let editId = null;
+    let editPVal = 'most-urgent';
 
-    const pLabels = {
+    const pText = {
       'most-urgent': 'Most Urgent',
       'urgent': 'Urgent',
       'important': 'Important',
       'normal': 'Normal'
     };
 
-    // Live Chronometer (Date, Day, Seconds)
-    function updateChronometer() {
+    // Live Clock
+    function tickClock() {
       const now = new Date();
       const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
       const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-      
-      const day = days[now.getDay()];
-      const dateNum = now.getDate();
-      const month = months[now.getMonth()];
-      const year = now.getFullYear();
-
       let h = now.getHours();
       const m = String(now.getMinutes()).padStart(2, '0');
       const s = String(now.getSeconds()).padStart(2, '0');
-      const ampm = h >= 12 ? 'PM' : 'AM';
+      const ap = h >= 12 ? 'PM' : 'AM';
       h = h % 12 || 12;
-      const hh = String(h).padStart(2, '0');
-
-      document.getElementById('liveChronometer').innerText = 
-        `${day}, ${dateNum} ${month} ${year} • ${hh}:${m}:${s} ${ampm}`;
+      document.getElementById('hudClock').innerText = 
+        `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} • ${String(h).padStart(2, '0')}:${m}:${s} ${ap}`;
     }
-    setInterval(updateChronometer, 1000);
-    updateChronometer();
+    setInterval(tickClock, 1000);
+    tickClock();
 
     // Priority Selection
-    document.querySelectorAll('.priority-selector .priority-tag-btn:not(.edit-pill)').forEach(btn => {
+    document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.priority-selector .priority-tag-btn:not(.edit-pill)').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.priority-pills .pill-btn:not(.edit-pill)').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        selectedPriority = btn.getAttribute('data-p');
+        priorityVal = btn.getAttribute('data-p');
       });
     });
 
@@ -1008,75 +815,61 @@
       btn.addEventListener('click', () => {
         document.querySelectorAll('.edit-pill').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        editSelectedPriority = btn.getAttribute('data-p');
+        editPVal = btn.getAttribute('data-p');
       });
     });
 
-    // Detect Phone Number
-    function extractPhoneNumber(str) {
-      const match = str.match(/\b[6-9]\d{9}\b/);
-      return match ? match[0] : null;
+    function getPhone(t) {
+      const m = t.match(/\b[6-9]\d{9}\b/);
+      return m ? m[0] : null;
     }
 
-    // Save and Sync
-    function save(syncCloud = true) {
+    // Storage and Google Sync
+    function saveState(sync = true) {
       localStorage.setItem('coolart_executive_tasks', JSON.stringify(tasks));
       render();
-      if (syncCloud) syncToGoogleSheets();
+      if (sync) pushCloud();
     }
 
-    // Google Sheets Push
-    function syncToGoogleSheets() {
-      const statusText = document.getElementById('cloudStatusText');
-      statusText.innerHTML = `<i class="fa-solid fa-spinner fa-spin" style="color:var(--accent-gold)"></i> Syncing...`;
+    function pushCloud() {
+      const st = document.getElementById('syncStatus');
+      st.innerHTML = `<i class="fa-solid fa-spinner fa-spin" style="color:var(--gold)"></i> Syncing...`;
 
-      const activeRows = tasks.filter(t => !t.completed).map(t => [
-        t.id, t.title, pLabels[t.priority], "Pending", t.contact || "", t.createdAt
-      ]);
+      const active = tasks.filter(t => !t.completed).map(t => [t.id, t.title, pText[t.priority], "Pending", t.contact || "", t.createdAt]);
+      const history = tasks.filter(t => t.completed).map(t => [t.id, t.title, pText[t.priority], "Done", t.contact || "", t.createdAt, t.completedAt || ""]);
 
-      const historyRows = tasks.filter(t => t.completed).map(t => [
-        t.id, t.title, pLabels[t.priority], "Done", t.contact || "", t.createdAt, t.completedAt || ""
-      ]);
-
-      fetch(GOOGLE_SHEETS_URL, {
+      fetch(SHEETS_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "sync_all", active: activeRows, history: historyRows })
+        body: JSON.stringify({ action: "sync_all", active, history })
       }).then(() => {
-        statusText.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced`;
+        st.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--p-normal)"></i> Google Sheets Synced`;
       }).catch(() => {
-        statusText.innerHTML = `<i class="fa-solid fa-cloud-slash" style="color:var(--text-muted)"></i> Offline Local`;
+        st.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--p-normal)"></i> Saved Locally`;
       });
     }
 
-    // Google Sheets Pull
-    function fetchFromGoogleSheets(notify = false) {
-      const statusText = document.getElementById('cloudStatusText');
-      if (notify) statusText.innerHTML = `<i class="fa-solid fa-rotate fa-spin"></i> Checking Cloud...`;
+    function fetchLive(show = false) {
+      const st = document.getElementById('syncStatus');
+      if (show) st.innerHTML = `<i class="fa-solid fa-rotate fa-spin"></i> Checking...`;
 
-      fetch(`${GOOGLE_SHEETS_URL}?action=read&t=${Date.now()}`, { method: 'GET', redirect: 'follow' })
+      fetch(`${SHEETS_URL}?action=read&t=${Date.now()}`)
       .then(res => res.json())
-      .then(data => {
-        if (data && (data.active || data.history)) {
+      .then(d => {
+        if (d && (d.active || d.history)) {
           const fresh = [];
-          if (Array.isArray(data.active)) {
-            data.active.forEach(r => {
+          if (Array.isArray(d.active)) {
+            d.active.forEach(r => {
               if (r && r[0] && r[1]) {
-                fresh.push({
-                  id: String(r[0]), title: String(r[1]), priority: normalizePriority(r[2]),
-                  completed: false, contact: String(r[4] || ''), createdAt: String(r[5] || ''), completedAt: null
-                });
+                fresh.push({ id: String(r[0]), title: String(r[1]), priority: normP(r[2]), completed: false, contact: String(r[4]||''), createdAt: String(r[5]||''), completedAt: null });
               }
             });
           }
-          if (Array.isArray(data.history)) {
-            data.history.forEach(r => {
+          if (Array.isArray(d.history)) {
+            d.history.forEach(r => {
               if (r && r[0] && r[1]) {
-                fresh.push({
-                  id: String(r[0]), title: String(r[1]), priority: normalizePriority(r[2]),
-                  completed: true, contact: String(r[4] || ''), createdAt: String(r[5] || ''), completedAt: String(r[6] || '')
-                });
+                fresh.push({ id: String(r[0]), title: String(r[1]), priority: normP(r[2]), completed: true, contact: String(r[4]||''), createdAt: String(r[5]||''), completedAt: String(r[6]||'') });
               }
             });
           }
@@ -1086,296 +879,263 @@
             render();
           }
         }
-        statusText.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced`;
+        st.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--p-normal)"></i> Google Sheets Synced`;
       }).catch(() => {
-        statusText.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--priority-normal)"></i> Cloud Synced`;
+        st.innerHTML = `<i class="fa-solid fa-cloud" style="color:var(--p-normal)"></i> Google Sheets Synced`;
       });
     }
 
-    function normalizePriority(val) {
-      val = String(val || '').toLowerCase();
-      if (val.includes('most')) return 'most-urgent';
-      if (val.includes('urgent')) return 'urgent';
-      if (val.includes('important')) return 'important';
+    function normP(v) {
+      v = String(v||'').toLowerCase();
+      if (v.includes('most')) return 'most-urgent';
+      if (v.includes('urgent')) return 'urgent';
+      if (v.includes('important')) return 'important';
       return 'normal';
     }
 
     // Add Task
-    function addTask() {
-      const input = document.getElementById('taskInput');
-      const val = input.value.trim();
+    function dispatchTask() {
+      const f = document.getElementById('taskInput');
+      const val = f.value.trim();
       if (!val) return;
 
-      const phone = extractPhoneNumber(val);
+      const ph = getPhone(val);
       const now = new Date();
-      const timeFormatted = `${now.getDate()} ${now.toLocaleDateString('en-US', {month:'short'})}, ${now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', hour12:true})}`;
+      const timeFmt = `${now.getDate()} ${now.toLocaleDateString('hi-IN', {month:'short'})}, ${now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', hour12:true})}`;
 
       tasks.unshift({
         id: 'TSK-' + Math.floor(1000 + Math.random() * 9000),
         title: val,
-        priority: selectedPriority,
+        priority: priorityVal,
         completed: false,
-        contact: phone || '',
-        createdAt: timeFormatted,
+        contact: ph || '',
+        createdAt: timeFmt,
         completedAt: null
       });
 
-      input.value = '';
-      save();
+      f.value = '';
+      saveState();
     }
 
-    document.getElementById('addTaskBtn').addEventListener('click', addTask);
+    document.getElementById('addTaskBtn').addEventListener('click', dispatchTask);
     document.getElementById('taskInput').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') addTask();
+      if (e.key === 'Enter') dispatchTask();
     });
 
-    // Check Task
-    function toggleCheck(id) {
-      const task = tasks.find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      if (task.completed) {
+    // Check Done
+    function toggleDone(id) {
+      const t = tasks.find(x => x.id === id);
+      if (!t) return;
+      t.completed = !t.completed;
+      if (t.completed) {
         const now = new Date();
-        task.completedAt = `${now.getDate()} ${now.toLocaleDateString('en-US', {month:'short'})}, ${now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', hour12:true})}`;
+        t.completedAt = `${now.getDate()} ${now.toLocaleDateString('hi-IN', {month:'short'})}, ${now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit', hour12:true})}`;
       } else {
-        task.completedAt = null;
+        t.completedAt = null;
       }
-      save();
+      saveState();
     }
 
     function deleteTask(id) {
-      tasks = tasks.filter(t => t.id !== id);
-      save();
+      tasks = tasks.filter(x => x.id !== id);
+      saveState();
     }
 
-    // Move Task (Up/Down)
-    function moveTask(id, dir) {
-      const active = tasks.filter(t => !t.completed);
-      const idx = active.findIndex(t => t.id === id);
+    function shiftTask(id, dir) {
+      const act = tasks.filter(x => !x.completed);
+      const idx = act.findIndex(x => x.id === id);
       if (idx === -1) return;
-
-      if (dir === 'up' && idx > 0) {
-        swapTasks(id, active[idx - 1].id);
-      } else if (dir === 'down' && idx < active.length - 1) {
-        swapTasks(id, active[idx + 1].id);
-      }
+      if (dir === 'up' && idx > 0) swap(id, act[idx - 1].id);
+      else if (dir === 'down' && idx < act.length - 1) swap(id, act[idx + 1].id);
     }
 
-    function swapTasks(id1, id2) {
-      const i1 = tasks.findIndex(t => t.id === id1);
-      const i2 = tasks.findIndex(t => t.id === id2);
-      const temp = tasks[i1];
+    function swap(id1, id2) {
+      const i1 = tasks.findIndex(x => x.id === id1);
+      const i2 = tasks.findIndex(x => x.id === id2);
+      const tmp = tasks[i1];
       tasks[i1] = tasks[i2];
-      tasks[i2] = temp;
-      save();
+      tasks[i2] = tmp;
+      saveState();
     }
 
-    // Edit Modal
-    function openEditModal(id) {
-      const task = tasks.find(t => t.id === id);
-      if (!task) return;
-      editTaskId = id;
-      editSelectedPriority = task.priority;
-      document.getElementById('editInput').value = task.title;
-
+    // Modal Edit
+    function openEdit(id) {
+      const t = tasks.find(x => x.id === id);
+      if (!t) return;
+      editId = id;
+      editPVal = t.priority;
+      document.getElementById('editField').value = t.title;
       document.querySelectorAll('.edit-pill').forEach(b => {
-        b.classList.toggle('active', b.getAttribute('data-p') === task.priority);
+        b.classList.toggle('active', b.getAttribute('data-p') === t.priority);
       });
-
-      document.getElementById('editModal').classList.add('active');
+      document.getElementById('editModal').classList.add('show');
     }
 
-    function closeEditModal() {
-      document.getElementById('editModal').classList.remove('active');
-      editTaskId = null;
+    function closeEdit() {
+      document.getElementById('editModal').classList.remove('show');
+      editId = null;
     }
 
     document.getElementById('saveEditBtn').addEventListener('click', () => {
-      if (!editTaskId) return;
-      const task = tasks.find(t => t.id === editTaskId);
-      const newVal = document.getElementById('editInput').value.trim();
-      if (task && newVal) {
-        task.title = newVal;
-        task.priority = editSelectedPriority;
-        task.contact = extractPhoneNumber(newVal) || '';
-        save();
-        closeEditModal();
+      if (!editId) return;
+      const t = tasks.find(x => x.id === editId);
+      const nv = document.getElementById('editField').value.trim();
+      if (t && nv) {
+        t.title = nv;
+        t.priority = editPVal;
+        t.contact = getPhone(nv) || '';
+        saveState();
+        closeEdit();
       }
     });
 
-    // Sleek Voice Engine with Native Hindi Speech Transcription
+    // Smart Native Bilingual Audio Engine (Catches Technical & English Words)
     const voiceBtn = document.getElementById('voiceBtn');
-    let recognition = null;
-    let isListening = false;
-
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-      recognition = new SR();
-      recognition.continuous = false;
-      recognition.interimResults = true;
-      recognition.lang = 'hi-IN';
+      const recog = new SR();
+      recog.continuous = false;
+      recog.interimResults = false;
+      recog.lang = 'hi-IN'; // Native Indian voice recognition
 
-      recognition.onstart = () => {
-        isListening = true;
-        voiceBtn.classList.add('active-listening');
-      };
-
-      recognition.onresult = (e) => {
-        let txt = '';
-        for (let i = e.resultIndex; i < e.results.length; ++i) {
-          txt += e.results[i][0].transcript;
+      let listening = false;
+      recog.onstart = () => { listening = true; voiceBtn.classList.add('listening'); };
+      recog.onresult = (e) => {
+        if (e.results && e.results[0] && e.results[0][0]) {
+          const txt = e.results[0][0].transcript.trim();
+          const inp = document.getElementById('taskInput');
+          inp.value = inp.value ? inp.value + ' ' + txt : txt;
+          inp.focus();
         }
-        if (txt) document.getElementById('taskInput').value = txt;
       };
-
-      recognition.onerror = () => {
-        isListening = false;
-        voiceBtn.classList.remove('active-listening');
-      };
-
-      recognition.onend = () => {
-        isListening = false;
-        voiceBtn.classList.remove('active-listening');
-      };
+      recog.onerror = () => { listening = false; voiceBtn.classList.remove('listening'); };
+      recog.onend = () => { listening = false; voiceBtn.classList.remove('listening'); };
 
       voiceBtn.addEventListener('click', () => {
-        if (isListening) recognition.stop();
-        else {
-          try { recognition.start(); } catch(err) { recognition.stop(); }
-        }
+        if (listening) recog.stop();
+        else { try { recog.start(); } catch(err) { recog.stop(); } }
       });
     }
 
-    // Render Function
+    // Render Function with 100% Full-Width Linear Text Flow
     function render() {
-      const activeContainer = document.getElementById('activeContainer');
-      const archiveContainer = document.getElementById('archiveContainer');
+      const activeStack = document.getElementById('activeStack');
+      const archiveStack = document.getElementById('archiveStack');
 
-      activeContainer.innerHTML = '';
-      archiveContainer.innerHTML = '';
+      activeStack.innerHTML = '';
+      archiveStack.innerHTML = '';
 
-      const activeList = tasks.filter(t => !t.completed);
-      const completedList = tasks.filter(t => t.completed);
+      const actList = tasks.filter(x => !x.completed);
+      const doneList = tasks.filter(x => x.completed);
 
-      document.getElementById('activeCounter').innerText = activeList.length;
-      document.getElementById('doneCounter').innerText = completedList.length;
+      document.getElementById('activeCnt').innerText = actList.length;
+      document.getElementById('doneCnt').innerText = doneList.length;
 
-      const mostUrgentCount = activeList.filter(t => t.priority === 'most-urgent').length;
-      const noteElem = document.getElementById('prioritySummaryNote');
-      noteElem.innerText = mostUrgentCount > 0 ? `🔥 ${mostUrgentCount} Most Urgent` : '';
-
-      // Active Stack
-      if (activeList.length === 0) {
-        activeContainer.innerHTML = `<div style="text-align:center; padding:28px; color:var(--text-muted); font-size:0.85rem;">All active missions resolved.</div>`;
+      if (actList.length === 0) {
+        activeStack.innerHTML = `<div style="text-align:center; padding:20px; color:var(--text-dim); font-size:0.8rem;">कोई लंबित कार्य नहीं है। नया मिशन जोड़ें।</div>`;
       } else {
-        activeList.forEach((t, idx) => {
+        actList.forEach((t, i) => {
           const row = document.createElement('div');
-          row.className = 'task-card-row';
+          row.className = 'task-row';
 
-          let phoneBadge = '';
+          let phBadge = '';
           if (t.contact) {
-            phoneBadge = `<a class="contact-link-tag" href="tel:${t.contact}"><i class="fa-solid fa-phone"></i> ${t.contact}</a>`;
+            phBadge = `<a class="phone-tag" href="tel:${t.contact}"><i class="fa-solid fa-phone"></i> ${t.contact}</a>`;
           }
 
+          // Full Width Utilization: Actions placed cleanly in the bottom meta-line
           row.innerHTML = `
-            <div class="priority-bullet ${t.priority}"></div>
-            <div class="check-disc" onclick="toggleCheck('${t.id}')"></div>
+            <div class="dot-priority ${t.priority}"></div>
+            <div class="check-box" onclick="toggleDone('${t.id}')"></div>
             
-            <div class="task-core-content">
-              <div class="task-headline">${escapeHtml(t.title)}</div>
-              <div class="task-sub-info">
-                <span>#${idx + 1}</span>
-                <span>• ${t.createdAt}</span>
-                ${phoneBadge}
+            <div class="task-body">
+              <div class="task-title">${escapeHtml(t.title)}</div>
+              
+              <div class="task-meta-line">
+                <div class="meta-details">
+                  <span>#${i + 1}</span>
+                  <span>• ${t.createdAt}</span>
+                  ${phBadge}
+                </div>
+                <div class="actions-cluster">
+                  <button class="action-icon" title="Shift Up" onclick="shiftTask('${t.id}', 'up')"><i class="fa-solid fa-arrow-up"></i></button>
+                  <button class="action-icon" title="Shift Down" onclick="shiftTask('${t.id}', 'down')"><i class="fa-solid fa-arrow-down"></i></button>
+                  <button class="action-icon" title="Edit" onclick="openEdit('${t.id}')"><i class="fa-solid fa-pen"></i></button>
+                  <button class="action-icon del" title="Delete" onclick="deleteTask('${t.id}')"><i class="fa-solid fa-xmark"></i></button>
+                </div>
               </div>
             </div>
-
-            <div class="task-dock-actions">
-              <button class="dock-btn" title="Shift Up" onclick="moveTask('${t.id}', 'up')"><i class="fa-solid fa-arrow-up"></i></button>
-              <button class="dock-btn" title="Shift Down" onclick="moveTask('${t.id}', 'down')"><i class="fa-solid fa-arrow-down"></i></button>
-              <button class="dock-btn" title="Edit" onclick="openEditModal('${t.id}')"><i class="fa-solid fa-pen"></i></button>
-              <button class="dock-btn delete" title="Delete" onclick="deleteTask('${t.id}')"><i class="fa-solid fa-xmark"></i></button>
-            </div>
           `;
-          activeContainer.appendChild(row);
+          activeStack.appendChild(row);
         });
       }
 
-      // Past Archive Dropdown
-      if (completedList.length === 0) {
-        archiveContainer.innerHTML = `<div style="text-align:center; padding:10px; color:var(--text-muted); font-size:0.75rem;">No historical records yet.</div>`;
+      // Archive List
+      if (doneList.length === 0) {
+        archiveStack.innerHTML = `<div style="text-align:center; padding:10px; color:var(--text-dim); font-size:0.75rem;">कोई पिछला रिकॉर्ड नहीं है।</div>`;
       } else {
-        completedList.forEach(t => {
+        doneList.forEach(t => {
           const row = document.createElement('div');
-          row.className = 'task-card-row past-task-row';
+          row.className = 'task-row done-row';
           row.innerHTML = `
-            <div class="check-disc checked" onclick="toggleCheck('${t.id}')"></div>
-            <div class="task-core-content">
-              <div class="task-headline">${escapeHtml(t.title)}</div>
-              <div class="task-sub-info">
-                <span style="color:#30d158">✓ Finished: ${t.completedAt}</span>
+            <div class="check-box done" onclick="toggleDone('${t.id}')"></div>
+            <div class="task-body">
+              <div class="task-title">${escapeHtml(t.title)}</div>
+              <div class="task-meta-line">
+                <span style="color:var(--p-normal)">✓ Finished: ${t.completedAt}</span>
+                <button class="action-icon del" onclick="deleteTask('${t.id}')"><i class="fa-solid fa-trash"></i></button>
               </div>
             </div>
-            <div class="task-dock-actions">
-              <button class="dock-btn delete" onclick="deleteTask('${t.id}')"><i class="fa-solid fa-trash"></i></button>
-            </div>
           `;
-          archiveContainer.appendChild(row);
+          archiveStack.appendChild(row);
         });
       }
     }
 
     // Archive Toggle
-    document.getElementById('archiveToggleBtn').addEventListener('click', () => {
-      const container = document.getElementById('archiveContainer');
-      const chevron = document.getElementById('archiveChevron');
-      isArchiveOpen = !isArchiveOpen;
-      container.classList.toggle('open', isArchiveOpen);
-      chevron.innerHTML = isArchiveOpen ? `<i class="fa-solid fa-chevron-up"></i>` : `<i class="fa-solid fa-chevron-down"></i>`;
+    let arcOpen = false;
+    document.getElementById('archiveTrigger').addEventListener('click', () => {
+      arcOpen = !arcOpen;
+      document.getElementById('archiveStack').classList.toggle('open', arcOpen);
+      document.getElementById('archiveCaret').innerHTML = arcOpen ? `<i class="fa-solid fa-chevron-up"></i>` : `<i class="fa-solid fa-chevron-down"></i>`;
     });
 
     // Excel Export
-    function exportToExcel() {
+    function exportExcel() {
       let csv = "\uFEFFTask ID,Mission Title,Priority,Status,Contact,Created At,Completed At\n";
       tasks.forEach(t => {
-        csv += `${t.id},"${t.title.replace(/"/g, '""')}",${pLabels[t.priority]},${t.completed ? "Done" : "Pending"},${t.contact || ''},"${t.createdAt}","${t.completedAt || ''}"\n`;
+        csv += `${t.id},"${t.title.replace(/"/g, '""')}",${pText[t.priority]},${t.completed ? "Done" : "Pending"},${t.contact || ''},"${t.createdAt}","${t.completedAt || ''}"\n`;
       });
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = `CoolArt_Executive_Tasks_${new Date().toISOString().slice(0, 10)}.csv`;
-      link.click();
+      const b = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(b);
+      a.download = `CoolArt_Tasks_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
     }
 
-    // WhatsApp Daily Wrap
-    function shareDailyBrief() {
-      const done = tasks.filter(t => t.completed);
+    // Daily Wrap WhatsApp
+    function shareWhatsapp() {
+      const done = tasks.filter(x => x.completed);
       let msg = `*📊 DAILY EXECUTIVE BRIEF - COOL ART ADVERTISING*\n`;
-      msg += `📅 Date: ${new Date().toLocaleDateString('en-US')}\n`;
-      msg += `✅ Completed Targets (${done.length}):\n`;
+      msg += `📅 Date: ${new Date().toLocaleDateString('hi-IN')}\n`;
+      msg += `✅ Finished Targets (${done.length}):\n`;
       done.slice(0, 10).forEach((t, i) => {
         msg += `${i + 1}. ${t.title} (${t.completedAt})\n`;
       });
-      const pending = tasks.filter(t => !t.completed).length;
-      msg += `\n⏳ Active for Tomorrow: ${pending} tasks.`;
-
+      msg += `\n⏳ Active: ${tasks.filter(x => !x.completed).length} tasks.`;
       window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    function escapeHtml(text) {
+    function escapeHtml(t) {
       const d = document.createElement('div');
-      d.innerText = text;
+      d.innerText = t;
       return d.innerHTML;
     }
 
-    // Launch Engine
+    // Boot
     render();
-    fetchFromGoogleSheets(true);
-
-    // Background Auto Sync Every 12 Seconds
-    setInterval(() => {
-      fetchFromGoogleSheets(false);
-    }, 12000);
+    fetchLive(true);
+    setInterval(() => { fetchLive(false); }, 12000);
   </script>
 </body>
 </html>
